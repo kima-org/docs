@@ -36,12 +36,12 @@ template: home.html
         </p>
         <!--  -->
         <div class="cta-buttons">
-            <a href="/about">
+            <a href="about">
                 <button class="md-button">About</button>
             </a>
             <button class="md-button">News</button>
             <p>
-            <a href="/docs">
+            <a href="docs">
                 <button class="md-button md-button--primary">Documentation</button>
             </a>
             </p>

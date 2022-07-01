@@ -1,5 +1,6 @@
 site_name: kima
 repo_url: https://github.com/j-faria/kima
+site_url: ""
 
 docs_dir: docs
 edit_uri: ""
