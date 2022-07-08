@@ -8,7 +8,7 @@ We run regular tests with the *gcc* and *clang* compilers:
 <img style='vertical-align:middle;' src='https://github.com/j-faria/kima/actions/workflows/compilers.yml/badge.svg'>
 
 
-To install, first clone the GitHub repository :octocat:
+To install, first clone the :material-github: GitHub repository
 ```sh
 git clone --recursive https://github.com/j-faria/kima.git  #(1)
 ```

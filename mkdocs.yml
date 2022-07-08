@@ -28,6 +28,7 @@ theme:
     - search.suggest
     - search.share
     - navigation.instant
+    # - navigation.tabs
     # - navigation.sections
     - navigation.expand
     - navigation.indexes
@@ -43,16 +44,17 @@ extra_css:
 
 nav:
   - Welcome: docs/index.md
-  - docs/tldr.md
   - docs/installation.md
-  - getting-started.md
-  - models.md
+  - docs/getting-started.md
+  - docs/models.md
   - Examples:
     - examples/index.md
     - examples/51Peg.md
     - examples/trends.md
     - examples/BL2009.md
-  - contributing.md
+  - docs/API.md
+  - docs/troubleshooting.md
+  - docs/contributing.md
 #   - Building Models:
 #     - building-models/index.md
 #     - building-models/general-settings.md
@@ -66,6 +68,7 @@ plugins:
   - git-revision-date-localized:
       type: timeago
       enable_creation_date: false
+
 
 markdown_extensions:
   - attr_list
@@ -93,5 +96,10 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+
+watch:
+  - overrides
+
 
 copyright: Copyright © 2018 - 2022 Institute of Astrophysics and Space Sciences 
