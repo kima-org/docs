@@ -17,11 +17,12 @@ jobs:
         with:
           python-version: 3.x
 
-      # - name: Install dependencies
-      #   run: |
-      #     if [ -f requirements.txt ]; then python -m pip install -r requirements.txt; fi
-      #     python -m pip install jupyter
-
+      - name: Install dependencies
+        run: |
+          git clone --recursive https://github.com/j-faria/kima.git
+          cd kima
+          make -j 4
+          python setup.py install
 
       # - name: Run examples
       #   run: |
