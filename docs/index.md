@@ -39,12 +39,9 @@ template: home.html
             <a href="about">
                 <button class="md-button">About</button>
             </a>
-            <button class="md-button">News</button>
-            <p>
             <a href="docs">
                 <button class="md-button md-button--primary">Documentation</button>
             </a>
-            </p>
         </div>
     </div>
 </div>
