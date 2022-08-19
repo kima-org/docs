@@ -110,6 +110,7 @@ extra_javascript:
 
 watch:
   - overrides
+  - stylesheets
 
 
 copyright: Copyright © 2018 - 2022 Institute of Astrophysics and Space Sciences 
