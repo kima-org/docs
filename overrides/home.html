@@ -5,23 +5,24 @@
 
 {% block content %}
   {{ super() }}
+  
+  <div class="hero">
+    <div class="text-center">
+      <small class="text-muted mb-2">
+        by <strong>João Faria</strong>
+      </small>
+      <br>
+      <span class="twemoji">
+        <a href="mailto:joao.faria@astro.up.pt">
+          {% include ".icons/material/email.svg" %} 
+        </a>
+      </span>
+    </div>
+  </div>
+
 {% endblock %}
 
 
 {% block footer %}
 {% endblock %} 
 
-<!-- 
-<div class="mt-auto py-3 text-center">
-  <small class="text-muted mb-2">
-    by <strong>João Faria</strong>
-  </small>
-  <div class="container-fluid justify-content-center"><a class="social mx-1"  href="mailto:joao.faria@astro.up.pt"
-    style="color: #6c757d"
-    onMouseOver="this.style.color='#db4437'"
-    onMouseOut="this.style.color='#6c757d'">
-    <i class="fas fa-envelope fa-1x"></i>
-  </a>
-</div>
-</div>
--->

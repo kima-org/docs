@@ -36,9 +36,6 @@ template: home.html
         </p>
         <!--  -->
         <div class="cta-buttons">
-            <a href="about">
-                <button class="md-button">About</button>
-            </a>
             <a href="docs">
                 <button class="md-button md-button--primary">Documentation</button>
             </a>
@@ -46,6 +43,3 @@ template: home.html
     </div>
 </div>
   
-
-
-
