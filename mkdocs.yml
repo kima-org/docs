@@ -52,7 +52,9 @@ nav:
     - examples/51Peg.md
     - examples/trends.md
     - examples/BL2009.md
-  - docs/API.md
+  - API:
+    - kima: docs/API/kima.md
+    - pykima: docs/API/pykima.md
   - docs/troubleshooting.md
   - docs/contributing.md
 #   - Building Models:
@@ -65,10 +67,18 @@ nav:
 
 plugins:
   - search
+  - mkdocstrings:
+      custom_templates: templates
+      handlers:
+        python:
+          options:
+            show_source: false
+            docstring_style: "google"
+            merge_init_into_class: true
+            # members_order: "source"
   - git-revision-date-localized:
       type: timeago
       enable_creation_date: false
-
 
 markdown_extensions:
   - attr_list
