@@ -27,20 +27,18 @@ distribution is estimated[^2]<sup>, </sup>[^3].
 
 
 The code is under active development at 
-[this](https://www.github.com/j-faria/kima) :material-github: GitHub repository.
-
-This page hosts the [documentation](/docs) and [examples](/examples), 
-as well as the latest [news](/news).
+[this](https://www.github.com/j-faria/kima) :material-github: GitHub repository.  
+This page hosts the documentation, [examples](/examples), and detailed APIs.
 
 
-If you use **kima** for your work or research, we kindly ask that you include
+If you use **kima** in your work or research, we kindly ask that you include
 the following citation[^4]
 
     Faria et al., (2018). kima: Exoplanet detection in radial velocities.
     Journal of Open Source Software, 3(26), 487
 
 Feel free to use the following BibTeX entry, or see the ADS entry
-[2018JOSS....3..487F](https://ui.adsabs.harvard.edu/abs/2018JOSS....3..487F/abstract)
+[2018JOSS....3..487F](https://ui.adsabs.harvard.edu/abs/2018JOSS....3..487F/abstract).
 
 ```
 @article{kima,

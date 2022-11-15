@@ -1,8 +1,7 @@
 ## Running the examples
 
-**kima** comes packed with ready-to-run examples inside the *kima/examples*
-directory. All of them are described to some length
-[here]({{site.baseurl}}/examples).
+**kima** comes packed with ready-to-run examples. All of them are described to
+some length [here](/examples).
 
 To run any example, go to the directory and use the `kima-run` script
 

@@ -1,34 +1,26 @@
 # Installation
 
-**kima** is written in C++ and needs to be compiled, so you will need a working
-C++ compiler.
-
-We run regular tests with the *gcc* and *clang* compilers: 
-
-<img style='vertical-align:middle;' src='https://github.com/j-faria/kima/actions/workflows/compilers.yml/badge.svg'>
+Both **kima** and `pykima` can easily be installed using pip:
 
 
-To install, first clone the :material-github: GitHub repository
 ```sh
-git clone --recursive https://github.com/j-faria/kima.git  #(1)
+pip install kima
 ```
 
-1.  don't foget the `--recursive` to download the required submodules.
+[![PyPI version](https://badge.fury.io/py/kima.svg)](https://badge.fury.io/py/kima)
 
+Alternatively, you can also clone the :material-github: GitHub repository
 
-then go to the *kima* directory and compile the code (in parallel)
+```sh
+git clone https://github.com/j-faria/kima.git
+```
+
+and install the package locally
 
 ```sh
 cd kima
 make -j 4
-```
-
-To analyse the results, **kima** comes with a helper Python package called
-`pykima`.  
-To install `pykima`, from inside the *kima* directory run
-
-```sh
-python setup.py install  # or python setup.py develop
+pip install -e .
 ```
 
 
