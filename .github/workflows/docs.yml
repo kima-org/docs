@@ -19,10 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          git clone --recursive https://github.com/j-faria/kima.git
-          cd kima
-          make -j 4
-          python setup.py install
+          pip install kima
 
       # - name: Run examples
       #   run: |
