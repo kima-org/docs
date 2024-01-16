@@ -29,12 +29,14 @@ theme:
     - search.share
     - navigation.instant
     # - navigation.tabs
-    # - navigation.sections
-    - navigation.expand
+    - navigation.sections
+    # - navigation.expand
     - navigation.indexes
     # - toc.integrate 
-    - navigation.top
+    #- navigation.top
+    - navigation.prune
     - content.code.annotate
+    - content.code.copy
     - content.tabs.link
 
 
@@ -48,15 +50,14 @@ nav:
   - docs/getting-started.md
   - docs/models.md
   - Examples:
-    - examples/index.md
-    - examples/51Peg.md
-    - examples/trends.md
-    - examples/BL2009.md
-  - API:
-    - kima: docs/API/kima.md
-    - pykima: docs/API/pykima.md
+    - docs/examples/index.md
+    - 51Peg: docs/examples/51Peg.md  
   - docs/troubleshooting.md
   - docs/contributing.md
+  - API:
+    - docs/API/index.md
+    - kima: docs/API/kima.md
+    - pykima: docs/API/pykima.md
 #   - Building Models:
 #     - building-models/index.md
 #     - building-models/general-settings.md
@@ -67,18 +68,20 @@ nav:
 
 plugins:
   - search
-  - mkdocstrings:
-      custom_templates: templates
-      handlers:
-        python:
-          options:
-            show_source: false
-            docstring_style: "google"
-            merge_init_into_class: true
-            # members_order: "source"
-  - git-revision-date-localized:
-      type: timeago
-      enable_creation_date: false
+  - mkdocstrings
+      # custom_templates: templates
+      # handlers:
+      #   python:
+      #     options:
+      #       show_source: true
+      #       merge_init_into_class: true
+      #       # members_order: "source"
+      #       filters:
+      #         - "!^_"
+      #         - "!__"
+  # - git-revision-date-localized:
+  #     type: timeago
+  #     enable_creation_date: false
 
 markdown_extensions:
   - attr_list
@@ -113,4 +116,4 @@ watch:
   - stylesheets
 
 
-copyright: Copyright © 2018 - 2022 Institute of Astrophysics and Space Sciences 
+copyright: Copyright © 2018 - 2023 João Faria
