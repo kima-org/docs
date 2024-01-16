@@ -27,8 +27,8 @@ distribution is estimated[^2]<sup>, </sup>[^3].
 
 
 The code is under active development at 
-[this](https://www.github.com/j-faria/kima) :material-github: GitHub repository.  
-This page hosts the documentation, [examples](/examples), and detailed APIs.
+[this](https://www.github.com/kima-org/kima) :material-github: GitHub repository.  
+This page hosts the documentation, [examples](/docs/examples), and detailed [APIs](/docs/API).
 
 
 If you use **kima** in your work or research, we kindly ask that you include
