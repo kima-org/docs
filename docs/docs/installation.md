@@ -1,7 +1,6 @@
 # Installation
 
-Both **kima** and `pykima` can easily be installed using pip:
-
+**kima** can easily be installed using pip:
 
 ```sh
 pip install kima
@@ -9,28 +8,31 @@ pip install kima
 
 [![PyPI version](https://badge.fury.io/py/kima.svg)](https://badge.fury.io/py/kima)
 
-Alternatively, you can also clone the :material-github: GitHub repository
+Installation is tested on Linux, Windows, and MacOS regularly.
+If the following badge is green, things should be working:
+
+[![test pip install](https://github.com/kima-org/test-pip-install/actions/workflows/python-package.yml/badge.svg)](https://github.com/kima-org/test-pip-install/actions/workflows/python-package.yml)
+
+!!! danger
+    The installation process compiles the C++ code using [CMake](https://cmake.org/),
+    and requires at least CMake v3.17, which should be easy to install (or update)
+    on most platforms. See [this official page](https://cmake.org/download/) for more information.
+
+
+Alternatively, you can also clone the [:material-github: GitHub repository](https://github.com/kima-org/kima.git)
 
 ```sh
-git clone https://github.com/j-faria/kima.git
+git clone https://github.com/kima-org/kima.git
 ```
 
 and install the package locally
 
 ```sh
 cd kima
-make -j 4
 pip install -e .
 ```
 
-
-!!! note  
-    You may choose to analyse the results without `pykima` since the inputs and
-    outputs of **kima** itself are simple text files. `pykima` will just make it
-    a bit easier.
  
- 
- If the installation fails, take a look at the
- [troubleshooting](https://github.com/j-faria/kima/wiki/Troubleshooting){:target="_blank"}
- section of the wiki or [open an
- issue](https://github.com/j-faria/kima/issues){:target="_blank"}.
+If the installation fails,
+open an issue [here](https://github.com/kima-org/kima/issues){:target="_blank"}.
+<!-- take a look at the [troubleshooting](/docs/troubleshooting) page -->
