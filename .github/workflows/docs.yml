@@ -30,4 +30,6 @@ jobs:
           python -m pip install mkdocs-material mkdocstrings[python]
           python -m pip install mkdocs-git-revision-date-localized-plugin
 
-      - run: mkdocs gh-deploy --force
+      - name: GH deplow
+        run: |
+          python -m mkdocs gh-deploy --force
