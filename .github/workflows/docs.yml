@@ -30,6 +30,11 @@ jobs:
           python -m pip install mkdocs-material mkdocstrings[python]
           python -m pip install mkdocs-git-revision-date-localized-plugin
 
-      - name: GH deplow
+      - name: Import
         run: |
-          python -m mkdocs gh-deploy --force
+          python -c "import kima"
+          python -c "from kima import pykima"
+
+      #- name: GH deplow
+      #  run: |
+      #    python -m mkdocs gh-deploy --force
