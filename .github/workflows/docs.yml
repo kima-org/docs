@@ -35,6 +35,6 @@ jobs:
           python -c "import kima"
           python -c "from kima import pykima"
 
-      #- name: GH deplow
-      #  run: |
-      #    python -m mkdocs gh-deploy --force
+      - name: GH deploy
+        run: |
+          mkdocs gh-deploy --force
