@@ -28,6 +28,7 @@ jobs:
       - name: Install docs packages
         run: |
           python -m pip install mkdocs-material mkdocstrings[python]
+          python -m pip install mkdocs-jupyter
           python -m pip install mkdocs-git-revision-date-localized-plugin
 
       - name: Import
