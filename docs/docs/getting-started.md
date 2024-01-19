@@ -1,5 +1,5 @@
 
-To get started, read in a dataset and choose one of the available [models](/docs/models)
+To get started, read in a dataset and choose one of the available [models](/docs/models):
 
 ```py
 import kima
@@ -10,13 +10,13 @@ data = RVData('my_dataset')
 model = RVmodel(fix=True, npmax=1, data=data)
 ```
 
-Run the model
+and then run the model
 
 ```py
 kima.run(model, steps=1000)
 ```
 
-and the resulting posteriors can be loaded and analysed easily (more information [here](/docs/API/pykima))
+The resulting posteriors can be loaded and analysed easily (more information [here](/docs/API/pykima))
 
 ```py
 res = kima.load_results()
