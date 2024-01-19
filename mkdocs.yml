@@ -70,6 +70,7 @@ nav:
 
 plugins:
   - search
+  - mkdocs-jupyter
   - mkdocstrings
       # custom_templates: templates
       # handlers:
@@ -81,9 +82,9 @@ plugins:
       #       filters:
       #         - "!^_"
       #         - "!__"
-  # - git-revision-date-localized:
-  #     type: timeago
-  #     enable_creation_date: false
+  - git-revision-date-localized:
+      type: timeago
+      enable_creation_date: false
 
 markdown_extensions:
   - attr_list
