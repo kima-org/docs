@@ -1,0 +1,58 @@
+:root {
+  --md-admonition-icon--boilerplate: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 2c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h1v2H6v2h3c1.11 0 2-.89 2-2v-2h2v2c0 1.11.89 2 2 2h3v-2h-3v-2h1c1.11 0 2-.89 2-2V4c0-1.11-.89-2-2-2H8m4 2.97a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m-2 9.53h4V16h-4v-1.5Z"/></svg>')
+}
+.md-typeset .admonition.boilerplate,
+.md-typeset details.boilerplate {
+  border-color: rgb(43, 155, 70);
+}
+.md-typeset .boilerplate > .admonition-title,
+.md-typeset .boilerplate > summary {
+  background-color: rgba(43, 155, 70, 0.1);
+}
+.md-typeset .boilerplate > .admonition-title::before,
+.md-typeset .boilerplate > summary::before {
+  background-color: rgb(43, 155, 70);
+  -webkit-mask-image: var(--md-admonition-icon--boilerplate);
+          mask-image: var(--md-admonition-icon--boilerplate);
+}
+
+
+/* for API docs */
+
+/* Indentation. */
+div.doc-contents:not(.first) {
+  padding-left: 25px;
+  border-left: .05rem solid var(--md-typeset-table-color);
+}
+
+
+/* Mark external links as such. */
+a.autorefs-external::after {
+  /* https://primer.style/octicons/arrow-up-right-24 */
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="rgb(0, 0, 0)" d="M18.25 15.5a.75.75 0 00.75-.75v-9a.75.75 0 00-.75-.75h-9a.75.75 0 000 1.5h7.19L6.22 16.72a.75.75 0 101.06 1.06L17.5 7.56v7.19c0 .414.336.75.75.75z"></path></svg>');
+  content: ' ';
+
+  display: inline-block;
+  position: relative;
+  top: 0.1em;
+  margin-left: 0.2em;
+  margin-right: 0.1em;
+
+  height: 1em;
+  width: 1em;
+  border-radius: 100%;
+  background-color: var(--md-typeset-a-color);
+}
+a.autorefs-external:hover::after {
+  background-color: var(--md-accent-fg-color);
+}
+
+
+/* for HeadWay badge */
+#HW_badge_cont {
+  top: -5px;
+  right: 10px;
+  width: 100%;
+  height: 100%;
+  position: absolute !important;
+}

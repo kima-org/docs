@@ -1,0 +1,8030 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../pykima/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+    
+    
+      
+        <title>kima - kima</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+<script src="https://cdn.headwayapp.co/widget.js"></script>
+<script>
+  // @see https://docs.headwayapp.co/widget for more configuration options.
+  var HW_config = {
+  selector: ".hw-badge",
+  account: "7zrlR7",
+  callbacks: {
+    onWidgetReady: function(widget) {
+    //   console.log("Widget is here!");
+    //   console.log("unseen entries count: " + widget.getUnseenCount());
+    },
+    onShowWidget: function(){
+    //   console.log("Someone opened the widget!");
+    },
+    onShowDetails: function(changelog){
+    //   console.log(changelog.position); // position in the widget
+    //   console.log(changelog.id); // unique id
+    //   console.log(changelog.title); // title
+    //   console.log(changelog.category); // category, lowercased
+    },
+    onReadMore: function(changelog){
+    //   console.log(changelog); // same changelog object as in onShowDetails callback
+    },
+    onHideWidget: function(){
+    //   console.log("Who turned off the light?");
+    }
+  }
+  };
+  Headway.init(HW_config);
+</script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kima-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="header.title">
+    <a href="../../.." title="kima" class="md-header__button md-logo" aria-label="kima" data-md-component="logo">
+      
+  <img src="../../../assets/logo_transparent_small.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            kima
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+            kima
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    <div class="md-header__option">
+      <div class="md-header__button md-icon hw-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 7v12h15v2H4c-2 0-2-2-2-2V7h2m17.3-4H7.7C6.76 3 6 3.7 6 4.55v10.9c0 .86.76 1.55 1.7 1.55h13.6c.94 0 1.7-.69 1.7-1.55V4.55C23 3.7 22.24 3 21.3 3M8 5h5v6H8V5m13 10H8v-2h13v2m0-4h-6V9h6v2m0-4h-6V5h6v2Z"/></svg>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kima-org/kima" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="kima" class="md-nav__button md-logo" aria-label="kima" data-md-component="logo">
+      
+  <img src="../../../assets/logo_transparent_small.png" alt="logo">
+
+    </a>
+    kima
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kima-org/kima" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../examples/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/51Peg.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    51Peg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/multi_instrument/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multiple instruments
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/transiting_planet.ipynb" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    transiting_planet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    kima
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    kima
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData" class="md-nav__link">
+    <span class="md-ellipsis">
+      RVData
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.M0_epoch" class="md-nav__link">
+    <span class="md-ellipsis">
+      M0_epoch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.N" class="md-nav__link">
+    <span class="md-ellipsis">
+      N
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.actind" class="md-nav__link">
+    <span class="md-ellipsis">
+      actind
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.instrument" class="md-nav__link">
+    <span class="md-ellipsis">
+      instrument
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.multi" class="md-nav__link">
+    <span class="md-ellipsis">
+      multi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.obsi" class="md-nav__link">
+    <span class="md-ellipsis">
+      obsi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.sig" class="md-nav__link">
+    <span class="md-ellipsis">
+      sig
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.skip" class="md-nav__link">
+    <span class="md-ellipsis">
+      skip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.t" class="md-nav__link">
+    <span class="md-ellipsis">
+      t
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.units" class="md-nav__link">
+    <span class="md-ellipsis">
+      units
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.y" class="md-nav__link">
+    <span class="md-ellipsis">
+      y
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.get_timespan" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_timespan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.load" class="md-nav__link">
+    <span class="md-ellipsis">
+      load
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.topslope" class="md-nav__link">
+    <span class="md-ellipsis">
+      topslope
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      RVmodel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      RVmodel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RVmodel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.Cprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.Jprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.KO_Kprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_Kprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.KO_Pprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_Pprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.KO_eprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_eprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.KO_phiprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_phiprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.KO_wprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_wprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.conditional" class="md-nav__link">
+    <span class="md-ellipsis">
+      conditional
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.cubic_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      cubic_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.data" class="md-nav__link">
+    <span class="md-ellipsis">
+      data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.degree" class="md-nav__link">
+    <span class="md-ellipsis">
+      degree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.enforce_stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      enforce_stability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      fix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.indicator_correlations" class="md-nav__link">
+    <span class="md-ellipsis">
+      indicator_correlations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.individual_offset_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      individual_offset_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.known_object" class="md-nav__link">
+    <span class="md-ellipsis">
+      known_object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.n_known_object" class="md-nav__link">
+    <span class="md-ellipsis">
+      n_known_object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.npmax" class="md-nav__link">
+    <span class="md-ellipsis">
+      npmax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.nu_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      nu_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.offsets_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      offsets_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.quadr_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      quadr_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.slope_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      slope_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.star_mass" class="md-nav__link">
+    <span class="md-ellipsis">
+      star_mass
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.studentt" class="md-nav__link">
+    <span class="md-ellipsis">
+      studentt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.trend" class="md-nav__link">
+    <span class="md-ellipsis">
+      trend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.set_known_object" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_known_object
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPmodel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPmodel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GPmodel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.Cprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.Jprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.KO_Kprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_Kprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.KO_Pprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_Pprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.KO_eprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_eprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.KO_phiprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_phiprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.KO_wprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_wprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.conditional" class="md-nav__link">
+    <span class="md-ellipsis">
+      conditional
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.cubic_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      cubic_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.degree" class="md-nav__link">
+    <span class="md-ellipsis">
+      degree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.enforce_stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      enforce_stability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.eta1_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta1_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.eta2_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta2_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.eta3_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta3_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.eta4_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta4_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.known_object" class="md-nav__link">
+    <span class="md-ellipsis">
+      known_object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.n_known_object" class="md-nav__link">
+    <span class="md-ellipsis">
+      n_known_object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.offsets_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      offsets_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.quadr_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      quadr_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.slope_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      slope_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.star_mass" class="md-nav__link">
+    <span class="md-ellipsis">
+      star_mass
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.trend" class="md-nav__link">
+    <span class="md-ellipsis">
+      trend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.set_known_object" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_known_object
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      RVFWHMmodel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      RVFWHMmodel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RVFWHMmodel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.Cprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.Jprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.KO_Kprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_Kprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.KO_Pprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_Pprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.KO_eprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_eprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.KO_phiprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_phiprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.KO_wprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_wprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.conditional" class="md-nav__link">
+    <span class="md-ellipsis">
+      conditional
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.cubic_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      cubic_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.degree" class="md-nav__link">
+    <span class="md-ellipsis">
+      degree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.enforce_stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      enforce_stability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.eta1_fwhm_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta1_fwhm_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.eta1_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta1_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.eta2_fwhm_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta2_fwhm_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.eta2_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta2_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.eta3_fwhm_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta3_fwhm_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.eta3_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta3_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.eta4_fwhm_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta4_fwhm_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.eta4_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta4_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.known_object" class="md-nav__link">
+    <span class="md-ellipsis">
+      known_object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.n_known_object" class="md-nav__link">
+    <span class="md-ellipsis">
+      n_known_object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.quadr_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      quadr_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.slope_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      slope_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.star_mass" class="md-nav__link">
+    <span class="md-ellipsis">
+      star_mass
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.trend" class="md-nav__link">
+    <span class="md-ellipsis">
+      trend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.set_known_object" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_known_object
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.run" class="md-nav__link">
+    <span class="md-ellipsis">
+      run
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      distributions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.Cauchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cauchy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cauchy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Cauchy.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Cauchy.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Cauchy.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.Exponential" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exponential">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Exponential.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Exponential.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Exponential.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.Fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixed
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fixed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Fixed.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Fixed.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Fixed.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.Gaussian" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gaussian
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gaussian">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Gaussian.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Gaussian.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Gaussian.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.Kumaraswamy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kumaraswamy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kumaraswamy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Kumaraswamy.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Kumaraswamy.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Kumaraswamy.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.Laplace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laplace
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Laplace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Laplace.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Laplace.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Laplace.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.LogUniform" class="md-nav__link">
+    <span class="md-ellipsis">
+      LogUniform
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LogUniform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.LogUniform.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.LogUniform.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.LogUniform.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.ModifiedLogUniform" class="md-nav__link">
+    <span class="md-ellipsis">
+      ModifiedLogUniform
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ModifiedLogUniform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.ModifiedLogUniform.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.ModifiedLogUniform.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.ModifiedLogUniform.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.RNG" class="md-nav__link">
+    <span class="md-ellipsis">
+      RNG
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RNG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.RNG.rand" class="md-nav__link">
+    <span class="md-ellipsis">
+      rand
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.RNG.rand_int" class="md-nav__link">
+    <span class="md-ellipsis">
+      rand_int
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.Rayleigh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rayleigh
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rayleigh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Rayleigh.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Rayleigh.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Rayleigh.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.Triangular" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triangular
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Triangular">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Triangular.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Triangular.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Triangular.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedCauchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      TruncatedCauchy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TruncatedCauchy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedCauchy.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedCauchy.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedCauchy.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedExponential" class="md-nav__link">
+    <span class="md-ellipsis">
+      TruncatedExponential
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TruncatedExponential">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedExponential.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedExponential.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedExponential.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedRayleigh" class="md-nav__link">
+    <span class="md-ellipsis">
+      TruncatedRayleigh
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TruncatedRayleigh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedRayleigh.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedRayleigh.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedRayleigh.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.Uniform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uniform
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uniform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Uniform.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Uniform.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Uniform.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.keplerian" class="md-nav__link">
+    <span class="md-ellipsis">
+      keplerian
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pykima/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pykima
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData" class="md-nav__link">
+    <span class="md-ellipsis">
+      RVData
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.M0_epoch" class="md-nav__link">
+    <span class="md-ellipsis">
+      M0_epoch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.N" class="md-nav__link">
+    <span class="md-ellipsis">
+      N
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.actind" class="md-nav__link">
+    <span class="md-ellipsis">
+      actind
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.instrument" class="md-nav__link">
+    <span class="md-ellipsis">
+      instrument
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.multi" class="md-nav__link">
+    <span class="md-ellipsis">
+      multi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.obsi" class="md-nav__link">
+    <span class="md-ellipsis">
+      obsi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.sig" class="md-nav__link">
+    <span class="md-ellipsis">
+      sig
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.skip" class="md-nav__link">
+    <span class="md-ellipsis">
+      skip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.t" class="md-nav__link">
+    <span class="md-ellipsis">
+      t
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.units" class="md-nav__link">
+    <span class="md-ellipsis">
+      units
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.y" class="md-nav__link">
+    <span class="md-ellipsis">
+      y
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.get_timespan" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_timespan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.load" class="md-nav__link">
+    <span class="md-ellipsis">
+      load
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVData.topslope" class="md-nav__link">
+    <span class="md-ellipsis">
+      topslope
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      RVmodel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      RVmodel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RVmodel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.Cprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.Jprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.KO_Kprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_Kprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.KO_Pprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_Pprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.KO_eprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_eprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.KO_phiprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_phiprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.KO_wprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_wprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.conditional" class="md-nav__link">
+    <span class="md-ellipsis">
+      conditional
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.cubic_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      cubic_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.data" class="md-nav__link">
+    <span class="md-ellipsis">
+      data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.degree" class="md-nav__link">
+    <span class="md-ellipsis">
+      degree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.enforce_stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      enforce_stability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      fix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.indicator_correlations" class="md-nav__link">
+    <span class="md-ellipsis">
+      indicator_correlations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.individual_offset_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      individual_offset_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.known_object" class="md-nav__link">
+    <span class="md-ellipsis">
+      known_object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.n_known_object" class="md-nav__link">
+    <span class="md-ellipsis">
+      n_known_object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.npmax" class="md-nav__link">
+    <span class="md-ellipsis">
+      npmax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.nu_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      nu_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.offsets_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      offsets_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.quadr_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      quadr_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.slope_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      slope_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.star_mass" class="md-nav__link">
+    <span class="md-ellipsis">
+      star_mass
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.studentt" class="md-nav__link">
+    <span class="md-ellipsis">
+      studentt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.trend" class="md-nav__link">
+    <span class="md-ellipsis">
+      trend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVmodel.RVmodel.set_known_object" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_known_object
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPmodel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPmodel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GPmodel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.Cprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.Jprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.KO_Kprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_Kprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.KO_Pprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_Pprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.KO_eprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_eprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.KO_phiprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_phiprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.KO_wprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_wprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.conditional" class="md-nav__link">
+    <span class="md-ellipsis">
+      conditional
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.cubic_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      cubic_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.degree" class="md-nav__link">
+    <span class="md-ellipsis">
+      degree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.enforce_stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      enforce_stability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.eta1_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta1_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.eta2_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta2_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.eta3_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta3_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.eta4_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta4_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.known_object" class="md-nav__link">
+    <span class="md-ellipsis">
+      known_object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.n_known_object" class="md-nav__link">
+    <span class="md-ellipsis">
+      n_known_object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.offsets_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      offsets_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.quadr_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      quadr_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.slope_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      slope_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.star_mass" class="md-nav__link">
+    <span class="md-ellipsis">
+      star_mass
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.trend" class="md-nav__link">
+    <span class="md-ellipsis">
+      trend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.GPmodel.GPmodel.set_known_object" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_known_object
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      RVFWHMmodel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      RVFWHMmodel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RVFWHMmodel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.Cprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.Jprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.KO_Kprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_Kprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.KO_Pprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_Pprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.KO_eprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_eprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.KO_phiprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_phiprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.KO_wprior" class="md-nav__link">
+    <span class="md-ellipsis">
+      KO_wprior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.conditional" class="md-nav__link">
+    <span class="md-ellipsis">
+      conditional
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.cubic_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      cubic_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.degree" class="md-nav__link">
+    <span class="md-ellipsis">
+      degree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.enforce_stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      enforce_stability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.eta1_fwhm_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta1_fwhm_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.eta1_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta1_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.eta2_fwhm_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta2_fwhm_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.eta2_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta2_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.eta3_fwhm_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta3_fwhm_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.eta3_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta3_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.eta4_fwhm_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta4_fwhm_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.eta4_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      eta4_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.known_object" class="md-nav__link">
+    <span class="md-ellipsis">
+      known_object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.n_known_object" class="md-nav__link">
+    <span class="md-ellipsis">
+      n_known_object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.quadr_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      quadr_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.slope_prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      slope_prior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.star_mass" class="md-nav__link">
+    <span class="md-ellipsis">
+      star_mass
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.trend" class="md-nav__link">
+    <span class="md-ellipsis">
+      trend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.RVFWHMmodel.RVFWHMmodel.set_known_object" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_known_object
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.run" class="md-nav__link">
+    <span class="md-ellipsis">
+      run
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      distributions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.Cauchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cauchy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cauchy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Cauchy.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Cauchy.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Cauchy.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.Exponential" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exponential">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Exponential.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Exponential.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Exponential.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.Fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixed
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fixed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Fixed.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Fixed.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Fixed.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.Gaussian" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gaussian
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gaussian">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Gaussian.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Gaussian.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Gaussian.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.Kumaraswamy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kumaraswamy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kumaraswamy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Kumaraswamy.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Kumaraswamy.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Kumaraswamy.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.Laplace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laplace
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Laplace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Laplace.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Laplace.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Laplace.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.LogUniform" class="md-nav__link">
+    <span class="md-ellipsis">
+      LogUniform
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LogUniform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.LogUniform.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.LogUniform.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.LogUniform.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.ModifiedLogUniform" class="md-nav__link">
+    <span class="md-ellipsis">
+      ModifiedLogUniform
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ModifiedLogUniform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.ModifiedLogUniform.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.ModifiedLogUniform.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.ModifiedLogUniform.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.RNG" class="md-nav__link">
+    <span class="md-ellipsis">
+      RNG
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RNG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.RNG.rand" class="md-nav__link">
+    <span class="md-ellipsis">
+      rand
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.RNG.rand_int" class="md-nav__link">
+    <span class="md-ellipsis">
+      rand_int
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.Rayleigh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rayleigh
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rayleigh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Rayleigh.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Rayleigh.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Rayleigh.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.Triangular" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triangular
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Triangular">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Triangular.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Triangular.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Triangular.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedCauchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      TruncatedCauchy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TruncatedCauchy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedCauchy.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedCauchy.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedCauchy.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedExponential" class="md-nav__link">
+    <span class="md-ellipsis">
+      TruncatedExponential
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TruncatedExponential">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedExponential.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedExponential.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedExponential.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedRayleigh" class="md-nav__link">
+    <span class="md-ellipsis">
+      TruncatedRayleigh
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TruncatedRayleigh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedRayleigh.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedRayleigh.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.TruncatedRayleigh.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.distributions.Uniform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uniform
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uniform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Uniform.cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      cdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Uniform.logpdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      logpdf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kima.distributions.Uniform.ppf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ppf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.keplerian" class="md-nav__link">
+    <span class="md-ellipsis">
+      keplerian
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="kima-api">kima API</h1>
+<p>Most analyses will use the <a class="autorefs autorefs-internal" href="#kima.RVData"><code>RVData</code></a> class to load RV data
+from a set of files or arrays</p>
+<h4 id="example">Example:</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">kima</span> <span class="kn">import</span> <span class="n">RVData</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">data</span> <span class="o">=</span> <span class="n">RVData</span><span class="p">(</span><span class="s1">&#39;filename.txt&#39;</span><span class="p">,</span> <span class="n">skip</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<details class="example">
+<summary><code>kima.RVData</code> API</summary>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="kima.RVData"></a>
+  <div class="doc doc-contents first">
+
+  
+      <p>docs</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVData.M0_epoch" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">M0_epoch</span><span class="p">:</span> <span class="nb">float</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>reference epoch for the mean anomaly</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVData.N" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">N</span><span class="p">:</span> <span class="nb">int</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Total number of observations</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVData.actind" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">actind</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Activity indicators</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVData.instrument" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">instrument</span><span class="p">:</span> <span class="nb">str</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>instrument name</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVData.multi" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">multi</span><span class="p">:</span> <span class="nb">bool</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Data comes from multiple instruments</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVData.obsi" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">obsi</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>The instrument identifier</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVData.sig" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">sig</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>The observed RV uncertainties</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVData.skip" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">skip</span><span class="p">:</span> <span class="nb">int</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Lines skipped when reading data</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVData.t" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">t</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>The times of observations</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVData.units" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">units</span><span class="p">:</span> <span class="nb">str</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Units of the RVs and uncertainties</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVData.y" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">y</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>The observed radial velocities</p>
+  </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="kima.RVData.get_timespan" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_timespan</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">float</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>get_timespan(self) -&gt; float</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="kima.RVData.load" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">load</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>load(self, filename: str, units: str, skip: int, max_rows: int, delimiter: str, indicators: list[str]) -&gt; None</p>
+<p>Load RV data from a tab/space separated file with columns
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>time  vrad  error  quant  error
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>...   ...   ...    ...    ...
+</code></pre></div>
+Args:
+    filename (str): the name of the file
+    untis (str): units of the RVs and errors, either "kms" or "ms"
+    skip (int): number of lines to skip in the beginning of the file (default = 2)
+    indicators (list[str]): nodoc</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="kima.RVData.topslope" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">topslope</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">float</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>topslope(self) -&gt; float</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div></details>
+<p>and then define one of the several models currently implemented</p>
+<h4 id="example_1">Example:</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">kima</span> <span class="kn">import</span> <span class="n">RVmodel</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">model</span> <span class="o">=</span> <span class="n">RVmodel</span><span class="p">(</span><span class="n">fix</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">npmax</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+<details class="tip" open="open">
+<summary><code>kima.RVmodel</code> API</summary>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="kima.RVmodel"></a>
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h5 id="kima.RVmodel.RVmodel" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">RVmodel</span><span class="p">()</span></code>
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>None</p>
+  
+      <p><strong>init</strong>(self, fix: bool, npmax: int, data: kima.Data.RVData) -&gt; None</p>
+<p>Implements a sum-of-Keplerians model where the number of Keplerians can be free.
+This model assumes white, uncorrelated noise.</p>
+<p>Args:
+    fix (bool, default=True):
+        whether the number of Keplerians should be fixed
+    npmax (int, default=0):
+        maximum number of Keplerians
+    data (RVData):
+        the RV data</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.Cprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">Cprior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for the systemic velocity</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.Jprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">Jprior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for the extra white noise (jitter)</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.KO_Kprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">KO_Kprior</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for KO semi-amplitude</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.KO_Pprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">KO_Pprior</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for KO orbital period</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.KO_eprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">KO_eprior</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for KO eccentricity</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.KO_phiprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">KO_phiprior</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for KO mean anomaly(ies)</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.KO_wprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">KO_wprior</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for KO argument of periastron</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.conditional" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">conditional</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">RVmodel</span><span class="o">.</span><span class="n">RVConditionalPrior</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>(self) -&gt; kima.RVmodel.RVConditionalPrior</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.cubic_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">cubic_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for the cubic coefficient of the trend</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.data" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">data</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">RVData</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>the data</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.degree" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">degree</span><span class="p">:</span> <span class="nb">int</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>degree of the polynomial trend</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.enforce_stability" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">enforce_stability</span><span class="p">:</span> <span class="nb">bool</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>whether to enforce AMD-stability</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.fix" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">fix</span><span class="p">:</span> <span class="nb">bool</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>whether the number of Keplerians is fixed</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.indicator_correlations" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">indicator_correlations</span><span class="p">:</span> <span class="nb">bool</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>include in the model linear correlations with indicators</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.individual_offset_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">individual_offset_prior</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Common prior for the between-instrument offsets</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.known_object" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">known_object</span><span class="p">:</span> <span class="nb">bool</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>whether the model includes (better) known extra Keplerian curve(s)</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.n_known_object" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">n_known_object</span><span class="p">:</span> <span class="nb">int</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>how many known objects</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.npmax" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">npmax</span><span class="p">:</span> <span class="nb">int</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>maximum number of Keplerians</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.nu_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">nu_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for the degrees of freedom of the Student-t likelihood</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.offsets_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">offsets_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Common prior for the between-instrument offsets</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.quadr_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">quadr_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for the quadratic coefficient of the trend</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.slope_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">slope_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for the slope</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.star_mass" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">star_mass</span><span class="p">:</span> <span class="nb">float</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>stellar mass [Msun]</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.studentt" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">studentt</span><span class="p">:</span> <span class="nb">bool</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>use a Student-t distribution for the likelihood (instead of Gaussian)</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.trend" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">trend</span><span class="p">:</span> <span class="nb">bool</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>whether the model includes a polynomial trend</p>
+  </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="kima.RVmodel.RVmodel.set_known_object" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">set_known_object</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>set_known_object(self, arg: int, /) -&gt; None</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div></details>
+<details class="tip">
+<summary><code>kima.GPmodel</code> API</summary>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="kima.GPmodel"></a>
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h5 id="kima.GPmodel.GPmodel" class="doc doc-heading">
+          <code>GPmodel</code>
+
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>None</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.Cprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">Cprior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for the systemic velocity</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.Jprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">Jprior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for the extra white noise (jitter)</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.KO_Kprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">KO_Kprior</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for KO semi-amplitude</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.KO_Pprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">KO_Pprior</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for KO orbital period</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.KO_eprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">KO_eprior</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for KO eccentricity</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.KO_phiprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">KO_phiprior</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for KO mean anomaly(ies)</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.KO_wprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">KO_wprior</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for KO argument of periastron</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.conditional" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">conditional</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">RVmodel</span><span class="o">.</span><span class="n">RVConditionalPrior</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>(self) -&gt; kima.RVmodel.RVConditionalPrior</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.cubic_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">cubic_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for the cubic coefficient of the trend</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.degree" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">degree</span><span class="p">:</span> <span class="nb">int</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>degree of the polynomial trend</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.enforce_stability" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">enforce_stability</span><span class="p">:</span> <span class="nb">bool</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>whether to enforce AMD-stability</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.eta1_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">eta1_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for η1, the GP 'amplitude'</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.eta2_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">eta2_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for η2, the GP correlation timescale</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.eta3_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">eta3_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for η3, the GP period</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.eta4_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">eta4_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for η4, the recurrence timescale or (inverse) harmonic complexity</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.known_object" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">known_object</span><span class="p">:</span> <span class="nb">bool</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>whether the model includes (better) known extra Keplerian curve(s)</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.n_known_object" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">n_known_object</span><span class="p">:</span> <span class="nb">int</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>how many known objects</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.offsets_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">offsets_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Common prior for the between-instrument offsets</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.quadr_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">quadr_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for the quadratic coefficient of the trend</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.slope_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">slope_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for the slope</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.star_mass" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">star_mass</span><span class="p">:</span> <span class="nb">float</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>stellar mass [Msun]</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.trend" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">trend</span><span class="p">:</span> <span class="nb">bool</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>whether the model includes a polynomial trend</p>
+  </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="kima.GPmodel.GPmodel.set_known_object" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">set_known_object</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>set_known_object(self, arg: int, /) -&gt; None</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div></details>
+<details class="tip">
+<summary><code>kima.RVFWHMmodel</code> API</summary>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="kima.RVFWHMmodel"></a>
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h5 id="kima.RVFWHMmodel.RVFWHMmodel" class="doc doc-heading">
+          <code>RVFWHMmodel</code>
+
+
+</h5>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>None</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.Cprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">Cprior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for the systemic velocity</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.Jprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">Jprior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for the extra white noise (jitter)</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.KO_Kprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">KO_Kprior</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for KO semi-amplitude</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.KO_Pprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">KO_Pprior</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for KO orbital period</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.KO_eprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">KO_eprior</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for KO eccentricity</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.KO_phiprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">KO_phiprior</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for KO mean anomaly(ies)</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.KO_wprior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">KO_wprior</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for KO argument of periastron</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.conditional" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">conditional</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">RVmodel</span><span class="o">.</span><span class="n">RVConditionalPrior</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>(self) -&gt; kima.RVmodel.RVConditionalPrior</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.cubic_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">cubic_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for the cubic coefficient of the trend</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.degree" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">degree</span><span class="p">:</span> <span class="nb">int</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>degree of the polynomial trend</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.enforce_stability" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">enforce_stability</span><span class="p">:</span> <span class="nb">bool</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>whether to enforce AMD-stability</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.eta1_fwhm_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">eta1_fwhm_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for the GP 'amplitude' on the FWHM</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.eta1_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">eta1_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for the GP 'amplitude' on the RVs</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.eta2_fwhm_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">eta2_fwhm_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for η2, the GP correlation timescale, on the FWHM</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.eta2_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">eta2_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for η2, the GP correlation timescale, on the RVs</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.eta3_fwhm_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">eta3_fwhm_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for η3, the GP period, on the FWHM</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.eta3_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">eta3_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for η3, the GP period, on the RVs</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.eta4_fwhm_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">eta4_fwhm_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for η4, the recurrence timescale or (inverse) harmonic complexity, on the FWHM</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.eta4_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">eta4_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for η4, the recurrence timescale or (inverse) harmonic complexity, on the RVs</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.known_object" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">known_object</span><span class="p">:</span> <span class="nb">bool</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>whether the model includes (better) known extra Keplerian curve(s)</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.n_known_object" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">n_known_object</span><span class="p">:</span> <span class="nb">int</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>how many known objects</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.quadr_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">quadr_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for the quadratic coefficient of the trend</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.slope_prior" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">slope_prior</span><span class="p">:</span> <span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Distribution</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prior for the slope</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.star_mass" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">star_mass</span><span class="p">:</span> <span class="nb">float</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>stellar mass [Msun]</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.trend" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">trend</span><span class="p">:</span> <span class="nb">bool</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>whether the model includes a polynomial trend</p>
+  </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="kima.RVFWHMmodel.RVFWHMmodel.set_known_object" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">set_known_object</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>set_known_object(self, arg: int, /) -&gt; None</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div></details>
+<p>To run the sampler and estimate the posterior for the model parameters just call <a class="autorefs autorefs-internal" href="#kima.run"><code>kima.run</code></a></p>
+<h4 id="example_2">Example:</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">kima</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">kima</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">num_threads</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+<details class="danger">
+<summary><code>kima.run</code> API</summary>
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<a id="kima.run"></a>
+  <div class="doc doc-contents first">
+  
+      <p>Run the DNest4 sampler with the given model</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>m</code></td>
+          <td>
+                <code>(<a class="autorefs autorefs-internal" title="kima.RVmodel" href="#kima.RVmodel">RVmodel</a>, <a class="autorefs autorefs-internal" title="kima.GPmodel" href="#kima.GPmodel">GPmodel</a>, ...)</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The model</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>steps</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>How many steps to run. Default is 100.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>num_threads</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>How many threads to use for parallel processing. Default is 1.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>num_particles</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of MCMC particles. Default is 1.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>new_level_interval</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of steps required to create a new level. Default is 2000.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>save_interval</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of steps between saves. Default is 100.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>thread_steps</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of independent steps on each thread. Default is 10.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>max_num_levels</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Maximum number of levels, or 0 if it should be determined automatically. Default is 0.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>lambda_</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DOC. Default is 10.0</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>beta</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DOC. Default is 100.0,</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>compression</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>DOC. Default is exp(1.0)</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>seed</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Random number seed value, or 0 to use current time. Default is 0.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>print_thin</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Thinning steps for terminal output. Default is 50.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div></details>
+<hr />
+<p>The <code>distributions</code> sub-package contains the implementation of several probability distributions 
+that can be used as priors for a model parameter. All distributions have standard parameterizations, 
+as you would find e.g. in Wikipedia. Some distributions have a corresponding 
+<code>Truncated</code> version which truncates the support of the distribution to an interval <span class="arithmatex">\([{\rm lower}, {\rm upper}]\)</span>.</p>
+<h4 id="example_3">Example:</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">kima</span> <span class="kn">import</span> <span class="n">distributions</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">parameter_prior</span> <span class="o">=</span> <span class="n">distributions</span><span class="o">.</span><span class="n">Gaussian</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<details class="example">
+<summary><code>kima.distributions</code> API</summary>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="kima.distributions"></a>
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="kima.distributions.Cauchy" class="doc doc-heading">
+          <code>Cauchy</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>kima.distributions.Distribution</code></p>
+
+  
+      <p>Cauchy distribution</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Cauchy.cdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">cdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>cdf(self, x: float) -&gt; float</p>
+<p>Cumulative distribution function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Cauchy.logpdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">logpdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>logpdf(self, x: float) -&gt; float</p>
+<p>Log of the probability density function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Cauchy.ppf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">ppf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>ppf(self, q: float) -&gt; float</p>
+<p>Percent point function (inverse of cdf) evaluated at <code>q</code></p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="kima.distributions.Exponential" class="doc doc-heading">
+          <code>Exponential</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>kima.distributions.Distribution</code></p>
+
+  
+      <p>Exponential distribution</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Exponential.cdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">cdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>cdf(self, x: float) -&gt; float</p>
+<p>Cumulative distribution function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Exponential.logpdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">logpdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>logpdf(self, x: float) -&gt; float</p>
+<p>Log of the probability density function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Exponential.ppf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">ppf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>ppf(self, q: float) -&gt; float</p>
+<p>Percent point function (inverse of cdf) evaluated at <code>q</code></p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="kima.distributions.Fixed" class="doc doc-heading">
+          <code>Fixed</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>kima.distributions.Distribution</code></p>
+
+  
+      <p>'Fixed' distribution</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Fixed.cdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">cdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>cdf(self, x: float) -&gt; float</p>
+<p>Cumulative distribution function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Fixed.logpdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">logpdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>logpdf(self, x: float) -&gt; float</p>
+<p>Log of the probability density function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Fixed.ppf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">ppf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>ppf(self, q: float) -&gt; float</p>
+<p>Percent point function (inverse of cdf) evaluated at <code>q</code></p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="kima.distributions.Gaussian" class="doc doc-heading">
+          <code>Gaussian</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>kima.distributions.Distribution</code></p>
+
+  
+      <p>Gaussian distribution</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Gaussian.cdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">cdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>cdf(self, x: float) -&gt; float</p>
+<p>Cumulative distribution function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Gaussian.logpdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">logpdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>logpdf(self, x: float) -&gt; float</p>
+<p>Log of the probability density function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Gaussian.ppf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">ppf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>ppf(self, q: float) -&gt; float</p>
+<p>Percent point function (inverse of cdf) evaluated at <code>q</code></p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="kima.distributions.Kumaraswamy" class="doc doc-heading">
+          <code>Kumaraswamy</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>kima.distributions.Distribution</code></p>
+
+  
+      <p>Kumaraswamy distribution (similar to a Beta distribution)</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Kumaraswamy.cdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">cdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>cdf(self, x: float) -&gt; float</p>
+<p>Cumulative distribution function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Kumaraswamy.logpdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">logpdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>logpdf(self, x: float) -&gt; float</p>
+<p>Log of the probability density function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Kumaraswamy.ppf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">ppf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>ppf(self, q: float) -&gt; float</p>
+<p>Percent point function (inverse of cdf) evaluated at <code>q</code></p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="kima.distributions.Laplace" class="doc doc-heading">
+          <code>Laplace</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>kima.distributions.Distribution</code></p>
+
+  
+      <p>Laplace distribution</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Laplace.cdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">cdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>cdf(self, x: float) -&gt; float</p>
+<p>Cumulative distribution function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Laplace.logpdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">logpdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>logpdf(self, x: float) -&gt; float</p>
+<p>Log of the probability density function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Laplace.ppf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">ppf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>ppf(self, q: float) -&gt; float</p>
+<p>Percent point function (inverse of cdf) evaluated at <code>q</code></p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="kima.distributions.LogUniform" class="doc doc-heading">
+          <code>LogUniform</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>kima.distributions.Distribution</code></p>
+
+  
+      <p>LogUniform distribution (sometimes called reciprocal or Jeffrey's distribution)</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.LogUniform.cdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">cdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>cdf(self, x: float) -&gt; float</p>
+<p>Cumulative distribution function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.LogUniform.logpdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">logpdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>logpdf(self, x: float) -&gt; float</p>
+<p>Log of the probability density function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.LogUniform.ppf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">ppf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>ppf(self, q: float) -&gt; float</p>
+<p>Percent point function (inverse of cdf) evaluated at <code>q</code></p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="kima.distributions.ModifiedLogUniform" class="doc doc-heading">
+          <code>ModifiedLogUniform</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>kima.distributions.Distribution</code></p>
+
+  
+      <p>ModifiedLogUniform distribution</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.ModifiedLogUniform.cdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">cdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>cdf(self, x: float) -&gt; float</p>
+<p>Cumulative distribution function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.ModifiedLogUniform.logpdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">logpdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>logpdf(self, x: float) -&gt; float</p>
+<p>Log of the probability density function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.ModifiedLogUniform.ppf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">ppf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>ppf(self, q: float) -&gt; float</p>
+<p>Percent point function (inverse of cdf) evaluated at <code>q</code></p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="kima.distributions.RNG" class="doc doc-heading">
+          <code>RNG</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>None</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.RNG.rand" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">rand</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>rand(self) -&gt; float</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.RNG.rand_int" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">rand_int</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>rand_int(self, arg: int, /) -&gt; int</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="kima.distributions.Rayleigh" class="doc doc-heading">
+          <code>Rayleigh</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>kima.distributions.Distribution</code></p>
+
+  
+      <p>Rayleigh distribution</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Rayleigh.cdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">cdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>cdf(self, x: float) -&gt; float</p>
+<p>Cumulative distribution function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Rayleigh.logpdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">logpdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>logpdf(self, x: float) -&gt; float</p>
+<p>Log of the probability density function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Rayleigh.ppf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">ppf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>ppf(self, q: float) -&gt; float</p>
+<p>Percent point function (inverse of cdf) evaluated at <code>q</code></p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="kima.distributions.Triangular" class="doc doc-heading">
+          <code>Triangular</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>kima.distributions.Distribution</code></p>
+
+  
+      <p>Triangular distribution</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Triangular.cdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">cdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>cdf(self, x: float) -&gt; float</p>
+<p>Cumulative distribution function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Triangular.logpdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">logpdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>logpdf(self, x: float) -&gt; float</p>
+<p>Log of the probability density function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Triangular.ppf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">ppf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>ppf(self, q: float) -&gt; float</p>
+<p>Percent point function (inverse of cdf) evaluated at <code>q</code></p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="kima.distributions.TruncatedCauchy" class="doc doc-heading">
+          <code>TruncatedCauchy</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>kima.distributions.Distribution</code></p>
+
+  
+      <p>docs</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.TruncatedCauchy.cdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">cdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>cdf(self, x: float) -&gt; float</p>
+<p>Cumulative distribution function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.TruncatedCauchy.logpdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">logpdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>logpdf(self, x: float) -&gt; float</p>
+<p>Log of the probability density function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.TruncatedCauchy.ppf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">ppf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>ppf(self, q: float) -&gt; float</p>
+<p>Percent point function (inverse of cdf) evaluated at <code>q</code></p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="kima.distributions.TruncatedExponential" class="doc doc-heading">
+          <code>TruncatedExponential</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>kima.distributions.Distribution</code></p>
+
+  
+      <p>Exponential distribution truncated to [lower, upper]</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.TruncatedExponential.cdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">cdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>cdf(self, x: float) -&gt; float</p>
+<p>Cumulative distribution function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.TruncatedExponential.logpdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">logpdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>logpdf(self, x: float) -&gt; float</p>
+<p>Log of the probability density function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.TruncatedExponential.ppf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">ppf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>ppf(self, q: float) -&gt; float</p>
+<p>Percent point function (inverse of cdf) evaluated at <code>q</code></p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="kima.distributions.TruncatedRayleigh" class="doc doc-heading">
+          <code>TruncatedRayleigh</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>kima.distributions.Distribution</code></p>
+
+  
+      <p>Rayleigh distribution truncated to [lower, upper]</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.TruncatedRayleigh.cdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">cdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>cdf(self, x: float) -&gt; float</p>
+<p>Cumulative distribution function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.TruncatedRayleigh.logpdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">logpdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>logpdf(self, x: float) -&gt; float</p>
+<p>Log of the probability density function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.TruncatedRayleigh.ppf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">ppf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>ppf(self, q: float) -&gt; float</p>
+<p>Percent point function (inverse of cdf) evaluated at <code>q</code></p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="kima.distributions.Uniform" class="doc doc-heading">
+          <code>Uniform</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>kima.distributions.Distribution</code></p>
+
+  
+      <p>Uniform distribuion in [lower, upper]</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Uniform.cdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">cdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>cdf(self, x: float) -&gt; float</p>
+<p>Cumulative distribution function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Uniform.logpdf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">logpdf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>logpdf(self, x: float) -&gt; float</p>
+<p>Log of the probability density function evaluated at <code>x</code></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="kima.distributions.Uniform.ppf" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">ppf</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>ppf(self, q: float) -&gt; float</p>
+<p>Percent point function (inverse of cdf) evaluated at <code>q</code></p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div></details>
+<p>Finally, even though it sits at the core of what <strong>kima</strong> does, is the <a class="autorefs autorefs-internal" href="#kima.keplerian">keplerian</a> function:</p>
+<details class="example">
+<summary><code>kima.keplerian</code> API</summary>
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<a id="kima.keplerian"></a>
+  <div class="doc doc-contents first">
+  
+      <p>keplerian(t: list[float], P: float, K: float, ecc: float, w: float, M0: float, M0_epoch: float) -&gt; list[float]</p>
+  </div>
+
+</div></details>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-01-19T13:39:35+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-01-19</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2018 - 2023 João Faria
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.share", "navigation.instant", "navigation.sections", "navigation.indexes", "navigation.prune", "content.code.annotate", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      
+        <script src="../../../js/timeago.min.js"></script>
+      
+        <script src="../../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

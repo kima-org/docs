@@ -1,0 +1,1267 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../getting-started/">
+      
+      
+        <link rel="next" href="../examples/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+    
+    
+      
+        <title>Models - kima</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+<script src="https://cdn.headwayapp.co/widget.js"></script>
+<script>
+  // @see https://docs.headwayapp.co/widget for more configuration options.
+  var HW_config = {
+  selector: ".hw-badge",
+  account: "7zrlR7",
+  callbacks: {
+    onWidgetReady: function(widget) {
+    //   console.log("Widget is here!");
+    //   console.log("unseen entries count: " + widget.getUnseenCount());
+    },
+    onShowWidget: function(){
+    //   console.log("Someone opened the widget!");
+    },
+    onShowDetails: function(changelog){
+    //   console.log(changelog.position); // position in the widget
+    //   console.log(changelog.id); // unique id
+    //   console.log(changelog.title); // title
+    //   console.log(changelog.category); // category, lowercased
+    },
+    onReadMore: function(changelog){
+    //   console.log(changelog); // same changelog object as in onShowDetails callback
+    },
+    onHideWidget: function(){
+    //   console.log("Who turned off the light?");
+    }
+  }
+  };
+  Headway.init(HW_config);
+</script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#models" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="header.title">
+    <a href="../.." title="kima" class="md-header__button md-logo" aria-label="kima" data-md-component="logo">
+      
+  <img src="../../assets/logo_transparent_small.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            kima
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+            Models
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    <div class="md-header__option">
+      <div class="md-header__button md-icon hw-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 7v12h15v2H4c-2 0-2-2-2-2V7h2m17.3-4H7.7C6.76 3 6 3.7 6 4.55v10.9c0 .86.76 1.55 1.7 1.55h13.6c.94 0 1.7-.69 1.7-1.55V4.55C23 3.7 22.24 3 21.3 3M8 5h5v6H8V5m13 10H8v-2h13v2m0-4h-6V9h6v2m0-4h-6V5h6v2Z"/></svg>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kima-org/kima" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="kima" class="md-nav__button md-logo" aria-label="kima" data-md-component="logo">
+      
+  <img src="../../assets/logo_transparent_small.png" alt="logo">
+
+    </a>
+    kima
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kima-org/kima" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Models
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Models
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-np-planets" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Np planets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-background-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      The "background" model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prior-distributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prior distributions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prior distributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-priors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default priors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../examples/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/51Peg.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    51Peg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/multi_instrument/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multiple instruments
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/transiting_planet.ipynb" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    transiting_planet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../API/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API/kima/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    kima
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API/pykima/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pykima
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-np-planets" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Np planets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-background-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      The "background" model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prior-distributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prior distributions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prior distributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-priors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default priors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="models">Models</h1>
+<h2 id="types-of-models">Types of models</h2>
+<p><strong>kima</strong> currently implements dedicated models for different analyses of
+a given dataset. The models share a common organization, but each has its own
+parameters, priors, and settings.</p>
+<ul>
+<li>
+<p><a class="autorefs autorefs-internal" href="../API/kima/#kima.RVmodel">RVmodel</a><br />
+  models the RVs with a sum-of-Keplerians</p>
+</li>
+<li>
+<p><a class="autorefs autorefs-internal" href="../API/kima/#kima.GPmodel">GPmodel</a><br />
+  models the RVs with a sum-of-Keplerians plus a correlated noise component
+  given by a Gaussian process</p>
+</li>
+<li>
+<p><a class="autorefs autorefs-internal" href="../API/kima/#kima.RVFWHMmodel">RVFWHMmodel</a><br />
+  models the RVs together with the FWHM as an activity indicator, including a
+  Gaussian process for the activity signal</p>
+</li>
+<li>
+<p>[BINARIESmodel][kima.BINARIESmodel]<br />
+  this includes tidal and relativistic effects as well as apsidal precession of
+  the binary’s orbit (applicable for circumbinary planets), and can also fit 
+  double-lined binary data.</p>
+</li>
+</ul>
+<p>To use a given model, just instantiate an object of the respective class
+providing the necessary options and a dataset</p>
+<div class="highlight"><span class="filename">kima_setup.py</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">from</span><span class="w"> </span><span class="n">kima</span><span class="w"> </span><span class="k">import</span><span class="w"> </span><span class="n">RVmodel</span><span class="p">,</span><span class="w"> </span><span class="n">GPmodel</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RVmodel</span><span class="p">(</span><span class="n">fix</span><span class="o">=</span><span class="n">True</span><span class="p">,</span><span class="w"> </span><span class="n">npmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="cp"># or</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GPmodel</span><span class="p">(</span><span class="n">fix</span><span class="o">=</span><span class="n">True</span><span class="p">,</span><span class="w"> </span><span class="n">npmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+<details class="info" open="open">
+<summary>Info</summary>
+<p>The arguments to the models can be provided as positional arguments, as in
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">RVmodel</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+but this is discouraged for being less readable. 
+Note, however, that there are not default values for these arguments, 
+as the keyword syntax could lead to believe.</p>
+</details>
+<!--  -->
+
+<p>Each model has its own parameters and particular settings, 
+which are described in detail in the <a href="/docs/API">API</a> page.
+Below we include a more mathematical description of each model.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">RVmodel</label><label for="__tabbed_1_2">GPmodel</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>This is the most basic model, but already allows for an in-depth analysis 
+of an RV dataset. In terms of general settings, we can define</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">model</span> <span class="o">=</span> <span class="n">RVmodel</span><span class="p">(</span><span class="n">fix</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">npmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span> <span class="c1"># (4)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">model</span><span class="o">.</span><span class="n">trend</span> <span class="o">=</span> <span class="kc">False</span> <span class="o">/</span> <span class="kc">True</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">model</span><span class="o">.</span><span class="n">degree</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">/</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span> <span class="c1"># (1)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">model</span><span class="o">.</span><span class="n">set_known_object</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># (2)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">model</span><span class="o">.</span><span class="n">studentt</span> <span class="o">=</span> <span class="kc">False</span> <span class="o">/</span> <span class="kc">True</span> <span class="c1"># (3)</span>
+</code></pre></div>
+<ol>
+<li>
+<p>sets up a long-term trend in the RVs, of a given degree. This is a 
+linear trend for <code>degree=1</code>, a quadratic for <code>degree=2</code>, and a cubic for 
+<code>degree=3</code>. Higher degree trends are not implemented.</p>
+</li>
+<li>
+<p>In known object (KO!) mode, <strong>kima</strong> considers some Keplerians as part 
+of a "background" model (see below). This can be useful when modelling 
+transiting planets or simply planets with better-known orbital parameters. </p>
+</li>
+<li>
+<p>Whether to use a Student-t distribution as the likelihood, instead of a
+Gaussian. If this is set to <code>True</code>, the degrees of freedom of the
+Student-t distribution can be estimated from the data. This is sometimes
+useful when the RV data is suspected to contain (a few) strong outliers. 
+See the <a href="/examples/student-t">example</a> for more information.</p>
+</li>
+<li>
+<p>See <a href="#the-np-planets">below</a> for more information</p>
+</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p>This model considers a Gaussian process as a surrogate model for the 
+stellar activity signal present in the RVs. It uses the now standard 
+quasi-periodic kernel with four hyper-parameters:</p>
+<div class="arithmatex">\[ k(t_i, t_j) = \eta_1^2
+                 \exp\left[-\frac{t_i - t_j}{\eta_2^2}\right]
+                 \exp\left[-\frac{\sin^2\left(\frac{t_i - t_j}{\eta_3}\right)}{2 \eta_4^2}\right]
+\]</div>
+<p>Most of the same settings as for the <code>RVmodel</code> are available, except for
+<code>studentt</code> which doesn't apply in this case.</p>
+<div class="highlight"><span class="filename">kima_setup.py</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">model</span> <span class="o">=</span> <span class="n">GPmodel</span><span class="p">(</span><span class="n">fix</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">npmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># (4)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">model</span><span class="o">.</span><span class="n">trend</span> <span class="o">=</span> <span class="kc">False</span> <span class="o">/</span> <span class="kc">True</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">model</span><span class="o">.</span><span class="n">degree</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">/</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span> <span class="c1"># (1)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">model</span><span class="o">.</span><span class="n">set_known_object</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># (2)      </span>
+</code></pre></div>
+<ol>
+<li>
+<p>sets up a long-term trend in the RVs, of a given degree. This is a 
+  linear trend for <code>degree=1</code>, a quadratic for <code>degree=2</code>, and a cubic for 
+  <code>degree=3</code>. Higher degree trends are not implemented.</p>
+</li>
+<li>
+<p>In known object (KO!) mode, <strong>kima</strong> considers some Keplerians as part 
+  of a "background" model (see below). This can be useful when modelling 
+  transiting planets or simply planets with better-known orbital parameters. </p>
+</li>
+<li>
+<p>See <a href="#the-np-planets">below</a> for more information</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="the-np-planets">The Np planets</h2>
+<p><strong>kima</strong> can model Keplerian functions, the RV signals induced by planets. But
+the distinguishing feature is that the code can actually model a number <span class="arithmatex">\(N_p\)</span> of
+Keplerians, and <em>this number does not need to be fixed a priori</em>. In other
+words, <strong>kima</strong> estimates the joint posterior distribution for <span class="arithmatex">\(N_p\)</span> and the
+orbital parameters of the planets <span class="arithmatex">\(\theta\)</span>, given some data <span class="arithmatex">\(\mathcal{D}\)</span>:</p>
+<div class="arithmatex">\[ p(N_p, \theta | \mathcal{D} ) \]</div>
+<p>So <span class="arithmatex">\(N_p\)</span> is actually a free parameter in the model (if we want). It is somewhat
+of a special parameter, in that it only takes discrete values, but it's
+otherwise similar to other parameters in the model. In particular, it needs a
+prior distribution as well.</p>
+<p>This part of the model can be set with the first two arguments to the constructors</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">model</span> <span class="o">=</span> <span class="n">RVmodel</span><span class="p">(</span><span class="n">fix</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">npmax</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+<p>which define whether or not <span class="arithmatex">\(N_p\)</span> is fixed and its value or prior distribution</p>
+<div class="arithmatex">\[
+    N_p 
+    \begin{cases}
+        = \texttt{npmax},                       &amp; \text{if}\:\texttt{fix}\\
+        \sim \mathcal{U}(0, \texttt{npmax}),    &amp; \text{otherwise}
+    \end{cases}
+\]</div>
+<p>By default, each of the <span class="arithmatex">\(N_p\)</span> planets has 5 orbital parameters</p>
+<div class="arithmatex">\[
+\theta = { P, K, e, M_0, \omega }
+\]</div>
+<p>corresponding to the orbital period, semi-amplitude, eccentricity, mean anomaly
+at the epoch, and argument of periastron.</p>
+<p>Some models include additional <em>per-planet</em> parameters: the <code>BINARIESmodel</code>
+considers a linear precession parameter <span class="arithmatex">\(\dot\omega\)</span> and the BDmodel infers a
+mixture probability <span class="arithmatex">\(\lambda\)</span> for each planet.</p>
+<div class="admonition info">
+<p class="admonition-title">units</p>
+<ul>
+<li><span class="arithmatex">\(P\)</span> is in [days]</li>
+<li><span class="arithmatex">\(K\)</span> is in [m/s]</li>
+<li><span class="arithmatex">\(e\)</span> is unitless</li>
+<li><span class="arithmatex">\(M_0\)</span> and <span class="arithmatex">\(ω\)</span> are in radians</li>
+</ul>
+</div>
+<p>By default, the epoch is set to the first observed time, but it can be changed
+by setting the corresponding attribute of the data:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">data</span><span class="o">.</span><span class="n">M0_epoch</span> <span class="o">=</span> <span class="o">...</span>
+</code></pre></div>
+<hr />
+<h2 id="the-background-model">The "background" model</h2>
+<p>Besides the <span class="arithmatex">\(N_p\)</span> planets, <strong>kima</strong> models the RV observations as follows</p>
+<ul>
+<li>by default</li>
+</ul>
+<div class="arithmatex">\[
+v_i \sim \mathcal{N} \left( v_{sys} \,,\: j^2+\sigma_i^2 \right)
+\]</div>
+<ul>
+<li>if using a Student-t likelihood</li>
+</ul>
+<div class="arithmatex">\[
+v_i \sim \mathcal{T} \left( v_{sys} \,,\: j^2+\sigma_i^2, \nu \right)
+\]</div>
+<ul>
+<li>if using a Gaussian process</li>
+</ul>
+<div class="arithmatex">\[
+v \sim \mathcal{GP} \left( \boldsymbol{\mu} = v_{sys} \,,\: \boldsymbol{\Sigma} = {\bf K} + (j^2+\sigma_i^2)\,\delta_{ij}\,{\bf I} \right)
+\]</div>
+<p>where <span class="arithmatex">\(j\)</span> is a <em>jitter</em> parameter that represents additional white noise
+variations not accounted for by the individual uncertainties. </p>
+<p>When considering a long-term trend (by setting <code>trend=True</code>), instead of a
+constant systemic velocity, we have</p>
+<div class="arithmatex">\[
+\begin{aligned}
+v_{sys} \rightarrow v_{sys} 
+  &amp; + \text{slope} \times (t-t_m) \qquad      \text{if} \: \texttt{degree} \ge 1\\
+  &amp; + \text{quadr} \times (t-t_m)^2 \quad\,   \text{if} \: \texttt{degree} \ge 2\\
+  &amp; + \text{cubic} \times (t-t_m)^3 \quad\:\: \text{if} \: \texttt{degree} = 3
+\end{aligned}
+\]</div>
+<p>where <span class="arithmatex">\(t_m\)</span> is the mean of the times and <em>slope</em>, <em>quadr</em>, and <em>cubic</em> are free
+parameters. See the <a href="">example</a> for more information.</p>
+<p>When using data from multiple instruments, <strong>kima</strong> adds RV offsets between
+pairs of instruments as well as individual jitter parameters per instrument.</p>
+<h2 id="model-parameters">Model parameters</h2>
+<div class="admonition question">
+<p class="admonition-title">How many parameters?</p>
+<p>The number of free parameters can change substantially with each model, 
+with the different settings, and with the specific parameter priors.</p>
+</div>
+<hr />
+<h2 id="prior-distributions">Prior distributions</h2>
+<p>As in any Bayesian analysis, <strong>kima</strong> needs a set of priors for the model
+parameters. If we don't explicitly set the priors, default ones will be 
+used and the model will run. But sometimes we will want to set custom priors for some parameters.</p>
+<p>To change specific priors, we just need to re-assign some attributes of the models,
+using the probability distributions defined in <a class="autorefs autorefs-internal" href="../API/kima/#kima.distributions">kima.distributions</a>.
+Admittedly, some of these attributes might have rather undescriptive names, 
+but they are still documented individually.</p>
+<p>For example, let's re-define the priors for the jitter and for the orbital
+periods of the <span class="arithmatex">\(N_p\)</span> planets</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span> <span class="nn">kima.distributions</span> <span class="kn">import</span> <span class="n">Uniform</span><span class="p">,</span> <span class="n">Gaussian</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">model</span> <span class="o">=</span> <span class="n">RVmodel</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">model</span><span class="o">.</span><span class="n">Jprior</span> <span class="o">=</span> <span class="n">Uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>  <span class="c1"># (1)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="n">model</span><span class="o">.</span><span class="n">conditional</span><span class="o">.</span><span class="n">Pprior</span> <span class="o">=</span> <span class="n">Gaussian</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+</code></pre></div>
+<ol>
+<li><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/26a0.svg" title=":warning:" /> Note that this is a uniform distribution from 1 m/s to 20 m/s,
+unlike the <code>scipy.stats.uniform</code> distribution which would have support [1, 21] !</li>
+</ol>
+<p>While it might seem counter-intuitive at first, the priors for the
+orbital parameters are <em>the same</em> for all of the <span class="arithmatex">\(N_p\)</span> planets. This is intentional!
+But if this is not what you want, consider using the known object feature.</p>
+<div class="admonition warning">
+<p class="admonition-title"><code>conditional</code> priors</p>
+<p>The priors for the orbital parameters of the <span class="arithmatex">\(N_p\)</span> Keplerians
+are included in the <code>model.conditional</code> object because these priors are 
+<em>conditional on</em> having those Keplerians.</p>
+</div>
+<p>In the example above, we specify the prior distribution and its parameters.
+The list of currently implemented distributions is described <a class="autorefs autorefs-internal" href="../API/kima/#kima.distributions">here</a>.
+If you need a distribution that is not yet implemented, consider opening an
+<a href="https://github.com/j-faria/kima/issues" target="_blank">issue</a>.</p>
+<h4 id="default-priors">Default priors</h4>
+<p>Below is the list of default priors which are used if not explicitly re-defined</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">RVmodel</label><label for="__tabbed_2_2">GPmodel</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>
+<p>orbital period(s), <code>conditional.Pprior</code><br />
+  LogUniform(1, <span class="arithmatex">\(\Delta t\)</span>), where <span class="arithmatex">\(\Delta t\)</span> is the timespan of the data</p>
+</li>
+<li>
+<p>semi-amplitude(s), <code>conditional.Kprior</code><br />
+  Uniform(1, <span class="arithmatex">\(\Delta v\)</span>), where <span class="arithmatex">\(\Delta v\)</span> is the span of the RVs</p>
+</li>
+</ul>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+<details>
+<p><summary>expand</summary></p>
+<ul>
+<li>
+<p>orbital periods and semi-amplitudes<br />
+    units: days and m/s, respectively</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// if hyperpriors = false (default)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">Pprior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">LogUniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1e5</span><span class="p">);</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">Kprior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">ModifiedLogUniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1e3</span><span class="p">);</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1">// if hyperpriors = true</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">Pprior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Laplace</span><span class="o">&gt;</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">log_muP</span><span class="p">),</span><span class="w"> </span><span class="n">wP</span><span class="p">);</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">Kprior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Exponential</span><span class="o">&gt;</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">log_muK</span><span class="p">));</span>
+</code></pre></div>
+</li>
+<li>
+<p>orbital eccentricities
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">eprior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Uniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div></p>
+<p>another good option could be
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">eprior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Kumaraswamy</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">0.867</span><span class="p">,</span><span class="w"> </span><span class="mf">3.03</span><span class="p">);</span>
+</code></pre></div>
+which approximates the Beta distribution proposed by Kipping (2013).</p>
+</li>
+<li>
+<p>orbital phase and argument of periastron<br />
+    units: radians</p>
+<p>```c++
+phiprior = make_shared<Uniform>(0, 2*PI);</p>
+<p>wprior = make_shared<Uniform>(0, 2*PI);
+  ```</p>
+</li>
+<li>
+<p>systemic velocity<br />
+    units: m/s</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">Cprior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Uniform</span><span class="o">&gt;</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">get_RV_min</span><span class="p">(),</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">get_RV_max</span><span class="p">());</span>
+</code></pre></div>
+</li>
+<li>
+<p>additional white noise, or <em>jitter</em><br />
+    units: m/s</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">knee</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="o">*</span><span class="n">data</span><span class="p">.</span><span class="n">get_max_RV_span</span><span class="p">())</span><span class="w"> </span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">upper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">get_max_RV_span</span><span class="p">()</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">Jprior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">ModifiedLogUniform</span><span class="o">&gt;</span><span class="p">(</span><span class="n">knee</span><span class="p">,</span><span class="w"> </span><span class="n">upper</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>ccoefficients of the trend (if trend=true)<br />
+    units: m/s/day, m/s/day², m/s/day³
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">slope_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Gaussian</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">get_trend_magnitude</span><span class="p">(</span><span class="mi">1</span><span class="p">)));</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">quadr_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Gaussian</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">get_trend_magnitude</span><span class="p">(</span><span class="mi">2</span><span class="p">)));</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">cubic_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Gaussian</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">get_trend_magnitude</span><span class="p">(</span><span class="mi">3</span><span class="p">)));</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>between-instrument offsets
+    units: m/s</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">lower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">data</span><span class="p">.</span><span class="n">get_RV_span</span><span class="p">();</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">upper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">get_RV_span</span><span class="p">();</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">offsets_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Uniform</span><span class="o">&gt;</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span><span class="w"> </span><span class="n">upper</span><span class="p">);</span>
+</code></pre></div>
+</li>
+</ul>
+<p>{% katexmm %}</p>
+<ul>
+<li>
+<p>GP hyperparameters<br />
+    units: <span class="arithmatex">\(\eta_1\)</span> in m/s, <span class="arithmatex">\(\eta_2\)</span> and <span class="arithmatex">\(\eta_3\)</span> in days</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">log_eta1_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Uniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">-5</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">eta2_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">LogUniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="n">eta3_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Uniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">);</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="n">log_eta4_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Uniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div>
+</li>
+</ul>
+<p>{% endkatexmm %}</p>
+<ul>
+<li>
+<p>degrees of freedom for Student-t likelihood</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">nu_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">LogUniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>moving average parameters</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">sigmaMA_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Uniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">tauMA_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">LogUniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>hyperparameters for orbital period and semi-amplitude hierachical priors<br />
+    only if <code>hyperpriors=true</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">log_muP_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">TruncatedCauchy</span><span class="o">&gt;</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="mi">365</span><span class="p">),</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">log</span><span class="p">(</span><span class="mi">365</span><span class="p">)</span><span class="mi">-21</span><span class="p">,</span><span class="w"> </span><span class="n">log</span><span class="p">(</span><span class="mi">365</span><span class="p">)</span><span class="o">+</span><span class="mi">21</span><span class="p">);</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">wP_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Uniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">);</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="n">log_muK_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">TruncatedCauchy</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">-21.0</span><span class="p">,</span><span class="w"> </span><span class="mf">21.0</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>correlation coefficients with activity indicators</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">betaprior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Gaussian</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div>
+</li>
+</ul>
+</details>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-01-19T13:39:35+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-01-19</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2018 - 2023 João Faria
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.share", "navigation.instant", "navigation.sections", "navigation.indexes", "navigation.prune", "content.code.annotate", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
