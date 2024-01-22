@@ -1,6 +1,6 @@
 site_name: kima
 repo_url: https://github.com/kima-org/kima
-site_url: ""
+site_url: "https://www.kima.science"
 
 docs_dir: docs
 edit_uri: ""
@@ -51,9 +51,9 @@ nav:
   - docs/models.md
   - Examples:
     - docs/examples/index.md
-    - 51Peg: docs/examples/51Peg.md  
+    - 51Peg: docs/examples/51Peg.ipynb
     - multi_instrument: docs/examples/multi_instrument.ipynb
-    - transiting_planet: docs/examples/transiting_planet.ipynb
+    #- transiting_planet: docs/examples/transiting_planet.ipynb
   - API:
     - docs/API/index.md
     - kima: docs/API/kima.md

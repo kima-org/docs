@@ -76,6 +76,19 @@ model = RVmodel(fix=False, npmax=2, data=data)
             - "!__"
 
 
+??? tip "`kima.BINARIESmodel` API"
+
+    ::: kima.BINARIESmodel
+        handler: python
+        options:
+          heading_level: 5
+          filters:
+            - "!RVConditionalPrior"
+            - "!TRANSITConditionalPrior"
+            - "!__"
+
+
+
 To run the sampler and estimate the posterior for the model parameters just call [`kima.run`][kima.run]
 
 #### Example:
