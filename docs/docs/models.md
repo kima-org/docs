@@ -22,6 +22,8 @@ parameters, priors, and settings.
   the binary’s orbit (applicable for circumbinary planets), and can also fit 
   double-lined binary data.
 
+- TRANSITmodel (coming soon)
+- GAIAmodel (comming soon)
 
 To use a given model, just instantiate an object of the respective class
 providing the necessary options and a dataset
@@ -103,8 +105,8 @@ Below we include a more mathematical description of each model.
     Most of the same settings as for the `RVmodel` are available, except for
     `studentt` which doesn't apply in this case.
 
-      ```python title="kima_setup.py"
-      model = GPmodel(fix=True, npmax=1) # (4)
+      ```python
+      model = GPmodel(fix=True, npmax=1) # (3)
 
       model.trend = False / True
       model.degree = 0 / 1 / 2 / 3 # (1)
@@ -120,7 +122,7 @@ Below we include a more mathematical description of each model.
       of a "background" model (see below). This can be useful when modelling 
       transiting planets or simply planets with better-known orbital parameters. 
 
-      4. See [below](#the-np-planets) for more information
+      3. See [below](#the-np-planets) for more information
 
 
 ---
