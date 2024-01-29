@@ -7,20 +7,21 @@ a given dataset. The models share a common organization, but each has its own
 parameters, priors, and settings.
 
 - [RVmodel][kima.RVmodel]  
-  models the RVs with a sum-of-Keplerians
+  Models the RVs with a sum-of-Keplerians
 
 - [GPmodel][kima.GPmodel]  
-  models the RVs with a sum-of-Keplerians plus a correlated noise component
+  Models the RVs with a sum-of-Keplerians plus a correlated noise component
   given by a Gaussian process
 
 - [RVFWHMmodel][kima.RVFWHMmodel]  
-  models the RVs together with the FWHM as an activity indicator, including a
+  Models the RVs together with the FWHM as an activity indicator, including a
   Gaussian process for the activity signal
 
 - [BINARIESmodel][kima.BINARIESmodel]  
-  this includes tidal and relativistic effects as well as apsidal precession of
+  This includes tidal and relativistic effects as well as apsidal precession of
   the binary’s orbit (applicable for circumbinary planets), and can also fit 
-  double-lined binary data.
+  double-lined binary data. More details are available in
+  [Baycroft et al. (2023)](https://ui.adsabs.harvard.edu/abs/2023MNRAS.521.1871B/abstract){:target="_blank"}.
 
 - TRANSITmodel (coming soon)
 - GAIAmodel (comming soon)
