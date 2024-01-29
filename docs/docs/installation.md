@@ -12,7 +12,7 @@ Installation is tested on Linux, Windows, and MacOS regularly.
 If the following badge is green, things should be working 
 (even if it's red, go ahead and try it anyway :shrug:)
 
-[![test pip install](https://github.com/kima-org/test-pip-install/actions/workflows/python-package.yml/badge.svg)](https://github.com/kima-org/test-pip-install/actions/workflows/python-package.yml)
+[![test pip install](https://github.com/kima-org/test-pip-install/actions/workflows/python-package.yml/badge.svg)](https://github.com/kima-org/test-pip-install/actions/workflows/python-package.yml){:target="_blank"}
 
 !!! danger
     The installation process compiles the C++ code using [CMake](https://cmake.org/),
