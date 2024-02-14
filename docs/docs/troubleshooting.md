@@ -1,23 +1,23 @@
-<style>
+<!-- <style>
 .md-nav--secondary {
   display: none;
 }
-</style>
+</style> -->
 
 
-## Problems with installation
+### Problems with installation
 
 - Make sure you cloned the repository with `--recursive`, to get the submodules
 - Make sure the version of gcc you are using accepts the option `-std=c++11`.  
   Feel free to edit the Makefile and change the `CXX` variable
 
-- If you can't get it to work, [open an issue](https://github.com/j-faria/kima/issues) 
-  and let's try to fix it.
+- If you can't get it to work, [open an issue](https://github.com/kima-org/kima/issues) 
+  on GitHub and let's try to fix it.
 
 
-## Other issues
+### Other issues
 
-- Segmentation fault (core dumped) right at the start.  
+- Segmentation faults  
   If you run into a segmentation fault before **kima** even prints anything to
   the terminal, it might be due to the header of the data files. When reading
   the data, make sure the `skip` (the third) parameter to the `load` or
@@ -28,7 +28,7 @@
 
 ### I think something is wrong...
 
-Let us know in the [issues](https://github.com/j-faria/kima/issues) if you think
+Let us know in the [issues](https://github.com/kima-org/kima/issues) if you think
 there is a problem or if something doesn't work as expected.
 
 
