@@ -54,6 +54,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -376,14 +378,20 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#model-parameters" class="md-nav__link">
+    <nav class="md-nav" aria-label="The "background" model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#known-object-mode" class="md-nav__link">
     <span class="md-ellipsis">
-      Model parameters
+      Known object mode
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -755,14 +763,20 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#model-parameters" class="md-nav__link">
+    <nav class="md-nav" aria-label="The "background" model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#known-object-mode" class="md-nav__link">
     <span class="md-ellipsis">
-      Model parameters
+      Known object mode
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -939,7 +953,7 @@ quasi-periodic kernel with four hyper-parameters:</p>
 the distinguishing feature is that the code can actually model a number <span class="arithmatex">\(N_p\)</span> of
 Keplerians, and <em>this number does not need to be fixed a priori</em>. In other
 words, <strong>kima</strong> estimates the joint posterior distribution for <span class="arithmatex">\(N_p\)</span> and the
-orbital parameters of the planets <span class="arithmatex">\(\theta\)</span>, given some data <span class="arithmatex">\(\mathcal{D}\)</span>:</p>
+orbital parameters of the planets <span class="arithmatex">\(\theta\)</span>, given some data $ \mathcal{D} $:</p>
 <div class="arithmatex">\[ p(N_p, \theta | \mathcal{D} ) \]</div>
 <p>So <span class="arithmatex">\(N_p\)</span> is actually a free parameter in the model (if we want). It is somewhat
 of a special parameter, in that it only takes discrete values, but it's
@@ -962,9 +976,10 @@ prior distribution as well.</p>
 \]</div>
 <p>corresponding to the orbital period, semi-amplitude, eccentricity, mean anomaly
 at the epoch, and argument of periastron.</p>
-<p>Some models include additional <em>per-planet</em> parameters: the <code>BINARIESmodel</code>
-considers a linear precession parameter <span class="arithmatex">\(\dot\omega\)</span> and the BDmodel infers a
-mixture probability <span class="arithmatex">\(\lambda\)</span> for each planet.</p>
+<p>Some models include additional <em>per-planet</em> parameters: the
+<a class="autorefs autorefs-internal" href="../API/kima/#kima.BINARIESmodel">BINARIESmodel</a> considers a linear precession parameter
+<span class="arithmatex">\(\dot\omega\)</span> and the BDmodel infers a mixture probability <span class="arithmatex">\(\lambda\)</span> for each
+planet.</p>
 <div class="admonition info">
 <p class="admonition-title">units</p>
 <ul>
@@ -1015,12 +1030,28 @@ v_{sys} \rightarrow v_{sys}
 parameters. See the <a href="">example</a> for more information.</p>
 <p>When using data from multiple instruments, <strong>kima</strong> adds RV offsets between
 pairs of instruments as well as individual jitter parameters per instrument.</p>
-<h2 id="model-parameters">Model parameters</h2>
-<div class="admonition question">
-<p class="admonition-title">How many parameters?</p>
-<p>The number of free parameters can change substantially with each model, 
-with the different settings, and with the specific parameter priors.</p>
+<h3 id="known-object-mode">Known object mode</h3>
+<p>As described <a href="#prior-distributions">below</a>, the priors for the orbital
+parameters of the <span class="arithmatex">\(N_p\)</span> planets are all the same. </p>
+<p>To go around this limitation, we can add <em>known objects</em> to the background
+model, which are simply Keplerians for which we define individual priors. Each
+of these Keplerians has the same 5 orbital parameters <span class="arithmatex">\({P, K, e, M_0, \omega}\)</span>,
+in the same units. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The number of <em>known objects</em> is defined by the user and is always fixed,
+unlike <span class="arithmatex">\(N_p\)</span>.</p>
 </div>
+<p>Most models can accomodate known objects which can be added to the model with
+the following code</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">model</span><span class="o">.</span><span class="n">set_known_object</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">model</span><span class="o">.</span><span class="n">KO_Pprior</span> <span class="o">=</span> <span class="p">[</span><span class="n">kima</span><span class="o">.</span><span class="n">distributions</span><span class="o">...</span><span class="p">]</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">model</span><span class="o">.</span><span class="n">KO_Kprior</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">model</span><span class="o">.</span><span class="n">KO_eprior</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">model</span><span class="o">.</span><span class="n">KO_phiprior</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="n">model</span><span class="o">.</span><span class="n">KO_wprior</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+</code></pre></div>
 <hr />
 <h2 id="prior-distributions">Prior distributions</h2>
 <p>As in any Bayesian analysis, <strong>kima</strong> needs a set of priors for the model
@@ -1032,13 +1063,13 @@ Admittedly, some of these attributes might have rather undescriptive names,
 but they are still documented individually.</p>
 <p>For example, let's re-define the priors for the jitter and for the orbital
 periods of the <span class="arithmatex">\(N_p\)</span> planets</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span> <span class="nn">kima.distributions</span> <span class="kn">import</span> <span class="n">Uniform</span><span class="p">,</span> <span class="n">Gaussian</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">model</span> <span class="o">=</span> <span class="n">RVmodel</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">model</span><span class="o">.</span><span class="n">Jprior</span> <span class="o">=</span> <span class="n">Uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>  <span class="c1"># (1)</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="n">model</span><span class="o">.</span><span class="n">conditional</span><span class="o">.</span><span class="n">Pprior</span> <span class="o">=</span> <span class="n">Gaussian</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span> <span class="nn">kima.distributions</span> <span class="kn">import</span> <span class="n">Uniform</span><span class="p">,</span> <span class="n">Gaussian</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">model</span> <span class="o">=</span> <span class="n">RVmodel</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">model</span><span class="o">.</span><span class="n">Jprior</span> <span class="o">=</span> <span class="n">Uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>  <span class="c1"># (1)</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">model</span><span class="o">.</span><span class="n">conditional</span><span class="o">.</span><span class="n">Pprior</span> <span class="o">=</span> <span class="n">Gaussian</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
 </code></pre></div>
 <ol>
 <li><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/26a0.svg" title=":warning:" /> Note that this is a uniform distribution from 1 m/s to 20 m/s,
@@ -1062,6 +1093,142 @@ If you need a distribution that is not yet implemented, consider opening an
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">RVmodel</label><label for="__tabbed_2_2">GPmodel</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>meaning</th>
+<th>prior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>beta_prior</code></td>
+<td>activity indicator coefficients</td>
+<td>Gaussian(0, 1)</td>
+</tr>
+<tr>
+<td><code>Cprior</code></td>
+<td>systemic velocity</td>
+<td>Uniform(<span class="arithmatex">\(v_{\rm min}\)</span>, <span class="arithmatex">\(v_{\rm max}\)</span>)</td>
+</tr>
+<tr>
+<td><code>stellar_jitter_prior</code></td>
+<td>stellar jitter</td>
+<td>Fixed(0)</td>
+</tr>
+<tr>
+<td><code>slope_prior</code></td>
+<td>slope of linear trend</td>
+<td>Gaussian( 0, <span class="arithmatex">\(\Delta v / \Delta t\)</span> )</td>
+</tr>
+<tr>
+<td><code>quadr_prior</code></td>
+<td>coefficient of quadratic trend</td>
+<td>Gaussian( 0, <span class="arithmatex">\(\Delta v / \Delta t^2\)</span> )</td>
+</tr>
+<tr>
+<td><code>cubic_prior</code></td>
+<td>coefficient of cubic trend</td>
+<td>Gaussian( 0, <span class="arithmatex">\(\Delta v / \Delta t^3\)</span> )</td>
+</tr>
+<tr>
+<td><code>offsets_prior</code></td>
+<td>between-instrument offsets</td>
+<td>Uniform( -<span class="arithmatex">\(\Delta v\)</span>, <span class="arithmatex">\(\Delta v\)</span> )</td>
+</tr>
+<tr>
+<td><code>nu_prior</code></td>
+<td>degrees of freedom of Student-t likelihood</td>
+<td>LogUniform(2, 1000)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>meaning</th>
+<th>prior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>beta_prior</code></td>
+<td>activity indicator coefficients</td>
+<td>Gaussian(0, 1)</td>
+</tr>
+<tr>
+<td><code>Cprior</code></td>
+<td>systemic velocity</td>
+<td>Uniform(<span class="arithmatex">\(v_{\rm min}\)</span>, <span class="arithmatex">\(v_{\rm max}\)</span>)</td>
+</tr>
+<tr>
+<td><code>slope_prior</code></td>
+<td>slope of linear trend</td>
+<td>Gaussian( 0, <span class="arithmatex">\(\Delta v / \Delta t\)</span> )</td>
+</tr>
+<tr>
+<td><code>quadr_prior</code></td>
+<td>coefficient of quadratic trend</td>
+<td>Gaussian( 0, <span class="arithmatex">\(\Delta v / \Delta t^2\)</span> )</td>
+</tr>
+<tr>
+<td><code>cubic_prior</code></td>
+<td>coefficient of cubic trend</td>
+<td>Gaussian( 0, <span class="arithmatex">\(\Delta v / \Delta t^3\)</span> )</td>
+</tr>
+<tr>
+<td><code>offsets_prior</code></td>
+<td>between-instrument offsets</td>
+<td>Uniform( -<span class="arithmatex">\(\Delta v\)</span>, <span class="arithmatex">\(\Delta v\)</span> )</td>
+</tr>
+<tr>
+<td><code>eta1_prior</code></td>
+<td>GP "amplitude"</td>
+<td>LogUniform(0.1, 100)</td>
+</tr>
+<tr>
+<td><code>eta2_prior</code></td>
+<td>GP correlation timescale</td>
+<td>LogUniform(1, <span class="arithmatex">\(\Delta t\)</span>)</td>
+</tr>
+<tr>
+<td><code>eta3_prior</code></td>
+<td>GP period</td>
+<td>Uniform(10, 40)</td>
+</tr>
+<tr>
+<td><code>eta4_prior</code></td>
+<td>recurrence timescale or (inverse) harmonic complexity</td>
+<td>Uniform(0.2, 5)</td>
+</tr>
+<tr>
+<td><code>eta5_prior</code></td>
+<td>"amplitude" for the magnetic cycle kernel</td>
+<td>LogUniform(0.1, 100)</td>
+</tr>
+<tr>
+<td><code>eta6_prior</code></td>
+<td>period for the magnetic cycle kernel</td>
+<td>LogUniform(365, 5*<span class="arithmatex">\(\Delta t\)</span>)</td>
+</tr>
+<tr>
+<td><code>eta7_prior</code></td>
+<td>recurrence timescale for the magnetic cycle kernel</td>
+<td>Uniform(1, 10)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>And for the orbital parameters</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">orbital parameters</label><label for="__tabbed_3_2"> </label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <ul>
 <li>
 <p>orbital period(s), <code>conditional.Pprior</code><br />
@@ -1071,120 +1238,30 @@ If you need a distribution that is not yet implemented, consider opening an
 <p>semi-amplitude(s), <code>conditional.Kprior</code><br />
   Uniform(1, <span class="arithmatex">\(\Delta v\)</span>), where <span class="arithmatex">\(\Delta v\)</span> is the span of the RVs</p>
 </li>
+<li>
+<p>orbital eccentricity(ies), <code>conditional.eprior</code><br />
+  Uniform(0, 1)</p>
+</li>
+<li>
+<p>mean anomaly at the epoch, <code>conditional.phiprior</code><br />
+  Uniform(0, 2<span class="arithmatex">\(\pi\)</span>)</p>
+</li>
+<li>
+<p>argument of pericenter, <code>conditional.wprior</code><br />
+  Uniform(0, 2<span class="arithmatex">\(\pi\)</span>)</p>
+</li>
 </ul>
 </div>
 <div class="tabbed-block"></div>
 </div>
 </div>
-<details>
-<p><summary>expand</summary></p>
-<ul>
-<li>
-<p>orbital periods and semi-amplitudes<br />
-    units: days and m/s, respectively</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// if hyperpriors = false (default)</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">Pprior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">LogUniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1e5</span><span class="p">);</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">Kprior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">ModifiedLogUniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1e3</span><span class="p">);</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1">// if hyperpriors = true</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">Pprior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Laplace</span><span class="o">&gt;</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">log_muP</span><span class="p">),</span><span class="w"> </span><span class="n">wP</span><span class="p">);</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">Kprior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Exponential</span><span class="o">&gt;</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">log_muK</span><span class="p">));</span>
-</code></pre></div>
-</li>
-<li>
-<p>orbital eccentricities
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">eprior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Uniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-</code></pre></div></p>
-<p>another good option could be
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">eprior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Kumaraswamy</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">0.867</span><span class="p">,</span><span class="w"> </span><span class="mf">3.03</span><span class="p">);</span>
-</code></pre></div>
-which approximates the Beta distribution proposed by Kipping (2013).</p>
-</li>
-<li>
-<p>orbital phase and argument of periastron<br />
-    units: radians</p>
-<p>```c++
-phiprior = make_shared<Uniform>(0, 2*PI);</p>
-<p>wprior = make_shared<Uniform>(0, 2*PI);
-  ```</p>
-</li>
-<li>
-<p>systemic velocity<br />
-    units: m/s</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">Cprior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Uniform</span><span class="o">&gt;</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">get_RV_min</span><span class="p">(),</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">get_RV_max</span><span class="p">());</span>
-</code></pre></div>
-</li>
-<li>
-<p>additional white noise, or <em>jitter</em><br />
-    units: m/s</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">knee</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="o">*</span><span class="n">data</span><span class="p">.</span><span class="n">get_max_RV_span</span><span class="p">())</span><span class="w"> </span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">upper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">get_max_RV_span</span><span class="p">()</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">Jprior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">ModifiedLogUniform</span><span class="o">&gt;</span><span class="p">(</span><span class="n">knee</span><span class="p">,</span><span class="w"> </span><span class="n">upper</span><span class="p">);</span>
-</code></pre></div>
-</li>
-<li>
-<p>ccoefficients of the trend (if trend=true)<br />
-    units: m/s/day, m/s/day², m/s/day³
-  <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">slope_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Gaussian</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">get_trend_magnitude</span><span class="p">(</span><span class="mi">1</span><span class="p">)));</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">quadr_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Gaussian</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">get_trend_magnitude</span><span class="p">(</span><span class="mi">2</span><span class="p">)));</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">cubic_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Gaussian</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">get_trend_magnitude</span><span class="p">(</span><span class="mi">3</span><span class="p">)));</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>between-instrument offsets
-    units: m/s</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">lower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">data</span><span class="p">.</span><span class="n">get_RV_span</span><span class="p">();</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">upper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">get_RV_span</span><span class="p">();</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">offsets_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Uniform</span><span class="o">&gt;</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span><span class="w"> </span><span class="n">upper</span><span class="p">);</span>
-</code></pre></div>
-</li>
-</ul>
-<p>{% katexmm %}</p>
-<ul>
-<li>
-<p>GP hyperparameters<br />
-    units: <span class="arithmatex">\(\eta_1\)</span> in m/s, <span class="arithmatex">\(\eta_2\)</span> and <span class="arithmatex">\(\eta_3\)</span> in days</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">log_eta1_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Uniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">-5</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">eta2_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">LogUniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="n">eta3_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Uniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">);</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="n">log_eta4_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Uniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-</code></pre></div>
-</li>
-</ul>
-<p>{% endkatexmm %}</p>
-<ul>
-<li>
-<p>degrees of freedom for Student-t likelihood</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">nu_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">LogUniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
-</code></pre></div>
-</li>
-<li>
-<p>moving average parameters</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">sigmaMA_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Uniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">tauMA_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">LogUniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
-</code></pre></div>
-</li>
-<li>
-<p>hyperparameters for orbital period and semi-amplitude hierachical priors<br />
-    only if <code>hyperpriors=true</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">log_muP_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">TruncatedCauchy</span><span class="o">&gt;</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="mi">365</span><span class="p">),</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">log</span><span class="p">(</span><span class="mi">365</span><span class="p">)</span><span class="mi">-21</span><span class="p">,</span><span class="w"> </span><span class="n">log</span><span class="p">(</span><span class="mi">365</span><span class="p">)</span><span class="o">+</span><span class="mi">21</span><span class="p">);</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">wP_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Uniform</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">);</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="n">log_muK_prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">TruncatedCauchy</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">-21.0</span><span class="p">,</span><span class="w"> </span><span class="mf">21.0</span><span class="p">);</span>
-</code></pre></div>
-</li>
-<li>
-<p>correlation coefficients with activity indicators</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">betaprior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_prior</span><span class="o">&lt;</span><span class="n">Gaussian</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-</code></pre></div>
-</li>
-</ul>
-</details>
+<div class="admonition question">
+<p class="admonition-title">How many parameters?</p>
+<p>The number of free parameters can change substantially depending on the model, 
+the different settings, and the specific parameter priors 
+(which can be <a class="autorefs autorefs-internal" href="../API/kima/#kima.distributions.Fixed">Fixed</a>, for example).
+In essence, the number of free parameters is usually not a very useful quantity by itself.</p>
+</div>
 
 
 
@@ -1205,7 +1282,7 @@ phiprior = make_shared<Uniform>(0, 2*PI);</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-01-29T16:31:56+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-01-29</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-02-14T13:55:42+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-02-14</span>
   </span>
 
     
@@ -1267,11 +1344,11 @@ phiprior = make_shared<Uniform>(0, 2*PI);</p>
       
         <script src="../../js/timeago_mkdocs_material.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/katex.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
       
     
   </body>
