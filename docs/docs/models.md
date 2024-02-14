@@ -135,7 +135,7 @@ Below we include a more mathematical description of each model.
 the distinguishing feature is that the code can actually model a number $N_p$ of
 Keplerians, and *this number does not need to be fixed a priori*. In other
 words, **kima** estimates the joint posterior distribution for $N_p$ and the
-orbital parameters of the planets $\theta$, given some data $\mathcal{D}$:
+orbital parameters of the planets $\theta$, given some data $ \mathcal{D} $:
 
 $$ p(N_p, \theta | \mathcal{D} ) $$
 
@@ -169,9 +169,10 @@ $$
 corresponding to the orbital period, semi-amplitude, eccentricity, mean anomaly
 at the epoch, and argument of periastron.
 
-Some models include additional *per-planet* parameters: the `BINARIESmodel`
-considers a linear precession parameter $\dot\omega$ and the BDmodel infers a
-mixture probability $\lambda$ for each planet.
+Some models include additional *per-planet* parameters: the
+[BINARIESmodel][kima.BINARIESmodel] considers a linear precession parameter
+$\dot\omega$ and the BDmodel infers a mixture probability $\lambda$ for each
+planet.
 
 !!! info "units"
 
@@ -237,14 +238,33 @@ When using data from multiple instruments, **kima** adds RV offsets between
 pairs of instruments as well as individual jitter parameters per instrument.
 
 
-## Model parameters
+### Known object mode
 
+As described [below](#prior-distributions), the priors for the orbital
+parameters of the $N_p$ planets are all the same. 
 
-!!! question "How many parameters?"
+To go around this limitation, we can add _known objects_ to the background
+model, which are simply Keplerians for which we define individual priors. Each
+of these Keplerians has the same 5 orbital parameters ${P, K, e, M_0, \omega}$,
+in the same units. 
 
-    The number of free parameters can change substantially with each model, 
-    with the different settings, and with the specific parameter priors.
+!!! note
 
+    The number of _known objects_ is defined by the user and is always fixed,
+    unlike $N_p$.
+
+Most models can accomodate known objects which can be added to the model with
+the following code
+
+```py
+model.set_known_object(1)
+
+model.KO_Pprior = [kima.distributions...]
+model.KO_Kprior = [...]
+model.KO_eprior = [...]
+model.KO_phiprior = [...]
+model.KO_wprior = [...]
+```
 
 
 ---
@@ -302,130 +322,63 @@ Below is the list of default priors which are used if not explicitly re-defined
 
 === "RVmodel"
 
+    name | meaning | prior
+    ---- | ------- | -----
+    `beta_prior`              | activity indicator coefficients                    | Gaussian(0, 1)
+    `Cprior`                  | systemic velocity                                  | Uniform($v_{\rm min}$, $v_{\rm max}$)
+    `stellar_jitter_prior`    | stellar jitter                                     | Fixed(0)
+    `slope_prior`             | slope of linear trend                              | Gaussian( 0, $\Delta v / \Delta t$ )
+    `quadr_prior`             | coefficient of quadratic trend                     | Gaussian( 0, $\Delta v / \Delta t^2$ )
+    `cubic_prior`             | coefficient of cubic trend                         | Gaussian( 0, $\Delta v / \Delta t^3$ )
+    `offsets_prior`           | between-instrument offsets                         | Uniform( -$\Delta v$, $\Delta v$ )
+    `nu_prior`                | degrees of freedom of Student-t likelihood         | LogUniform(2, 1000)
+
+
+=== "GPmodel"
+
+    name | meaning | prior
+    ---- | ------- | -----
+    `beta_prior`              | activity indicator coefficients                    | Gaussian(0, 1)
+    `Cprior`                  | systemic velocity                                  | Uniform($v_{\rm min}$, $v_{\rm max}$)
+    `slope_prior`             | slope of linear trend                              | Gaussian( 0, $\Delta v / \Delta t$ )
+    `quadr_prior`             | coefficient of quadratic trend                     | Gaussian( 0, $\Delta v / \Delta t^2$ )
+    `cubic_prior`             | coefficient of cubic trend                         | Gaussian( 0, $\Delta v / \Delta t^3$ )
+    `offsets_prior`           | between-instrument offsets                         | Uniform( -$\Delta v$, $\Delta v$ )
+    `eta1_prior`              | GP "amplitude"                                     | LogUniform(0.1, 100)
+    `eta2_prior`              | GP correlation timescale                           | LogUniform(1, $\Delta t$)
+    `eta3_prior`              | GP period                                          | Uniform(10, 40)
+    `eta4_prior`              | recurrence timescale or (inverse) harmonic complexity | Uniform(0.2, 5)
+    `eta5_prior`              | "amplitude" for the magnetic cycle kernel          | LogUniform(0.1, 100)
+    `eta6_prior`              | period for the magnetic cycle kernel               | LogUniform(365, 5*$\Delta t$)
+    `eta7_prior`              | recurrence timescale for the magnetic cycle kernel | Uniform(1, 10)
+
+
+And for the orbital parameters
+
+=== "orbital parameters"
+
     - orbital period(s), `conditional.Pprior`  
       LogUniform(1, $\Delta t$), where $\Delta t$ is the timespan of the data
     
     - semi-amplitude(s), `conditional.Kprior`  
       Uniform(1, $\Delta v$), where $\Delta v$ is the span of the RVs
 
-=== "GPmodel"
+    - orbital eccentricity(ies), `conditional.eprior`  
+      Uniform(0, 1)
 
-<details markdown=1><summary>expand</summary>
+    - mean anomaly at the epoch, `conditional.phiprior`  
+      Uniform(0, 2$\pi$)
 
-  - orbital periods and semi-amplitudes  
-    units: days and m/s, respectively
+    - argument of pericenter, `conditional.wprior`  
+      Uniform(0, 2$\pi$)
 
-    ```c++
-    // if hyperpriors = false (default)
-    Pprior = make_shared<LogUniform>(1.0, 1e5);
-    Kprior = make_shared<ModifiedLogUniform>(1.0, 1e3);
+=== " "
 
-    // if hyperpriors = true
-    Pprior = make_shared<Laplace>(exp(log_muP), wP);
-    Kprior = make_shared<Exponential>(exp(log_muK));
-    ```
 
-  - orbital eccentricities
-    ```c++
-    eprior = make_shared<Uniform>(0, 1);
-    ```
+!!! question "How many parameters?"
 
-    another good option could be
-    ```c++
-    eprior = make_shared<Kumaraswamy>(0.867, 3.03);
-    ```
-    which approximates the Beta distribution proposed by Kipping (2013).
-
-  - orbital phase and argument of periastron  
-    units: radians
-
-    ```c++
-    phiprior = make_shared<Uniform>(0, 2*PI);
-    
-    wprior = make_shared<Uniform>(0, 2*PI);
-  ```
-
-  - systemic velocity  
-    units: m/s
-    
-    ```cpp
-    Cprior = make_prior<Uniform>(data.get_RV_min(), data.get_RV_max());
-    ```
-
-  - additional white noise, or *jitter*  
-    units: m/s
-    
-    ```c++
-    knee = min(1.0, 0.1*data.get_max_RV_span()) 
-    upper = data.get_max_RV_span()
-
-    Jprior = make_prior<ModifiedLogUniform>(knee, upper);
-    ```
-
-  - ccoefficients of the trend (if trend=true)  
-    units: m/s/day, m/s/day², m/s/day³
-  ```c++
-  slope_prior = make_prior<Gaussian>(0.0, pow(10, data.get_trend_magnitude(1)));
-  quadr_prior = make_prior<Gaussian>(0.0, pow(10, data.get_trend_magnitude(2)));
-  cubic_prior = make_prior<Gaussian>(0.0, pow(10, data.get_trend_magnitude(3)));
-  ```
-
-  - between-instrument offsets
-    units: m/s
-
-    ```c++
-    lower = -data.get_RV_span();
-    upper = data.get_RV_span();
-    offsets_prior = make_prior<Uniform>(lower, upper);
-    ```
-
-  {% katexmm %}
-
-  - GP hyperparameters  
-    units: $\eta_1$ in m/s, $\eta_2$ and $\eta_3$ in days
-
-    ```c++
-    log_eta1_prior = make_prior<Uniform>(-5, 5);
-
-    eta2_prior = make_prior<LogUniform>(1, 100);
-
-    eta3_prior = make_prior<Uniform>(10, 40);
-
-    log_eta4_prior = make_prior<Uniform>(-1, 1);
-    ```
-
-  {% endkatexmm %}
-
-  - degrees of freedom for Student-t likelihood
-
-    ```c++
-    nu_prior = make_prior<LogUniform>(2, 1000);
-    ```
-
-  - moving average parameters
-
-    ```c++
-    sigmaMA_prior = make_prior<Uniform>(-1, 1);
-    tauMA_prior = make_prior<LogUniform>(1, 100);
-    ``` 
-
-  - hyperparameters for orbital period and semi-amplitude hierachical priors  
-    only if `hyperpriors=true`
-
-    ```c++
-    log_muP_prior = make_prior<TruncatedCauchy>(log(365), 1.0, log(365)-21, log(365)+21);
-    
-    wP_prior = make_prior<Uniform>(0.1, 3.0);
-    
-    log_muK_prior = make_prior<TruncatedCauchy>(0.0, 1.0, -21.0, 21.0);
-    ```
-
-  - correlation coefficients with activity indicators
-
-    ```c++
-    betaprior = make_prior<Gaussian>(0, 1);
-    ```
-
-</details>
-
+    The number of free parameters can change substantially depending on the model, 
+    the different settings, and the specific parameter priors 
+    (which can be [Fixed][kima.distributions.Fixed], for example).
+    In essence, the number of free parameters is usually not a very useful quantity by itself.
 
