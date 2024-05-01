@@ -8,30 +8,25 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    # if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v5
         with:
           python-version: 3.x
 
       - name: Install dependencies
         run: |
-          pip install kima
+          pip install kima[dev]
 
-      # - name: Run examples
+      # - name: Install docs packages
       #   run: |
-      #     make -C docs
-
-      - name: Install docs packages
-        run: |
-          python -m pip install mkdocs-material mkdocstrings[python]
-          python -m pip install mkdocs-jupyter
-          python -m pip install mkdocs-git-revision-date-localized-plugin
+      #     python -m pip install mkdocs-material mkdocstrings[python]
+      #     python -m pip install mkdocs-jupyter
+      #     python -m pip install mkdocs-git-revision-date-localized-plugin
 
       - name: Import
         run: |
