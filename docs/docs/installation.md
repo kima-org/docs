@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Installation
 
 **kima** can easily be installed using pip:
@@ -14,10 +18,12 @@ If the following badge is green, things should be working
 
 [![test pip install](https://github.com/kima-org/test-pip-install/actions/workflows/python-package.yml/badge.svg)](https://github.com/kima-org/test-pip-install/actions/workflows/python-package.yml){:target="_blank"}
 
+
 !!! danger
-    The installation process compiles the C++ code using [CMake](https://cmake.org/),
-    and requires at least CMake v3.17, which should be easy to install (or update)
-    on most platforms. See [this official page](https://cmake.org/download/) for more information.
+    In some cases, the installation process will compile the C++ code using
+    [CMake](https://cmake.org/), which requires at least CMake v3.17. It should
+    be easy to install (or update) on most platforms. See [this official
+    page](https://cmake.org/download/) for more information.
 
 
 Alternatively, you can also clone the [:material-github: GitHub repository](https://github.com/kima-org/kima.git)
@@ -35,5 +41,6 @@ pip install -e .
 
  
 If the installation fails,
-open an issue [here](https://github.com/kima-org/kima/issues){:target="_blank"}.
+open an issue [here](https://github.com/kima-org/kima/issues){:target="_blank"}
+or comment below.
 <!-- take a look at the [troubleshooting](/docs/troubleshooting) page -->
