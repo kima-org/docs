@@ -1,3 +1,8 @@
+---
+comments: true
+---
+
+## Data, models, and results
 
 To get started, read in a dataset and choose one of the available [models](/docs/models):
 
@@ -19,7 +24,7 @@ kima.run(model, steps=1000)
 The resulting posteriors can be loaded and analysed easily (more information [here](/docs/API/pykima))
 
 ```py
-res = kima.load_results()
+res = kima.load_results(model)
 ```
 
 
@@ -37,20 +42,26 @@ Running it is as simple as
 ```py
 from kima.examples import _51Peg
 
-model = _51Peg(run=True)
+model, res = _51Peg(run=True, load=True) #(1)
 ```
 
-and the results are loaded with
+1. This will run **kima** for 5000 steps, taking a few seconds.
+
+and the results object provides a number of useful plots 
 
 ```py
-res = kima.load_results()
+res.plot_posterior_np() #(1)
 
-res.plot1() #(1)
-res.plot2() #(2)
+res.plot_posterior_periods() #(2)
+
+p = res.maximum_likelihood_sample() #(3)
+res.phase_plot(p) #(4)
 ```
 
-1.  shows the posterior for the number of planets \(N_p\)
-2.  shows the posterior for the orbital period, with a clear peak at 4.23 days
+1. shows the posterior for the number of planets
+2. shows the posterior for the orbital period, with a clear peak at 4.23 days
+3. select the sample with the maximum likelihood value
+4. plot the maximum likelihood solution in phase
 
 
 <!-- 
