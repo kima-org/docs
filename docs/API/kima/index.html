@@ -742,15 +742,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kima.Data.RVData.__init__" class="md-nav__link">
-    <span class="md-ellipsis">
-      __init__
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#kima.Data.RVData.get_RV_span" class="md-nav__link">
     <span class="md-ellipsis">
       get_RV_span
@@ -1163,15 +1154,6 @@
   <a href="#kima.RVmodel.RVmodel.trend" class="md-nav__link">
     <span class="md-ellipsis">
       trend
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kima.RVmodel.RVmodel.__init__" class="md-nav__link">
-    <span class="md-ellipsis">
-      __init__
     </span>
   </a>
   
@@ -3649,15 +3631,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kima.Data.RVData.__init__" class="md-nav__link">
-    <span class="md-ellipsis">
-      __init__
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#kima.Data.RVData.get_RV_span" class="md-nav__link">
     <span class="md-ellipsis">
       get_RV_span
@@ -4070,15 +4043,6 @@
   <a href="#kima.RVmodel.RVmodel.trend" class="md-nav__link">
     <span class="md-ellipsis">
       trend
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kima.RVmodel.RVmodel.__init__" class="md-nav__link">
-    <span class="md-ellipsis">
-      __init__
     </span>
   </a>
   
@@ -6320,6 +6284,28 @@ from a set of files or arrays</p>
 
       <p>Load and store RV data</p>
 
+      <p><strong>init</strong>(self, filenames: collections.abc.Sequence[str], units: str = 'ms', skip: int = 0, max_rows: int = 0, delimiter: str = ' ', indicators: collections.abc.Sequence[str] = [], double_lined: bool = False) -&gt; None
+<strong>init</strong>(self, filename: str, units: str = 'ms', skip: int = 0, max_rows: int = 0, multi: bool = False, delimiter: str = ' ', indicators: collections.abc.Sequence[str] = [], double_lined: bool = False) -&gt; None
+<strong>init</strong>(self, t: collections.abc.Sequence[float], y: collections.abc.Sequence[float], sig: collections.abc.Sequence[float], units: str = 'ms', instrument: str = '') -&gt; None
+<strong>init</strong>(self, t: collections.abc.Sequence[collections.abc.Sequence[float]], y: collections.abc.Sequence[collections.abc.Sequence[float]], sig: collections.abc.Sequence[collections.abc.Sequence[float]], units: str = 'ms', instruments: collections.abc.Sequence[str] = []) -&gt; None</p>
+<p>Overloaded function.</p>
+<ol>
+<li><code>__init__(self, filenames: collections.abc.Sequence[str], units: str = 'ms', skip: int = 0, max_rows: int = 0, delimiter: str = ' ', indicators: collections.abc.Sequence[str] = [], double_lined: bool = False) -&gt; None</code></li>
+</ol>
+<p>Load RV data from a list of files</p>
+<ol>
+<li><code>__init__(self, filename: str, units: str = 'ms', skip: int = 0, max_rows: int = 0, multi: bool = False, delimiter: str = ' ', indicators: collections.abc.Sequence[str] = [], double_lined: bool = False) -&gt; None</code></li>
+</ol>
+<p>Load RV data from a file</p>
+<ol>
+<li><code>__init__(self, t: collections.abc.Sequence[float], y: collections.abc.Sequence[float], sig: collections.abc.Sequence[float], units: str = 'ms', instrument: str = '') -&gt; None</code></li>
+</ol>
+<p>Load RV data from arrays</p>
+<ol>
+<li><code>__init__(self, t: collections.abc.Sequence[collections.abc.Sequence[float]], y: collections.abc.Sequence[collections.abc.Sequence[float]], sig: collections.abc.Sequence[collections.abc.Sequence[float]], units: str = 'ms', instruments: collections.abc.Sequence[str] = []) -&gt; None</code></li>
+</ol>
+<p>Load RV data from arrays, for multiple instruments</p>
+
 
 
 
@@ -6651,47 +6637,6 @@ from a set of files or arrays</p>
 <div class="doc doc-object doc-function">
 
 
-<h2 id="kima.Data.RVData.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">()</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
-  </span>
-
-</h2>
-
-
-    <div class="doc doc-contents ">
-
-      <p><strong>init</strong>(self, filenames: collections.abc.Sequence[str], units: str = 'ms', skip: int = 0, max_rows: int = 0, delimiter: str = ' ', indicators: collections.abc.Sequence[str] = [], double_lined: bool = False) -&gt; None
-<strong>init</strong>(self, filename: str, units: str = 'ms', skip: int = 0, max_rows: int = 0, multi: bool = False, delimiter: str = ' ', indicators: collections.abc.Sequence[str] = [], double_lined: bool = False) -&gt; None
-<strong>init</strong>(self, t: collections.abc.Sequence[float], y: collections.abc.Sequence[float], sig: collections.abc.Sequence[float], units: str = 'ms', instrument: str = '') -&gt; None
-<strong>init</strong>(self, t: collections.abc.Sequence[collections.abc.Sequence[float]], y: collections.abc.Sequence[collections.abc.Sequence[float]], sig: collections.abc.Sequence[collections.abc.Sequence[float]], units: str = 'ms', instruments: collections.abc.Sequence[str] = []) -&gt; None</p>
-<p>Overloaded function.</p>
-<ol>
-<li><code>__init__(self, filenames: collections.abc.Sequence[str], units: str = 'ms', skip: int = 0, max_rows: int = 0, delimiter: str = ' ', indicators: collections.abc.Sequence[str] = [], double_lined: bool = False) -&gt; None</code></li>
-</ol>
-<p>Load RV data from a list of files</p>
-<ol>
-<li><code>__init__(self, filename: str, units: str = 'ms', skip: int = 0, max_rows: int = 0, multi: bool = False, delimiter: str = ' ', indicators: collections.abc.Sequence[str] = [], double_lined: bool = False) -&gt; None</code></li>
-</ol>
-<p>Load RV data from a file</p>
-<ol>
-<li><code>__init__(self, t: collections.abc.Sequence[float], y: collections.abc.Sequence[float], sig: collections.abc.Sequence[float], units: str = 'ms', instrument: str = '') -&gt; None</code></li>
-</ol>
-<p>Load RV data from arrays</p>
-<ol>
-<li><code>__init__(self, t: collections.abc.Sequence[collections.abc.Sequence[float]], y: collections.abc.Sequence[collections.abc.Sequence[float]], sig: collections.abc.Sequence[collections.abc.Sequence[float]], units: str = 'ms', instruments: collections.abc.Sequence[str] = []) -&gt; None</code></li>
-</ol>
-<p>Load RV data from arrays, for multiple instruments</p>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
 <h2 id="kima.Data.RVData.get_RV_span" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_RV_span</span><span class="p">()</span></code>
 
@@ -6798,69 +6743,6 @@ Args:
 
       <p>Simple plot of RV data</p>
 
-            <details class="quote">
-              <summary>Source code in <code>kima/pykima/display.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1673">1673</a></span>
-<span class="normal"><a href="#__codelineno-0-1674">1674</a></span>
-<span class="normal"><a href="#__codelineno-0-1675">1675</a></span>
-<span class="normal"><a href="#__codelineno-0-1676">1676</a></span>
-<span class="normal"><a href="#__codelineno-0-1677">1677</a></span>
-<span class="normal"><a href="#__codelineno-0-1678">1678</a></span>
-<span class="normal"><a href="#__codelineno-0-1679">1679</a></span>
-<span class="normal"><a href="#__codelineno-0-1680">1680</a></span>
-<span class="normal"><a href="#__codelineno-0-1681">1681</a></span>
-<span class="normal"><a href="#__codelineno-0-1682">1682</a></span>
-<span class="normal"><a href="#__codelineno-0-1683">1683</a></span>
-<span class="normal"><a href="#__codelineno-0-1684">1684</a></span>
-<span class="normal"><a href="#__codelineno-0-1685">1685</a></span>
-<span class="normal"><a href="#__codelineno-0-1686">1686</a></span>
-<span class="normal"><a href="#__codelineno-0-1687">1687</a></span>
-<span class="normal"><a href="#__codelineno-0-1688">1688</a></span>
-<span class="normal"><a href="#__codelineno-0-1689">1689</a></span>
-<span class="normal"><a href="#__codelineno-0-1690">1690</a></span>
-<span class="normal"><a href="#__codelineno-0-1691">1691</a></span>
-<span class="normal"><a href="#__codelineno-0-1692">1692</a></span>
-<span class="normal"><a href="#__codelineno-0-1693">1693</a></span>
-<span class="normal"><a href="#__codelineno-0-1694">1694</a></span>
-<span class="normal"><a href="#__codelineno-0-1695">1695</a></span>
-<span class="normal"><a href="#__codelineno-0-1696">1696</a></span>
-<span class="normal"><a href="#__codelineno-0-1697">1697</a></span>
-<span class="normal"><a href="#__codelineno-0-1698">1698</a></span>
-<span class="normal"><a href="#__codelineno-0-1699">1699</a></span>
-<span class="normal"><a href="#__codelineno-0-1700">1700</a></span>
-<span class="normal"><a href="#__codelineno-0-1701">1701</a></span>
-<span class="normal"><a href="#__codelineno-0-1702">1702</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1673" name="__codelineno-0-1673"></a><span class="k">def</span> <span class="nf">plot_RVData</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<a id="__codelineno-0-1674" name="__codelineno-0-1674"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot; Simple plot of RV data &quot;&quot;&quot;</span>
-<a id="__codelineno-0-1675" name="__codelineno-0-1675"></a>    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<a id="__codelineno-0-1676" name="__codelineno-0-1676"></a>    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<a id="__codelineno-0-1677" name="__codelineno-0-1677"></a>    <span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">sig</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<a id="__codelineno-0-1678" name="__codelineno-0-1678"></a>    <span class="n">obs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">obsi</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<a id="__codelineno-0-1679" name="__codelineno-0-1679"></a>
-<a id="__codelineno-0-1680" name="__codelineno-0-1680"></a>    <span class="n">time_offset</span> <span class="o">=</span> <span class="kc">False</span>
-<a id="__codelineno-0-1681" name="__codelineno-0-1681"></a>    <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">24e5</span><span class="p">:</span>
-<a id="__codelineno-0-1682" name="__codelineno-0-1682"></a>        <span class="n">time_offset</span> <span class="o">=</span> <span class="kc">True</span>
-<a id="__codelineno-0-1683" name="__codelineno-0-1683"></a>        <span class="n">t</span> <span class="o">-=</span> <span class="mf">24e5</span>
-<a id="__codelineno-0-1684" name="__codelineno-0-1684"></a>
-<a id="__codelineno-0-1685" name="__codelineno-0-1685"></a>    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-0-1686" name="__codelineno-0-1686"></a>
-<a id="__codelineno-0-1687" name="__codelineno-0-1687"></a>    <span class="n">kw</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<a id="__codelineno-0-1688" name="__codelineno-0-1688"></a>    <span class="n">kw</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<a id="__codelineno-0-1689" name="__codelineno-0-1689"></a>
-<a id="__codelineno-0-1690" name="__codelineno-0-1690"></a>    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">multi</span><span class="p">:</span>
-<a id="__codelineno-0-1691" name="__codelineno-0-1691"></a>        <span class="n">uobs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span>
-<a id="__codelineno-0-1692" name="__codelineno-0-1692"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">uobs</span><span class="p">:</span>
-<a id="__codelineno-0-1693" name="__codelineno-0-1693"></a>            <span class="n">mask</span> <span class="o">=</span> <span class="n">obs</span> <span class="o">==</span> <span class="n">i</span>
-<a id="__codelineno-0-1694" name="__codelineno-0-1694"></a>            <span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">e</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>    
-<a id="__codelineno-0-1695" name="__codelineno-0-1695"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-0-1696" name="__codelineno-0-1696"></a>        <span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-<a id="__codelineno-0-1697" name="__codelineno-0-1697"></a>
-<a id="__codelineno-0-1698" name="__codelineno-0-1698"></a>    <span class="k">if</span> <span class="n">time_offset</span><span class="p">:</span>
-<a id="__codelineno-0-1699" name="__codelineno-0-1699"></a>        <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;BJD - 2400000 [days]&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;RV [m/s]&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-1700" name="__codelineno-0-1700"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-0-1701" name="__codelineno-0-1701"></a>        <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Time [days]&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;RV [m/s]&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-1702" name="__codelineno-0-1702"></a>    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
-</code></pre></div></td></tr></table></div>
-            </details>
     </div>
 
 </div>
@@ -6928,8 +6810,7 @@ Args:
 
 
 <h2 id="kima.RVmodel.RVmodel" class="doc doc-heading">
-            <code>RVmodel</code>
-
+              <code class="highlight language-python"><span class="n">RVmodel</span><span class="p">()</span></code>
 
 </h2>
 
@@ -6938,6 +6819,66 @@ Args:
 
 
       
+
+      <p><strong>init</strong>(self, fix: bool, npmax: int, data: kima.Data.RVData) -&gt; None</p>
+<p>Implements a sum-of-Keplerians model where the number of Keplerians can be free.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>fix</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>whether the number of Keplerians should be fixed</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>npmax</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>maximum number of Keplerians</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>data</code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="kima.Data.RVData" href="#kima.Data.RVData">RVData</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>the RV data</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
 
@@ -7690,85 +7631,6 @@ Args:
 <div class="doc doc-object doc-function">
 
 
-<h3 id="kima.RVmodel.RVmodel.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">()</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-method descriptor"><code>method descriptor</code></small>
-  </span>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-      <p><strong>init</strong>(self, fix: bool, npmax: int, data: kima.Data.RVData) -&gt; None</p>
-<p>Implements a sum-of-Keplerians model where the number of Keplerians can be free.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td><code>fix</code></td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>whether the number of Keplerians should be fixed</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>npmax</code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>maximum number of Keplerians</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>data</code></td>
-            <td>
-                  <code><a class="autorefs autorefs-internal" title="kima.Data.RVData" href="#kima.Data.RVData">RVData</a></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>the RV data</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
 <h3 id="kima.RVmodel.RVmodel.set_known_object" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">set_known_object</span><span class="p">()</span></code>
 
@@ -7851,8 +7713,7 @@ Args:
 
 
 <h2 id="kima.GPmodel.GPmodel" class="doc doc-heading">
-            <code>GPmodel</code>
-
+              <code class="highlight language-python"><span class="n">GPmodel</span><span class="p">()</span></code>
 
 </h2>
 
@@ -7861,6 +7722,8 @@ Args:
 
 
       <p>None</p>
+
+      <p><strong>init</strong>(self, fix: bool, npmax: int, data: kima.Data.RVData) -&gt; None</p>
 
 
 
@@ -8695,8 +8558,7 @@ Args:
 
 
 <h2 id="kima.RVFWHMmodel.RVFWHMmodel" class="doc doc-heading">
-            <code>RVFWHMmodel</code>
-
+              <code class="highlight language-python"><span class="n">RVFWHMmodel</span><span class="p">()</span></code>
 
 </h2>
 
@@ -8705,6 +8567,8 @@ Args:
 
 
       <p>None</p>
+
+      <p><strong>init</strong>(self, fix: bool, npmax: int, data: kima.Data.RVData) -&gt; None</p>
 
 
 
@@ -9455,14 +9319,77 @@ Args:
 
 
 <h2 id="kima.BINARIESmodel.BINARIESmodel" class="doc doc-heading">
-            <code>BINARIESmodel</code>
-
+              <code class="highlight language-python"><span class="n">BINARIESmodel</span><span class="p">()</span></code>
 
 </h2>
 
 
     <div class="doc doc-contents ">
 
+
+      <p><strong>init</strong>(self, fix: bool, npmax: int, data: kima.Data.RVData) -&gt; None</p>
+<p>Implements a sum-of-Keplerians model where the number of Keplerians can be free.
+This model assumes white, uncorrelated noise. This modules is tailored for the analysis
+of stellar binaries through the known object mode (without it this defaults to the RVmodel)
+The binary can have one set of RVs or two (one on each star). This model adds apsidal 
+precession as a free parameter and accounts for GR and Tidal effects on the radial velocities.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>fix</code></td>
+            <td>
+                  <code>bool, default=True</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>whether the number of Keplerians should be fixed</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>npmax</code></td>
+            <td>
+                  <code>int, default=0</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>maximum number of Keplerians</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>data</code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="kima.Data.RVData" href="#kima.Data.RVData">RVData</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>the RV data</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
 
@@ -12271,8 +12198,7 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
 <h2 id="kima.distributions.Cauchy" class="doc doc-heading">
-            <code>Cauchy</code>
-
+              <code class="highlight language-python"><span class="n">Cauchy</span><span class="p">()</span></code>
 
 </h2>
 
@@ -12281,6 +12207,8 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
       <p>Cauchy distribution</p>
+
+      <p><strong>init</strong>(self, loc: float, scale: float) -&gt; None</p>
 
 
 
@@ -12416,8 +12344,7 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
 <h2 id="kima.distributions.Exponential" class="doc doc-heading">
-            <code>Exponential</code>
-
+              <code class="highlight language-python"><span class="n">Exponential</span><span class="p">()</span></code>
 
 </h2>
 
@@ -12426,6 +12353,8 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
       <p>Exponential distribution</p>
+
+      <p><strong>init</strong>(self, scale: float) -&gt; None</p>
 
 
 
@@ -12519,8 +12448,7 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
 <h2 id="kima.distributions.Fixed" class="doc doc-heading">
-            <code>Fixed</code>
-
+              <code class="highlight language-python"><span class="n">Fixed</span><span class="p">()</span></code>
 
 </h2>
 
@@ -12529,6 +12457,8 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
       <p>'Fixed' distribution</p>
+
+      <p><strong>init</strong>(self, value: float) -&gt; None</p>
 
 
 
@@ -12643,8 +12573,7 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
 <h2 id="kima.distributions.Gaussian" class="doc doc-heading">
-            <code>Gaussian</code>
-
+              <code class="highlight language-python"><span class="n">Gaussian</span><span class="p">()</span></code>
 
 </h2>
 
@@ -12653,6 +12582,8 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
       <p>Gaussian distribution</p>
+
+      <p><strong>init</strong>(self, loc: float, scale: float) -&gt; None</p>
 
 
 
@@ -12788,8 +12719,7 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
 <h2 id="kima.distributions.HalfGaussian" class="doc doc-heading">
-            <code>HalfGaussian</code>
-
+              <code class="highlight language-python"><span class="n">HalfGaussian</span><span class="p">()</span></code>
 
 </h2>
 
@@ -12798,6 +12728,8 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
       <p>Half-Gaussian distribution</p>
+
+      <p><strong>init</strong>(self, scale: float) -&gt; None</p>
 
 
 
@@ -12912,8 +12844,7 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
 <h2 id="kima.distributions.InverseGamma" class="doc doc-heading">
-            <code>InverseGamma</code>
-
+              <code class="highlight language-python"><span class="n">InverseGamma</span><span class="p">()</span></code>
 
 </h2>
 
@@ -12922,6 +12853,9 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
       <p>Inverse gamma distribution</p>
+
+      <p><strong>init</strong>(self, alpha: float, beta: float) -&gt; None</p>
+<p>Inverse gamma distribution</p>
 
 
 
@@ -13057,8 +12991,7 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
 <h2 id="kima.distributions.InverseMoment" class="doc doc-heading">
-            <code>InverseMoment</code>
-
+              <code class="highlight language-python"><span class="n">InverseMoment</span><span class="p">()</span></code>
 
 </h2>
 
@@ -13067,6 +13000,8 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
       <p>InverseMoment prior</p>
+
+      <p><strong>init</strong>(self, tau: float, kmax: float) -&gt; None</p>
 
 
 
@@ -13202,8 +13137,7 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
 <h2 id="kima.distributions.Kumaraswamy" class="doc doc-heading">
-            <code>Kumaraswamy</code>
-
+              <code class="highlight language-python"><span class="n">Kumaraswamy</span><span class="p">()</span></code>
 
 </h2>
 
@@ -13212,6 +13146,8 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
       <p>Kumaraswamy distribution (similar to a Beta distribution)</p>
+
+      <p><strong>init</strong>(self, a: float, b: float) -&gt; None</p>
 
 
 
@@ -13347,8 +13283,7 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
 <h2 id="kima.distributions.Laplace" class="doc doc-heading">
-            <code>Laplace</code>
-
+              <code class="highlight language-python"><span class="n">Laplace</span><span class="p">()</span></code>
 
 </h2>
 
@@ -13357,6 +13292,8 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
       <p>Laplace distribution</p>
+
+      <p><strong>init</strong>(self, loc: float, scale: float) -&gt; None</p>
 
 
 
@@ -13492,8 +13429,7 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
 <h2 id="kima.distributions.LogUniform" class="doc doc-heading">
-            <code>LogUniform</code>
-
+              <code class="highlight language-python"><span class="n">LogUniform</span><span class="p">()</span></code>
 
 </h2>
 
@@ -13502,6 +13438,8 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
       <p>LogUniform distribution (sometimes called reciprocal or Jeffrey's distribution)</p>
+
+      <p><strong>init</strong>(self, lower: float, upper: float) -&gt; None</p>
 
 
 
@@ -13637,8 +13575,7 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
 <h2 id="kima.distributions.ModifiedLogUniform" class="doc doc-heading">
-            <code>ModifiedLogUniform</code>
-
+              <code class="highlight language-python"><span class="n">ModifiedLogUniform</span><span class="p">()</span></code>
 
 </h2>
 
@@ -13647,6 +13584,8 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
       <p>ModifiedLogUniform distribution</p>
+
+      <p><strong>init</strong>(self, knee: float, upper: float) -&gt; None</p>
 
 
 
@@ -13782,8 +13721,7 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
 <h2 id="kima.distributions.RNG" class="doc doc-heading">
-            <code>RNG</code>
-
+              <code class="highlight language-python"><span class="n">RNG</span><span class="p">()</span></code>
 
 </h2>
 
@@ -13792,6 +13730,8 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
       <p>None</p>
+
+      <p><strong>init</strong>(self, seed: int) -&gt; None</p>
 
 
 
@@ -13861,8 +13801,7 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
 <h2 id="kima.distributions.Rayleigh" class="doc doc-heading">
-            <code>Rayleigh</code>
-
+              <code class="highlight language-python"><span class="n">Rayleigh</span><span class="p">()</span></code>
 
 </h2>
 
@@ -13871,6 +13810,8 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
       <p>Rayleigh distribution</p>
+
+      <p><strong>init</strong>(self, scale: float) -&gt; None</p>
 
 
 
@@ -13985,8 +13926,7 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
 <h2 id="kima.distributions.Triangular" class="doc doc-heading">
-            <code>Triangular</code>
-
+              <code class="highlight language-python"><span class="n">Triangular</span><span class="p">()</span></code>
 
 </h2>
 
@@ -13995,6 +13935,8 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
       <p>Triangular distribution</p>
+
+      <p><strong>init</strong>(self, lower: float, center: float, upper: float) -&gt; None</p>
 
 
 
@@ -14151,8 +14093,7 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
 <h2 id="kima.distributions.TruncatedCauchy" class="doc doc-heading">
-            <code>TruncatedCauchy</code>
-
+              <code class="highlight language-python"><span class="n">TruncatedCauchy</span><span class="p">()</span></code>
 
 </h2>
 
@@ -14161,6 +14102,8 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
       <p>docs</p>
+
+      <p><strong>init</strong>(self, loc: float, scale: float, lower: float, upper: float) -&gt; None</p>
 
 
 
@@ -14338,8 +14281,7 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
 <h2 id="kima.distributions.TruncatedExponential" class="doc doc-heading">
-            <code>TruncatedExponential</code>
-
+              <code class="highlight language-python"><span class="n">TruncatedExponential</span><span class="p">()</span></code>
 
 </h2>
 
@@ -14348,6 +14290,8 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
       <p>Exponential distribution truncated to [lower, upper]</p>
+
+      <p><strong>init</strong>(self, scale: float, lower: float, upper: float) -&gt; None</p>
 
 
 
@@ -14504,8 +14448,7 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
 <h2 id="kima.distributions.TruncatedRayleigh" class="doc doc-heading">
-            <code>TruncatedRayleigh</code>
-
+              <code class="highlight language-python"><span class="n">TruncatedRayleigh</span><span class="p">()</span></code>
 
 </h2>
 
@@ -14514,6 +14457,8 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
       <p>Rayleigh distribution truncated to [lower, upper]</p>
+
+      <p><strong>init</strong>(self, scale: float, lower: float, upper: float) -&gt; None</p>
 
 
 
@@ -14670,8 +14615,7 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
 <h2 id="kima.distributions.Uniform" class="doc doc-heading">
-            <code>Uniform</code>
-
+              <code class="highlight language-python"><span class="n">Uniform</span><span class="p">()</span></code>
 
 </h2>
 
@@ -14680,6 +14624,8 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
       <p>Uniform distribuion in [lower, upper]</p>
+
+      <p><strong>init</strong>(self, lower: float, upper: float) -&gt; None</p>
 
 
 
@@ -14815,8 +14761,7 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
 <h2 id="kima.distributions.UniformAngle" class="doc doc-heading">
-            <code>UniformAngle</code>
-
+              <code class="highlight language-python"><span class="n">UniformAngle</span><span class="p">()</span></code>
 
 </h2>
 
@@ -14825,6 +14770,8 @@ interval $ [{\rm lower}, {\rm upper} ]$.</p>
 
 
       <p>Uniform distribuion in [0, 2*PI]</p>
+
+      <p><strong>init</strong>(self) -&gt; None</p>
 
 
 
