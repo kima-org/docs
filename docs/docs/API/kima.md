@@ -22,9 +22,6 @@ data = RVData('filename.txt', skip=1)
     ::: kima.Data.RVData
         handler: python
         options:
-          show_signature_annotations: false
-          members_order: source
-          heading_level: 5
           filters:
             - "!__"
             - "__init__"
@@ -46,9 +43,6 @@ model = RVmodel(fix=False, npmax=2, data=data)
     ::: kima.RVmodel
         handler: python
         options:
-          docstring_style: "google"
-          heading_level: 5
-          merge_init_into_class: true
           filters:
             - "!RVConditionalPrior"
             - "!TRANSITConditionalPrior"
@@ -61,7 +55,6 @@ model = RVmodel(fix=False, npmax=2, data=data)
     ::: kima.GPmodel
         handler: python
         options:
-          heading_level: 5
           filters:
             - "!RVConditionalPrior"
             - "!TRANSITConditionalPrior"
@@ -73,7 +66,6 @@ model = RVmodel(fix=False, npmax=2, data=data)
     ::: kima.RVFWHMmodel
         handler: python
         options:
-          heading_level: 5
           filters:
             - "!RVConditionalPrior"
             - "!TRANSITConditionalPrior"
@@ -85,7 +77,6 @@ model = RVmodel(fix=False, npmax=2, data=data)
     ::: kima.BINARIESmodel
         handler: python
         options:
-          heading_level: 5
           filters:
             - "!RVConditionalPrior"
             - "!TRANSITConditionalPrior"
@@ -157,38 +148,19 @@ parameter_prior = distributions.Gaussian(10, 1)
         - "!upper"
         - "!__" -->
 
-<!-- 
-show_docstring_functions
-show_docstring_modules
-show_docstring_examples
-show_docstring_raises
-show_docstring_receives
-show_docstring_returns
-show_docstring_warns
-show_docstring_yields 
--->
-<!-- show_root_toc_entry: true
-show_docstring_description: false
-show_docstring_attributes: false
 
-show_properties: false
-heading_level: 4
--->
-
-???+ example "`kima.distributions` API"
+??? example "`kima.distributions` API"
 
     ::: kima.distributions
         handler: python
         options:
           show_root_heading: false
-          show_root_toc_entry: false
           show_bases: false
-          show_labels: true
-          heading_level: 6
           filters:
             - "!__"
             - "!Distribution"
 
+### Keplerian
 
 Finally, even though it sits at the core of what **kima** does, 
 there is the [keplerian][kima.kepler.keplerian] function:
