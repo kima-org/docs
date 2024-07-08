@@ -69,14 +69,14 @@ nav:
 plugins:
   - search
   - mkdocs-jupyter
-  - mkdocstrings
-      # custom_templates: templates
-      # handlers:
-      #   python:
-      #     options:
-      #       show_source: true
-      #       merge_init_into_class: true
-      #       # members_order: "source"
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [../src/kima]
+          options:
+            merge_init_into_class: true
+            show_source: false
+            members_order: "source"
       #       filters:
       #         - "!^_"
       #         - "!__"
