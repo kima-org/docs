@@ -119,7 +119,6 @@ extra_css:
 
 watch:
   - overrides
-  - stylesheets
 
 
 copyright: Copyright © 2018 - 2024 João Faria
