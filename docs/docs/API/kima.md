@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# kima API
+# API documentation for `kima`
 
 ### Data
 
