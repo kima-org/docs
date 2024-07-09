@@ -7,9 +7,10 @@
 
 ### Problems with installation
 
-- Make sure you cloned the repository with `--recursive`, to get the submodules
-- Make sure the version of gcc you are using accepts the option `-std=c++11`.  
-  Feel free to edit the Makefile and change the `CXX` variable
+- We've pre-packaged **kima** so that it can be easily installed with `pip`. If
+  the installation fails on your machine, it could be because you're using an
+  old version of a C++ compiler. Try running `g++ --version` to check the
+  version (or the appropriate command for the compiler you're using).
 
 - If you can't get it to work, [open an issue](https://github.com/kima-org/kima/issues) 
   on GitHub and let's try to fix it.
@@ -19,11 +20,8 @@
 
 - Segmentation faults  
   If you run into a segmentation fault before **kima** even prints anything to
-  the terminal, it might be due to the header of the data files. When reading
-  the data, make sure the `skip` (the third) parameter to the `load` or
-  `load_multi` functions is set correctly. That is, make sure it matches the
-  number of lines in the header of the file(s). If using `load_multi`, also make
-  sure the headers occupy the same number of lines in all files.
+  the terminal, it might be due to an issue reading the data files. Check if the
+  first three columns of the file(s) are numbers and not strings.
   
 
 ### I think something is wrong...
