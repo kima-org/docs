@@ -763,10 +763,11 @@
 
 <h3 id="problems-with-installation">Problems with installation</h3>
 <ul>
-<li>Make sure you cloned the repository with <code>--recursive</code>, to get the submodules</li>
 <li>
-<p>Make sure the version of gcc you are using accepts the option <code>-std=c++11</code>.<br />
-  Feel free to edit the Makefile and change the <code>CXX</code> variable</p>
+<p>We've pre-packaged <strong>kima</strong> so that it can be easily installed with <code>pip</code>. If
+  the installation fails on your machine, it could be because you're using an
+  old version of a C++ compiler. Try running <code>g++ --version</code> to check the
+  version (or the appropriate command for the compiler you're using).</p>
 </li>
 <li>
 <p>If you can't get it to work, <a href="https://github.com/kima-org/kima/issues">open an issue</a> 
@@ -777,11 +778,8 @@
 <ul>
 <li>Segmentation faults<br />
   If you run into a segmentation fault before <strong>kima</strong> even prints anything to
-  the terminal, it might be due to the header of the data files. When reading
-  the data, make sure the <code>skip</code> (the third) parameter to the <code>load</code> or
-  <code>load_multi</code> functions is set correctly. That is, make sure it matches the
-  number of lines in the header of the file(s). If using <code>load_multi</code>, also make
-  sure the headers occupy the same number of lines in all files.</li>
+  the terminal, it might be due to an issue reading the data files. Check if the
+  first three columns of the file(s) are numbers and not strings.</li>
 </ul>
 <h3 id="i-think-something-is-wrong">I think something is wrong...</h3>
 <p>Let us know in the <a href="https://github.com/kima-org/kima/issues">issues</a> if you think
@@ -814,7 +812,7 @@ by email if needed.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-02-14T13:56:12+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-02-14</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-07-09T15:55:17+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-07-09</span>
   </span>
 
     
