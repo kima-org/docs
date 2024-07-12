@@ -13,8 +13,8 @@ interpreter.
 ---
 
 The typical interface with the results of a run is through the
-[`KimaResults`][pykima.results.KimaResults] class created by calling the
-[`kima.load_results`][pykima.results.load_results] function
+[`KimaResults`][kima.pykima.results.KimaResults] class created by calling the
+[`kima.load_results`][kima.pykima.results.load_results] function
 
 ```python
 model ...
@@ -24,29 +24,27 @@ res = kima.load_results(model)
 
 ??? example "`KimaResults` class"
 
-    ::: pykima.results.KimaResults
+    ::: kima.pykima.results.KimaResults
         handler: python
         options:
           show_source: false
-          heading_level: 6
           filters:
             - "!^_"
             - "!ESS"
 
 ??? example "`kima.load_results` API"
 
-    ::: pykima.results.load_results
+    ::: kima.pykima.results.load_results
         handler: python
         options:
           show_source: false
-          heading_level: 6
           filters:
             - "!^_"
 
 
 A number of convenience plots are redirected from the
-[`pykima.display`][pykima.display] module into any
-[`KimaResults`][pykima.results.KimaResults] instance:
+[`pykima.display`][kima.pykima.display] module into any
+[`KimaResults`][kima.pykima.results.KimaResults] instance:
 
 
 ```python
@@ -68,12 +66,32 @@ res.plot_posterior_period()
     documented.
 
 
-??? example "`load_results` class"
+#### Modules
 
-    ::: pykima.display
+??? example "`kima.pykima.analysis` API"
+
+    ::: kima.pykima.analysis
         handler: python
         options:
           show_source: false
-          heading_level: 6
+          filters:
+            - "!^_"
+
+
+??? example "`kima.pykima.display` API"
+
+    ::: kima.pykima.display
+        handler: python
+        options:
+          show_source: false
+          filters:
+            - "!^_"
+
+??? example "`kima.pykima.utils` API"
+
+    ::: kima.pykima.utils
+        handler: python
+        options:
+          show_source: false
           filters:
             - "!^_"

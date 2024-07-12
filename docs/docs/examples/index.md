@@ -1,3 +1,4 @@
+
 # Examples
 
 **kima** provides several examples showing the analysis of standard datasets and some best practices. 
@@ -18,3 +19,4 @@ The following pages describe each example in some depth:
 
 - [_51Peg](51Peg) (note the `_` here, so the function can be a valid Python name)
 - [multi_instrument](multi_instrument)
+- [transiting_planet](transiting_planet)
