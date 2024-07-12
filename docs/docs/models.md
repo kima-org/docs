@@ -185,8 +185,9 @@ planet.
     - $e$ is unitless
     - $M_0$ and $ω$ are in radians
 
-By default, the epoch is set to the first observed time, but it can be changed
-by setting the corresponding attribute of the data:
+By default, the epoch is set to the middle of the observed times ($t_{\rm min} +
+\Delta t / 2$), but it can be changed by setting the corresponding attribute of
+the data:
 
 ```py
 data.M0_epoch = ...
