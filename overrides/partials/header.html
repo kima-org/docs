@@ -68,7 +68,7 @@
         {% include ".icons/material/newspaper-variant-multiple.svg" %}
       </div>
     </div>
-    {% if "search" in config["plugins"] %}
+    {% if "search" in config["plugins"] or "material/search" in config["plugins"] %}
       <label class="md-header__button md-icon" for="__search">
         {% include ".icons/material/magnify.svg" %}
       </label>

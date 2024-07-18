@@ -66,7 +66,6 @@ res.plot_posterior_period()
     documented.
 
 
-#### Modules
 
 ??? example "`kima.pykima.analysis` API"
 
@@ -92,6 +91,6 @@ res.plot_posterior_period()
     ::: kima.pykima.utils
         handler: python
         options:
-          show_source: false
+          members_order: "alphabetical"
           filters:
             - "!^_"
