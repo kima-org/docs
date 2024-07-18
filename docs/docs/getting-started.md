@@ -6,7 +6,7 @@ comments: true
 
 To get started, read in a dataset and choose one of the available [models](/docs/models):
 
-```py
+```python
 import kima
 from kima import RVData, RVmodel
 
@@ -17,14 +17,15 @@ model = RVmodel(fix=True, npmax=1, data=data)
 
 and then run the model
 
-```py
+```python
 kima.run(model, steps=1000)
 ```
 
 The resulting posteriors can be loaded and analysed easily (more information [here](/docs/API/pykima))
 
-```py
+```python
 res = kima.load_results(model)
+res.plot_posterior_periods()
 ```
 
 
