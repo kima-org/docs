@@ -13,8 +13,8 @@ interpreter.
 ---
 
 The typical interface with the results of a run is through the
-[`KimaResults`][kima.pykima.results.KimaResults] class created by calling the
-[`kima.load_results`][kima.pykima.results.load_results] function
+[`KimaResults`][pykima.results.KimaResults] class created by calling the
+[`kima.load_results`][pykima.results.load_results] function
 
 ```python
 model ...

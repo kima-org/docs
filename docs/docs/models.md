@@ -317,13 +317,17 @@ But if this is not what you want, consider using the known object feature.
 In the example above, we specify the prior distribution and its parameters.
 The list of currently implemented distributions is described [here][kima.distributions].
 If you need a distribution that is not yet implemented, consider opening an
-[issue](https://github.com/j-faria/kima/issues){:target="_blank"}.
+[issue](https://github.com/kima-org/kima/issues){:target="_blank"}.
 
 
 
 #### Default priors
 
-Below is the list of default priors which are used if not explicitly re-defined
+Below is the list of default priors which are used if not explicitly re-defined.
+
+- $\Delta t$ is the timespan of the data
+- $\Delta v$ is the span of the RVs
+
 
 === "RVmodel"
 
@@ -331,13 +335,13 @@ Below is the list of default priors which are used if not explicitly re-defined
     ---- | ------- | -----
     `beta_prior`              | activity indicator coefficients                    | Gaussian(0, 1)
     `Cprior`                  | systemic velocity                                  | Uniform($v_{\rm min}$, $v_{\rm max}$)
+    `offsets_prior`           | between-instrument offsets                         | Uniform( -$\Delta v$, $\Delta v$ )
+    `Jprior`                  | instrument jitter                                  | ModifiedLogUniform( 1, $\Delta v$)
     `stellar_jitter_prior`    | stellar jitter                                     | Fixed(0)
     `slope_prior`             | slope of linear trend                              | Gaussian( 0, $\Delta v / \Delta t$ )
     `quadr_prior`             | coefficient of quadratic trend                     | Gaussian( 0, $\Delta v / \Delta t^2$ )
     `cubic_prior`             | coefficient of cubic trend                         | Gaussian( 0, $\Delta v / \Delta t^3$ )
-    `offsets_prior`           | between-instrument offsets                         | Uniform( -$\Delta v$, $\Delta v$ )
-    `nu_prior`                | degrees of freedom of Student-t likelihood         | LogUniform(2, 1000)
-
+    `nu_prior`                | degrees of freedom of Student-t likelihood         | LogUniform( 2, 1000 )
 
 === "GPmodel"
 
@@ -345,10 +349,11 @@ Below is the list of default priors which are used if not explicitly re-defined
     ---- | ------- | -----
     `beta_prior`              | activity indicator coefficients                    | Gaussian(0, 1)
     `Cprior`                  | systemic velocity                                  | Uniform($v_{\rm min}$, $v_{\rm max}$)
+    `offsets_prior`           | between-instrument offsets                         | Uniform( -$\Delta v$, $\Delta v$ )
+    `Jprior`                  | instrument jitter                                  | ModifiedLogUniform( 1, $\Delta v$)
     `slope_prior`             | slope of linear trend                              | Gaussian( 0, $\Delta v / \Delta t$ )
     `quadr_prior`             | coefficient of quadratic trend                     | Gaussian( 0, $\Delta v / \Delta t^2$ )
     `cubic_prior`             | coefficient of cubic trend                         | Gaussian( 0, $\Delta v / \Delta t^3$ )
-    `offsets_prior`           | between-instrument offsets                         | Uniform( -$\Delta v$, $\Delta v$ )
     `eta1_prior`              | GP "amplitude"                                     | LogUniform(0.1, 100)
     `eta2_prior`              | GP correlation timescale                           | LogUniform(1, $\Delta t$)
     `eta3_prior`              | GP period                                          | Uniform(10, 40)
@@ -363,10 +368,10 @@ And for the orbital parameters
 === "orbital parameters"
 
     - orbital period(s), `conditional.Pprior`  
-      LogUniform(1, $\Delta t$), where $\Delta t$ is the timespan of the data
+      LogUniform(1, $\Delta t$)
     
     - semi-amplitude(s), `conditional.Kprior`  
-      Uniform(1, $\Delta v$), where $\Delta v$ is the span of the RVs
+      Uniform(0, $\Delta v$)
 
     - orbital eccentricity(ies), `conditional.eprior`  
       Uniform(0, 1)

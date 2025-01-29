@@ -33,9 +33,9 @@ there is a problem or if something doesn't work as expected.
 ### I could do with some help analysing RVs
 
 **kima** is free software and provided *as is* within the terms of the
-[LICENSE](https://github.com/j-faria/kima/blob/master/LICENSE). However, we are
+[LICENSE](https://github.com/kima-org/kima/blob/master/LICENSE). However, we are
 available to help if we can! The [issue
-tracker](https://github.com/j-faria/kima/issues) is a good place to ask
+tracker](https://github.com/kima-org/kima/issues) is a good place to ask
 questions about **kima** or the analysis of RV data, but feel free to contact us
 by email if needed.
 

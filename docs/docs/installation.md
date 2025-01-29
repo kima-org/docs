@@ -4,6 +4,8 @@ comments: true
 
 # Installation
 
+### From PyPI
+
 **kima** can easily be installed using pip:
 
 ```sh
@@ -25,6 +27,8 @@ If the following badge is green, things should be working
     be easy to install (or update) on most platforms. See [this official
     page](https://cmake.org/download/) for more information.
 
+
+### From the repository
 
 Alternatively, you can also clone the [:material-github: GitHub repository](https://github.com/kima-org/kima.git)
 
