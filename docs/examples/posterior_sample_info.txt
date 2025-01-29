@@ -1,0 +1,3 @@
+#  level assignment, log likelihood, tiebreaker, ID.
+# 
+10 -569.501621 0.569296 1
