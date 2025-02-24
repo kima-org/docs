@@ -52,10 +52,13 @@ nav:
     - 51Peg: docs/examples/51Peg.ipynb
     - multi_instrument: docs/examples/multi_instrument.ipynb
     - transiting_planet: docs/examples/transiting_planet.ipynb
+    - jitter_rhk: docs/examples/jitter_rhk.ipynb
+
   - API:
     - docs/API/index.md
     - kima: docs/API/kima.md
     - pykima: docs/API/pykima.md
+
   - docs/troubleshooting.md
   - docs/contributing.md
 #   - Building Models:
