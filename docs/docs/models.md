@@ -100,11 +100,11 @@ Below we include a more mathematical description of each model.
 
     This model considers a Gaussian process as a surrogate model for the 
     stellar activity signal present in the RVs. It uses the now standard 
-    quasi-periodic kernel with four hyper-parameters:
+    quasi-periodic kernel[^1] with four hyper-parameters:
 
     $$ k(t_i, t_j) = \eta_1^2
-                     \exp\left[-\frac{t_i - t_j}{\eta_2^2}\right]
-                     \exp\left[-\frac{\sin^2\left(\frac{t_i - t_j}{\eta_3}\right)}{2 \eta_4^2}\right]
+                     \exp\left[-\frac{(t_i - t_j)^2}{2\eta_2^2}\right]
+                     \exp\left[-\frac{2\sin^2\left(\frac{\pi (t_i - t_j)}{\eta_3}\right)}{\eta_4^2}\right]
     $$
 
     Most of the same settings as for the `RVmodel` are available, except for
@@ -392,3 +392,17 @@ And for the orbital parameters
     (which can be [Fixed][kima.distributions.Fixed], for example).
     In essence, the number of free parameters is usually not a very useful quantity by itself.
 
+
+{%
+    include-markdown "./default_priors.md"
+    start="<!--intro-start-->"
+    end="<!--intro-end-->"
+%}
+
+
+#### References
+
+[^1]: Rasmussen, C.E. and Williams, C.K.I. (2006) *Gaussian processes for machine learning*.   
+      The MIT Press, ISBN 0-262-18253-X  
+      [link](https://gaussianprocess.org/gpml/), 
+      [PDF](https://gaussianprocess.org/gpml/chapters/RW.pdf)
