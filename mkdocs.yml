@@ -72,6 +72,7 @@ nav:
 plugins:
   - search
   - mkdocs-jupyter
+  - include-markdown
   - mkdocstrings:
       handlers:
         python:
@@ -108,6 +109,9 @@ markdown_extensions:
       generic: true
   - pymdownx.tabbed:
       alternate_style: true
+  - toc:
+      permalink: true
+      title: On this page
 
 extra_javascript:
   - javascripts/katex.js
