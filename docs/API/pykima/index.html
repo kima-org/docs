@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -658,7 +658,9 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
   
   
   
@@ -667,7 +669,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      On this page
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1558,7 +1560,9 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
   
   
   
@@ -1567,7 +1571,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      On this page
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -2403,7 +2407,7 @@
 
 
 
-<h1 id="api-documentation-for-pykima">API documentation for <code>pykima</code></h1>
+<h1 id="api-documentation-for-pykima">API documentation for <code>pykima</code><a class="headerlink" href="#api-documentation-for-pykima" title="Permanent link">&para;</a></h1>
 <p><strong>kima</strong> itself is written in C++, to leverage the increased performance. The
 Python bindings created with <a href="https://github.com/wjakob/nanobind">nanobind</a>
 expose most of the functionality of the data (<a class="autorefs autorefs-internal" href="../kima/#kima.Data.RVData">RVData</a>) and
@@ -2532,6 +2536,7 @@ interpreter.</p>
 
 
 
+
   <div class="doc doc-children">
 
 
@@ -2551,12 +2556,13 @@ interpreter.</p>
       <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
-</h2>
+<a href="#kima.pykima.results.KimaResults.parameter_priors" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>A list of priors which can be indexed using self.indices</p>
+
     </div>
 
 </div>
@@ -2573,7 +2579,7 @@ interpreter.</p>
       <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
   </span>
 
-</h2>
+<a href="#kima.pykima.results.KimaResults.load" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -2667,6 +2673,7 @@ file. Defaults to None.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -2677,7 +2684,7 @@ file. Defaults to None.</p>
 <h2 id="kima.pykima.results.KimaResults.save_pickle" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">save_pickle</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">postfix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.results.KimaResults.save_pickle" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -2748,6 +2755,7 @@ unique name will be generated from the properties of the model.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -2758,7 +2766,7 @@ unique name will be generated from the properties of the model.</p>
 <h2 id="kima.pykima.results.KimaResults.save_zip" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">save_zip</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.results.KimaResults.save_zip" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -2812,6 +2820,7 @@ unique name will be generated from the properties of the model.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -2822,13 +2831,14 @@ unique name will be generated from the properties of the model.</p>
 <h2 id="kima.pykima.results.KimaResults.get_marginals" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_marginals</span><span class="p">()</span></code>
 
-</h2>
+<a href="#kima.pykima.results.KimaResults.get_marginals" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Get the marginal posteriors from the posterior_sample matrix.
 They go into self.T, self.A, self.E, etc</p>
+
 
     </div>
 
@@ -2840,12 +2850,13 @@ They go into self.T, self.A, self.E, etc</p>
 <h2 id="kima.pykima.results.KimaResults.get_medians" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_medians</span><span class="p">()</span></code>
 
-</h2>
+<a href="#kima.pykima.results.KimaResults.get_medians" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>return the median values of all the parameters</p>
+
 
     </div>
 
@@ -2857,7 +2868,7 @@ They go into self.T, self.A, self.E, etc</p>
 <h2 id="kima.pykima.results.KimaResults.log_prior" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">log_prior</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.results.KimaResults.log_prior" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -2902,6 +2913,7 @@ They go into self.T, self.A, self.E, etc</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">log_prior</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">posterior_sample</span><span class="p">)</span>
 </code></pre></div>
 </details>
+
     </div>
 
 </div>
@@ -2916,7 +2928,7 @@ They go into self.T, self.A, self.E, etc</p>
       <small class="doc doc-label doc-label-cached"><code>cached</code></small>
   </span>
 
-</h2>
+<a href="#kima.pykima.results.KimaResults.map_sample" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -2993,6 +3005,7 @@ represent the posterior</em>.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -3003,7 +3016,7 @@ represent the posterior</em>.</p>
 <h2 id="kima.pykima.results.KimaResults.maximum_likelihood_sample" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">maximum_likelihood_sample</span><span class="p">(</span><span class="n">Np</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">printit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">from_posterior</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.results.KimaResults.maximum_likelihood_sample" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -3081,6 +3094,7 @@ represent the posterior</em>.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -3091,7 +3105,7 @@ represent the posterior</em>.</p>
 <h2 id="kima.pykima.results.KimaResults.median_sample" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">median_sample</span><span class="p">(</span><span class="n">Np</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">printit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.results.KimaResults.median_sample" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -3151,6 +3165,7 @@ median sample is usually not the appropriate choice for plots, etc. </p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -3161,7 +3176,7 @@ median sample is usually not the appropriate choice for plots, etc. </p>
 <h2 id="kima.pykima.results.KimaResults.eval_model" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">eval_model</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_planets</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">include_known_object</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">include_transiting_planet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">include_indicator_correlations</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">include_trend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">single_planet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">except_planet</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.results.KimaResults.eval_model" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -3355,6 +3370,7 @@ object and transiting planets.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">eval_model</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">posterior_sample</span><span class="p">)</span>
 </code></pre></div>
 </details>
+
     </div>
 
 </div>
@@ -3365,7 +3381,7 @@ object and transiting planets.</p>
 <h2 id="kima.pykima.results.KimaResults.planet_model" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">planet_model</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_known_object</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">include_transiting_planet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">single_planet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">except_planet</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.results.KimaResults.planet_model" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -3519,6 +3535,7 @@ posterior sample <code>p</code> use:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">res</span><span class="o">.</span><span class="n">planet_model</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">except_planet</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
 
+
     </div>
 
 </div>
@@ -3529,7 +3546,7 @@ posterior sample <code>p</code> use:</p>
 <h2 id="kima.pykima.results.KimaResults.stochastic_model" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">stochastic_model</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_std</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">derivative</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_jitters</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.results.KimaResults.stochastic_model" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -3648,6 +3665,7 @@ prediction</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">stochastic_model</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">posterior_sample</span><span class="p">)</span>
 </code></pre></div>
 </details>
+
     </div>
 
 </div>
@@ -3658,7 +3676,7 @@ prediction</p>
 <h2 id="kima.pykima.results.KimaResults.full_model" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">full_model</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.results.KimaResults.full_model" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -3733,6 +3751,7 @@ times</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -3743,7 +3762,7 @@ times</p>
 <h2 id="kima.pykima.results.KimaResults.burst_model" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">burst_model</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.results.KimaResults.burst_model" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -3815,6 +3834,7 @@ useful for plotting the RV model together with the original data.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -3825,12 +3845,13 @@ useful for plotting the RV model together with the original data.</p>
 <h2 id="kima.pykima.results.KimaResults.from_prior" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">from_prior</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.results.KimaResults.from_prior" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Generate <code>n</code> samples from the priors for all parameters.</p>
+
 
     </div>
 
@@ -3842,7 +3863,7 @@ useful for plotting the RV model together with the original data.</p>
 <h2 id="kima.pykima.results.KimaResults.print_results" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">print_results</span><span class="p">(</span><span class="n">show_prior</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.results.KimaResults.print_results" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -3886,6 +3907,7 @@ useful for plotting the RV model together with the original data.</p>
   <p>This function is heavily inspired by a similar implementation in
 <a href="https://johannesbuchner.github.io/UltraNest/index.html">UltraNest</a>.</p>
 </details>
+
     </div>
 
 </div>
@@ -4055,6 +4077,7 @@ moreSamples</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div></details>
@@ -4092,6 +4115,7 @@ documented.</p>
 
 
 
+
   <div class="doc doc-children">
 
 
@@ -4108,7 +4132,7 @@ documented.</p>
 <h2 id="kima.pykima.analysis.np_most_probable" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">np_most_probable</span><span class="p">(</span><span class="n">results</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.analysis.np_most_probable" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -4146,6 +4170,7 @@ documented.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -4156,7 +4181,7 @@ documented.</p>
 <h2 id="kima.pykima.analysis.np_bayes_factor_threshold" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">np_bayes_factor_threshold</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.analysis.np_bayes_factor_threshold" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -4211,6 +4236,7 @@ documented.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -4221,7 +4247,7 @@ documented.</p>
 <h2 id="kima.pykima.analysis.np_posterior_threshold" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">np_posterior_threshold</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.analysis.np_posterior_threshold" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -4276,6 +4302,7 @@ posterior probability threshold.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -4286,7 +4313,7 @@ posterior probability threshold.</p>
 <h2 id="kima.pykima.analysis.get_planet_mass" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_planet_mass</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">star_mass</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">full_output</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.analysis.get_planet_mass" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -4550,6 +4577,7 @@ taken into account in the calculation.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -4560,7 +4588,7 @@ taken into account in the calculation.</p>
 <h2 id="kima.pykima.analysis.get_planet_semimajor_axis" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_planet_semimajor_axis</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">star_mass</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">full_output</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.analysis.get_planet_semimajor_axis" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -4766,6 +4794,7 @@ taken into account in the calculation.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -4776,7 +4805,7 @@ taken into account in the calculation.</p>
 <h2 id="kima.pykima.analysis.get_planet_mass_and_semimajor_axis" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_planet_mass_and_semimajor_axis</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">star_mass</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">full_output</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.analysis.get_planet_mass_and_semimajor_axis" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -4798,6 +4827,7 @@ star_mass [Msun]</p>
         M is the output of get_planet_mass
         A is the output of get_planet_semimajor_axis</p>
 
+
     </div>
 
 </div>
@@ -4808,7 +4838,7 @@ star_mass [Msun]</p>
 <h2 id="kima.pykima.analysis.FIP" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">FIP</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_peaks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">oversampling</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.analysis.FIP" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -4927,6 +4957,7 @@ star_mass [Msun]</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -4937,7 +4968,7 @@ star_mass [Msun]</p>
 <h2 id="kima.pykima.analysis.find_outliers" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">find_outliers</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">sample</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">full_output</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.analysis.find_outliers" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -4950,6 +4981,7 @@ the probability Td is larger than Gd (by a factor of <code>threshold</code>), th
 is flagged as an outlier. The function returns an "outlier mask". If 
 <code>full_output</code> is True, it also returns the ratio Td/Gd.</p>
 
+
     </div>
 
 </div>
@@ -4960,7 +4992,7 @@ is flagged as an outlier. The function returns an "outlier mask". If
 <h2 id="kima.pykima.analysis.detection_limits" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">detection_limits</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">star_mass</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">Np</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">semi_amplitude</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">semi_major_axis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">logX</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_mask</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">remove_nan</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_eccentricity</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">K_lines</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">smooth</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">smooth_degree</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.analysis.detection_limits" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -5198,6 +5230,7 @@ array is in units of Earth masses, <code>bins</code> is in days.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -5208,7 +5241,7 @@ array is in units of Earth masses, <code>bins</code> is in days.</p>
 <h2 id="kima.pykima.analysis.hpd_grid" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">hpd_grid</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">bw_method</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">roundto</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.analysis.hpd_grid" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -5302,6 +5335,7 @@ works for multimodal distributions, returning more than one mode.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -5331,6 +5365,7 @@ works for multimodal distributions, returning more than one mode.</p>
 
 
 
+
   <div class="doc doc-children">
 
 
@@ -5347,7 +5382,7 @@ works for multimodal distributions, returning more than one mode.</p>
 <h2 id="kima.pykima.display.plot_posterior_np" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">plot_posterior_np</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_ESS</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_detected</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_probabilities</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_title</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.display.plot_posterior_np" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -5520,6 +5555,7 @@ works for multimodal distributions, returning more than one mode.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -5530,7 +5566,7 @@ works for multimodal distributions, returning more than one mode.</p>
 <h2 id="kima.pykima.display.plot_posterior_period" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">plot_posterior_period</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">plims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">logx</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">kde_bw</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_peaks</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_prior</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_year</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_timespan</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_aliases</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_known_object</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_transiting_planet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">separate_colors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">return_bins</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mark_periods</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mark_periods_text</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.display.plot_posterior_period" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -5831,6 +5867,7 @@ works for multimodal distributions, returning more than one mode.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -5841,7 +5878,7 @@ works for multimodal distributions, returning more than one mode.</p>
 <h2 id="kima.pykima.display.plot_PKE" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">plot_PKE</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_known_object</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_transiting_planet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_prior</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_aliases</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reorder_P</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sort_by_increasing_P</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">points</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">colors_np</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">gridsize</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.display.plot_PKE" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -5849,6 +5886,7 @@ works for multimodal distributions, returning more than one mode.</p>
         <p>Plot the 2d histograms of the posteriors for semi-amplitude and orbital
 period and for eccentricity and orbital period. If <code>points</code> is True, plot
 each posterior sample, else plot hexbins</p>
+
 
     </div>
 
@@ -5860,13 +5898,14 @@ each posterior sample, else plot hexbins</p>
 <h2 id="kima.pykima.display.plot_gp" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">plot_gp</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">Np</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ranges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_prior</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fig</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">hist_kwargs</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.display.plot_gp" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Plot histograms for the GP hyperparameters. If Np is not None, highlight
 the samples with Np Keplerians.</p>
+
 
     </div>
 
@@ -5878,13 +5917,14 @@ the samples with Np Keplerians.</p>
 <h2 id="kima.pykima.display.plot_gp_rvfwhm" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">plot_gp_rvfwhm</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">Np</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ranges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_prior</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fig</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">hist_kwargs</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.display.plot_gp_rvfwhm" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Plot histograms for the GP hyperparameters. If Np is not None, highlight
 the samples with Np Keplerians.</p>
+
 
     </div>
 
@@ -5896,12 +5936,13 @@ the samples with Np Keplerians.</p>
 <h2 id="kima.pykima.display.plot_gp_corner" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">plot_gp_corner</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">include_jitters</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ranges</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.display.plot_gp_corner" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Corner plot for the GP hyperparameters</p>
+
 
     </div>
 
@@ -5913,12 +5954,13 @@ the samples with Np Keplerians.</p>
 <h2 id="kima.pykima.display.corner_planet_parameters" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">corner_planet_parameters</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">fig</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Np</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">true_values</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">period_ranges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_known_object</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_transiting_planet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">KO_Np</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">TR_Np</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_prior</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">wrap_M0</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">replace_angles_with_mass</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">star_mass</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">a_factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.display.corner_planet_parameters" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Corner plots of the posterior samples for the planet parameters</p>
+
 
     </div>
 
@@ -5930,7 +5972,7 @@ the samples with Np Keplerians.</p>
 <h2 id="kima.pykima.display.hist_vsys" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">hist_vsys</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">show_offsets</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">specific</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_prior</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.display.hist_vsys" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -6019,6 +6061,7 @@ between-instrument offsets. (if the model has multiple instruments).</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -6029,12 +6072,13 @@ between-instrument offsets. (if the model has multiple instruments).</p>
 <h2 id="kima.pykima.display.hist_jitter" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">hist_jitter</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">show_prior</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_stats</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_title</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.display.hist_jitter" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Plot the histogram of the posterior for the additional white noise</p>
+
 
     </div>
 
@@ -6046,12 +6090,13 @@ between-instrument offsets. (if the model has multiple instruments).</p>
 <h2 id="kima.pykima.display.hist_correlations" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">hist_correlations</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">show_prior</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.display.hist_correlations" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Plot the histogram of the posterior for the activity correlations</p>
+
 
     </div>
 
@@ -6063,12 +6108,13 @@ between-instrument offsets. (if the model has multiple instruments).</p>
 <h2 id="kima.pykima.display.hist_trend" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">hist_trend</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">per_year</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_prior</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_title</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.display.hist_trend" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Plot the histogram of the posterior for the coefficients of the trend</p>
+
 
     </div>
 
@@ -6080,12 +6126,13 @@ between-instrument offsets. (if the model has multiple instruments).</p>
 <h2 id="kima.pykima.display.hist_MA" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">hist_MA</span><span class="p">(</span><span class="n">res</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.display.hist_MA" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Plot the histogram of the posterior for the MA parameters</p>
+
 
     </div>
 
@@ -6097,12 +6144,13 @@ between-instrument offsets. (if the model has multiple instruments).</p>
 <h2 id="kima.pykima.display.hist_nu" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">hist_nu</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">show_prior</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.display.hist_nu" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Plot the histogram of the posterior for the Student-t degrees of freedom</p>
+
 
     </div>
 
@@ -6114,12 +6162,13 @@ between-instrument offsets. (if the model has multiple instruments).</p>
 <h2 id="kima.pykima.display.plot_RVData" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">plot_RVData</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.display.plot_RVData" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Simple plot of RV data</p>
+
 
     </div>
 
@@ -6131,7 +6180,7 @@ between-instrument offsets. (if the model has multiple instruments).</p>
 <h2 id="kima.pykima.display.phase_plot" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">phase_plot</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">sample</span><span class="p">,</span> <span class="n">phase_axs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sort_by_increasing_P</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sort_by_decreasing_K</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">highlight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">highlight_points</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">only</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">add_titles</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_gls_residuals</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.display.phase_plot" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -6351,6 +6400,7 @@ between-instrument offsets. (if the model has multiple instruments).</p>
   <p>This is probably the most complicated function in the whole package! For
 one, the layout of the axes in the figure may not always be optimal.</p>
 </details>
+
     </div>
 
 </div>
@@ -6361,7 +6411,7 @@ one, the layout of the axes in the figure may not always be optimal.</p>
 <h2 id="kima.pykima.display.plot_random_samples_multiseries" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">plot_random_samples_multiseries</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">ncurves</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">over</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">ntt</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">show_vsys</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">isolate_known_object</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">include_jitters</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">just_rvs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">full_plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">highest_likelihood</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.display.plot_random_samples_multiseries" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -6371,6 +6421,7 @@ A total of <code>ncurves</code> random samples are chosen, and the Keplerian
 curves are calculated covering 100 + <code>over</code>% of the data timespan.
 If the model has a GP component, the prediction is calculated using the
 GP hyperparameters for each of the random samples.</p>
+
 
     </div>
 
@@ -6403,6 +6454,7 @@ GP hyperparameters for each of the random samples.</p>
 
 
 
+
   <div class="doc doc-children">
 
 
@@ -6419,13 +6471,14 @@ GP hyperparameters for each of the random samples.</p>
 <h2 id="kima.pykima.utils.Fixed" class="doc doc-heading">
               <code class="highlight language-python"><span class="n">Fixed</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.Fixed" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
 
         <p>Not a real distribution, just a parameter fixed at a given <code>value</code></p>
+
 
 
 
@@ -6451,12 +6504,13 @@ GP hyperparameters for each of the random samples.</p>
 <h3 id="kima.pykima.utils.Fixed.logpdf" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">logpdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code>
 
-</h3>
+<a href="#kima.pykima.utils.Fixed.logpdf" class="headerlink" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
 
         <p>Logarithm of the probability density function</p>
+
 
     </div>
 
@@ -6468,12 +6522,13 @@ GP hyperparameters for each of the random samples.</p>
 <h3 id="kima.pykima.utils.Fixed.pdf" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code>
 
-</h3>
+<a href="#kima.pykima.utils.Fixed.pdf" class="headerlink" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
 
         <p>Probability density function: 1.0 if x==value, otherwise 0.0</p>
+
 
     </div>
 
@@ -6485,12 +6540,13 @@ GP hyperparameters for each of the random samples.</p>
 <h3 id="kima.pykima.utils.Fixed.rvs" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">rvs</span><span class="p">()</span></code>
 
-</h3>
+<a href="#kima.pykima.utils.Fixed.rvs" class="headerlink" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
 
         <p>Random sample (always returns <code>value</code>)</p>
+
 
     </div>
 
@@ -6511,13 +6567,14 @@ GP hyperparameters for each of the random samples.</p>
 <h2 id="kima.pykima.utils.ZeroDist" class="doc doc-heading">
               <code class="highlight language-python"><span class="n">ZeroDist</span><span class="p">()</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.ZeroDist" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
 
         <p>A dummy probability distribution which always returns 0.0</p>
+
 
 
 
@@ -6552,12 +6609,13 @@ GP hyperparameters for each of the random samples.</p>
 <h2 id="kima.pykima.utils.apply_argsort" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">apply_argsort</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.apply_argsort" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Apply <code>arr1</code>.argsort() on <code>arr2</code>, along <code>axis</code>.</p>
+
 
     </div>
 
@@ -6569,12 +6627,13 @@ GP hyperparameters for each of the random samples.</p>
 <h2 id="kima.pykima.utils.chdir" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">chdir</span><span class="p">(</span><span class="nb">dir</span><span class="p">,</span> <span class="n">create</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.chdir" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>A simple context manager to switch directories temporarily</p>
+
 
     </div>
 
@@ -6586,12 +6645,13 @@ GP hyperparameters for each of the random samples.</p>
 <h2 id="kima.pykima.utils.clipped_mean" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">clipped_mean</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.clipped_mean" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Mean of <code>arr</code> between <code>min</code> and <code>max</code></p>
+
 
     </div>
 
@@ -6603,12 +6663,13 @@ GP hyperparameters for each of the random samples.</p>
 <h2 id="kima.pykima.utils.clipped_std" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">clipped_std</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.clipped_std" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Standard deviation of <code>arr</code> between <code>min</code> and <code>max</code></p>
+
 
     </div>
 
@@ -6620,7 +6681,7 @@ GP hyperparameters for each of the random samples.</p>
 <h2 id="kima.pykima.utils.date_date_to_jd" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">date_date_to_jd</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.date_date_to_jd" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -6723,6 +6784,7 @@ year before 1 A.D. is 0, 10 B.C. is year -9.</p>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">2446113.75</span>
 </code></pre></div>
 
+
     </div>
 
 </div>
@@ -6733,7 +6795,7 @@ year before 1 A.D. is 0, 10 B.C. is year -9.</p>
 <h2 id="kima.pykima.utils.date_datetime_to_jd" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">date_datetime_to_jd</span><span class="p">(</span><span class="n">date</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.date_datetime_to_jd" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -6803,6 +6865,7 @@ year before 1 A.D. is 0, 10 B.C. is year -9.</p>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="go">2446113.75</span>
 </code></pre></div>
 
+
     </div>
 
 </div>
@@ -6813,7 +6876,7 @@ year before 1 A.D. is 0, 10 B.C. is year -9.</p>
 <h2 id="kima.pykima.utils.date_days_to_hmsm" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">date_days_to_hmsm</span><span class="p">(</span><span class="n">days</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.date_days_to_hmsm" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -6934,6 +6997,7 @@ Precision beyond microseconds is rounded to the nearest microsecond.</p>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">(2, 24, 0, 0)</span>
 </code></pre></div>
 
+
     </div>
 
 </div>
@@ -6944,7 +7008,7 @@ Precision beyond microseconds is rounded to the nearest microsecond.</p>
 <h2 id="kima.pykima.utils.date_hmsm_to_days" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">date_hmsm_to_days</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sec</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">micro</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.date_hmsm_to_days" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -7059,6 +7123,7 @@ Precision beyond microseconds is rounded to the nearest microsecond.</p>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">0.25</span>
 </code></pre></div>
 
+
     </div>
 
 </div>
@@ -7069,7 +7134,7 @@ Precision beyond microseconds is rounded to the nearest microsecond.</p>
 <h2 id="kima.pykima.utils.date_jd_to_date" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">date_jd_to_date</span><span class="p">(</span><span class="n">jd</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.date_jd_to_date" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -7160,6 +7225,7 @@ year before 1 A.D. is 0, 10 B.C. is year -9.</p>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">(1985, 2, 17.25)</span>
 </code></pre></div>
 
+
     </div>
 
 </div>
@@ -7170,7 +7236,7 @@ year before 1 A.D. is 0, 10 B.C. is year -9.</p>
 <h2 id="kima.pykima.utils.date_jd_to_mjd" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">date_jd_to_mjd</span><span class="p">(</span><span class="n">jd</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.date_jd_to_mjd" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -7210,6 +7276,7 @@ year before 1 A.D. is 0, 10 B.C. is year -9.</p>
         <p>Returns
     mjd (float): Modified Julian Day</p>
 
+
     </div>
 
 </div>
@@ -7220,7 +7287,7 @@ year before 1 A.D. is 0, 10 B.C. is year -9.</p>
 <h2 id="kima.pykima.utils.date_mjd_to_jd" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">date_mjd_to_jd</span><span class="p">(</span><span class="n">mjd</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.date_mjd_to_jd" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -7260,6 +7327,7 @@ year before 1 A.D. is 0, 10 B.C. is year -9.</p>
         <p>Returns
     jd (float): Julian Day</p>
 
+
     </div>
 
 </div>
@@ -7270,7 +7338,7 @@ year before 1 A.D. is 0, 10 B.C. is year -9.</p>
 <h2 id="kima.pykima.utils.distribution_rvs" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">distribution_rvs</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.distribution_rvs" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -7324,6 +7392,7 @@ year before 1 A.D. is 0, 10 B.C. is year -9.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -7334,12 +7403,13 @@ year before 1 A.D. is 0, 10 B.C. is year -9.</p>
 <h2 id="kima.pykima.utils.distribution_support" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">distribution_support</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.distribution_support" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Return the support of a distribution</p>
+
 
     </div>
 
@@ -7351,13 +7421,14 @@ year before 1 A.D. is 0, 10 B.C. is year -9.</p>
 <h2 id="kima.pykima.utils.find_constrained_invgamma" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">find_constrained_invgamma</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">upp</span><span class="p">,</span> <span class="n">low_tail</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">upp_tail</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.find_constrained_invgamma" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Find the parameters of the inverse gamma distribution that is constrained
 between <code>low</code> and <code>upp</code> with tail probabilities <code>low_tail</code> and <code>upp_tail</code>.</p>
+
 
     </div>
 
@@ -7369,12 +7440,13 @@ between <code>low</code> and <code>upp</code> with tail probabilities <code>low_
 <h2 id="kima.pykima.utils.find_prior_limits" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">find_prior_limits</span><span class="p">(</span><span class="n">prior</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.find_prior_limits" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Find lower and upper limits of a prior from the kima_model_setup.txt file.</p>
+
 
     </div>
 
@@ -7386,12 +7458,13 @@ between <code>low</code> and <code>upp</code> with tail probabilities <code>low_
 <h2 id="kima.pykima.utils.find_prior_parameters" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">find_prior_parameters</span><span class="p">(</span><span class="n">prior</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.find_prior_parameters" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Find parameters of a prior from the kima_model_setup.txt file.</p>
+
 
     </div>
 
@@ -7403,7 +7476,7 @@ between <code>low</code> and <code>upp</code> with tail probabilities <code>low_
 <h2 id="kima.pykima.utils.get_gaussian_prior_vsys" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_gaussian_prior_vsys</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">use_ptp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_std</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_value</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.get_gaussian_prior_vsys" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -7501,7 +7574,7 @@ between <code>low</code> and <code>upp</code> with tail probabilities <code>low_
       <tbody>
           <tr class="doc-section-item">
 <td><code>prior</code></td>            <td>
-                  <code><a class="autorefs autorefs-internal" title="kima.distributions.Gaussian" href="../kima/#kima.distributions.Gaussian">Gaussian</a></code>
+                  <code><a class="autorefs autorefs-internal" title="Gaussian() (kima.distributions.Gaussian)" href="../kima/#kima.distributions.Gaussian">Gaussian</a></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -7535,6 +7608,7 @@ between <code>low</code> and <code>upp</code> with tail probabilities <code>low_
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -7545,7 +7619,7 @@ between <code>low</code> and <code>upp</code> with tail probabilities <code>low_
 <h2 id="kima.pykima.utils.get_gaussian_priors_individual_offsets" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_gaussian_priors_individual_offsets</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">use_ptp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_std</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_value</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.get_gaussian_priors_individual_offsets" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -7644,7 +7718,7 @@ the data.</p>
       <tbody>
           <tr class="doc-section-item">
 <td><code>prior</code></td>            <td>
-                  <code><a class="autorefs autorefs-internal" title="kima.distributions.Gaussian" href="../kima/#kima.distributions.Gaussian">Gaussian</a></code>
+                  <code><a class="autorefs autorefs-internal" title="Gaussian() (kima.distributions.Gaussian)" href="../kima/#kima.distributions.Gaussian">Gaussian</a></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -7681,6 +7755,7 @@ the data.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -7691,12 +7766,13 @@ the data.</p>
 <h2 id="kima.pykima.utils.get_instrument_name" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_instrument_name</span><span class="p">(</span><span class="n">data_file</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.get_instrument_name" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Try to find the instrument name from a filename</p>
+
 
     </div>
 
@@ -7708,7 +7784,7 @@ the data.</p>
 <h2 id="kima.pykima.utils.get_mean_longitude" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_mean_longitude</span><span class="p">(</span><span class="n">M0</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">fold</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">deg</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.get_mean_longitude" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -7818,6 +7894,7 @@ periastron w (given by λ = M0 + w).</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -7828,7 +7905,7 @@ periastron w (given by λ = M0 + w).</p>
 <h2 id="kima.pykima.utils.get_planet_teq" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_planet_teq</span><span class="p">(</span><span class="n">Tstar</span><span class="o">=</span><span class="mi">5777</span><span class="p">,</span> <span class="n">Rstar</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.get_planet_teq" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -7953,6 +8030,7 @@ periastron w (given by λ = M0 + w).</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -7963,12 +8041,13 @@ periastron w (given by λ = M0 + w).</p>
 <h2 id="kima.pykima.utils.get_prior" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_prior</span><span class="p">(</span><span class="n">prior</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.get_prior" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Return a scipt.stats-like prior from a kima_model_setup.txt prior</p>
+
 
     </div>
 
@@ -7980,12 +8059,13 @@ periastron w (given by λ = M0 + w).</p>
 <h2 id="kima.pykima.utils.get_star_name" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_star_name</span><span class="p">(</span><span class="n">data_file</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.get_star_name" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Find star name (usually works for approx. standard filenames)</p>
+
 
     </div>
 
@@ -7997,7 +8077,7 @@ periastron w (given by λ = M0 + w).</p>
 <h2 id="kima.pykima.utils.get_transit_probability" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_transit_probability</span><span class="p">(</span><span class="n">Rstar</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.get_transit_probability" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -8005,6 +8085,7 @@ periastron w (given by λ = M0 + w).</p>
         <p>Transit probability, simple. Eq 6.1 in Exoplanet Handbook
 Rstar: stellar radius [Rsun]
 a: semi-major axis [au]</p>
+
 
     </div>
 
@@ -8016,7 +8097,7 @@ a: semi-major axis [au]</p>
 <h2 id="kima.pykima.utils.hide_stdout" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">hide_stdout</span><span class="p">()</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.hide_stdout" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -8029,6 +8110,7 @@ a: semi-major axis [au]</p>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span> <span class="c1"># no output</span>
 </code></pre></div>
 
+
     </div>
 
 </div>
@@ -8039,7 +8121,7 @@ a: semi-major axis [au]</p>
 <h2 id="kima.pykima.utils.lighten_color" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">lighten_color</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.lighten_color" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -8054,6 +8136,7 @@ a: semi-major axis [au]</p>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">lighten_color</span><span class="p">((</span><span class="mf">.3</span><span class="p">,</span> <span class="mf">.55</span><span class="p">,</span> <span class="mf">.1</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">)</span>
 </code></pre></div>
 
+
     </div>
 
 </div>
@@ -8064,7 +8147,7 @@ a: semi-major axis [au]</p>
 <h2 id="kima.pykima.utils.mean_anomaly_from_epoch" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">mean_anomaly_from_epoch</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">M0</span><span class="p">,</span> <span class="n">epoch</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.mean_anomaly_from_epoch" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -8174,6 +8257,7 @@ epoch M0, and epoch.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -8184,7 +8268,7 @@ epoch M0, and epoch.</p>
 <h2 id="kima.pykima.utils.mean_anomaly_from_time_periastron" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">mean_anomaly_from_time_periastron</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Tp</span><span class="p">,</span> <span class="n">deg</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.mean_anomaly_from_time_periastron" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -8293,6 +8377,7 @@ epoch M0, and epoch.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -8303,7 +8388,7 @@ epoch M0, and epoch.</p>
 <h2 id="kima.pykima.utils.percentile68_ranges" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">percentile68_ranges</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.percentile68_ranges" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -8358,6 +8443,7 @@ epoch M0, and epoch.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -8368,7 +8454,7 @@ epoch M0, and epoch.</p>
 <h2 id="kima.pykima.utils.percentile68_ranges_latex" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">percentile68_ranges_latex</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">collapse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">include_dollar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.percentile68_ranges_latex" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -8425,6 +8511,7 @@ math mode string</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -8435,7 +8522,7 @@ math mode string</p>
 <h2 id="kima.pykima.utils.percentile_ranges" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">percentile_ranges</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">percentile</span><span class="o">=</span><span class="mi">68</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.percentile_ranges" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -8486,6 +8573,7 @@ and <code>max</code>.</p>
       </tbody>
     </table>
 
+
     </div>
 
 </div>
@@ -8496,7 +8584,7 @@ and <code>max</code>.</p>
 <h2 id="kima.pykima.utils.read_datafile" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">read_datafile</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span> <span class="n">skip</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.read_datafile" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -8506,6 +8594,7 @@ Can be str, in which case the last column is assumed to contain an integer
 identifier of the instrument.
 Or list, in which case each element will be one different filename
 containing three columns each.</p>
+
 
     </div>
 
@@ -8517,12 +8606,13 @@ containing three columns each.</p>
 <h2 id="kima.pykima.utils.read_datafile_rvfwhm" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">read_datafile_rvfwhm</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span> <span class="n">skip</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.read_datafile_rvfwhm" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Read data from <code>datafile</code> for multiple instruments and RV-FWHM data.</p>
+
 
     </div>
 
@@ -8534,12 +8624,13 @@ containing three columns each.</p>
 <h2 id="kima.pykima.utils.read_datafile_rvfwhmrhk" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">read_datafile_rvfwhmrhk</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span> <span class="n">skip</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.read_datafile_rvfwhmrhk" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Read data from <code>datafile</code> for multiple instruments and RV-FWHM-RHK data.</p>
+
 
     </div>
 
@@ -8551,12 +8642,13 @@ containing three columns each.</p>
 <h2 id="kima.pykima.utils.rms" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">rms</span><span class="p">(</span><span class="n">array</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.rms" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Root mean square of array</p>
+
 
     </div>
 
@@ -8568,12 +8660,13 @@ containing three columns each.</p>
 <h2 id="kima.pykima.utils.show_tips" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">show_tips</span><span class="p">()</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.show_tips" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Show a few tips on how to use kima (but only sometimes)</p>
+
 
     </div>
 
@@ -8585,12 +8678,13 @@ containing three columns each.</p>
 <h2 id="kima.pykima.utils.wrms" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">wrms</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span></code>
 
-</h2>
+<a href="#kima.pykima.utils.wrms" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
     <div class="doc doc-contents ">
 
         <p>Weighted root mean square of array, given weights</p>
+
 
     </div>
 
@@ -8623,7 +8717,7 @@ containing three columns each.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-01-29T08:00:45+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-01-29</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="January 29, 2025 08:00:45"><span class="timeago" datetime="2025-01-29T08:00:45+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="January 29, 2025 08:00:45">2025-01-29</span>
   </span>
 
     
@@ -8679,7 +8773,7 @@ containing three columns each.</p>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.share", "navigation.instant", "navigation.sections", "navigation.indexes", "navigation.prune", "content.code.annotate", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="../../../js/timeago.min.js"></script>
       
