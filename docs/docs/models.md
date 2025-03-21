@@ -302,12 +302,13 @@ model.conditional.Pprior = Gaussian(15, 0.1)
 1. :warning: Note that this is a uniform distribution from 1 m/s to 20 m/s,
 unlike the `scipy.stats.uniform` distribution which would have support [1, 21] !
 
+!!! warning
 
-While it might seem counter-intuitive at first, the priors for the
-orbital parameters are *the same* for all of the $N_p$ planets. This is intentional!
-But if this is not what you want, consider using the known object feature.
+    While it might seem counter-intuitive at first, **the priors for the
+    orbital parameters are *the same* for all the $N_p$ planets**. This is intentional!
+    But if this is not what you want, consider using the [known object](#known-object-mode) feature.
 
-!!! warning "`conditional` priors"
+!!! info "`conditional` priors"
 
     The priors for the orbital parameters of the $N_p$ Keplerians
     are included in the `model.conditional` object because these priors are 
@@ -321,46 +322,15 @@ If you need a distribution that is not yet implemented, consider opening an
 
 
 
-#### Default priors
+### Default priors
 
 Below is the list of default priors which are used if not explicitly re-defined.
 
-- $\Delta t$ is the timespan of the data
-- $\Delta v$ is the span of the RVs
-
-
-=== "RVmodel"
-
-    name | meaning | prior
-    ---- | ------- | -----
-    `beta_prior`              | activity indicator coefficients                    | Gaussian(0, 1)
-    `Cprior`                  | systemic velocity                                  | Uniform($v_{\rm min}$, $v_{\rm max}$)
-    `offsets_prior`           | between-instrument offsets                         | Uniform( -$\Delta v$, $\Delta v$ )
-    `Jprior`                  | instrument jitter                                  | ModifiedLogUniform( 1, $\Delta v$)
-    `stellar_jitter_prior`    | stellar jitter                                     | Fixed(0)
-    `slope_prior`             | slope of linear trend                              | Gaussian( 0, $\Delta v / \Delta t$ )
-    `quadr_prior`             | coefficient of quadratic trend                     | Gaussian( 0, $\Delta v / \Delta t^2$ )
-    `cubic_prior`             | coefficient of cubic trend                         | Gaussian( 0, $\Delta v / \Delta t^3$ )
-    `nu_prior`                | degrees of freedom of Student-t likelihood         | LogUniform( 2, 1000 )
-
-=== "GPmodel"
-
-    name | meaning | prior
-    ---- | ------- | -----
-    `beta_prior`              | activity indicator coefficients                    | Gaussian(0, 1)
-    `Cprior`                  | systemic velocity                                  | Uniform($v_{\rm min}$, $v_{\rm max}$)
-    `offsets_prior`           | between-instrument offsets                         | Uniform( -$\Delta v$, $\Delta v$ )
-    `Jprior`                  | instrument jitter                                  | ModifiedLogUniform( 1, $\Delta v$)
-    `slope_prior`             | slope of linear trend                              | Gaussian( 0, $\Delta v / \Delta t$ )
-    `quadr_prior`             | coefficient of quadratic trend                     | Gaussian( 0, $\Delta v / \Delta t^2$ )
-    `cubic_prior`             | coefficient of cubic trend                         | Gaussian( 0, $\Delta v / \Delta t^3$ )
-    `eta1_prior`              | GP "amplitude"                                     | LogUniform(0.1, 100)
-    `eta2_prior`              | GP correlation timescale                           | LogUniform(1, $\Delta t$)
-    `eta3_prior`              | GP period                                          | Uniform(10, 40)
-    `eta4_prior`              | recurrence timescale or (inverse) harmonic complexity | Uniform(0.2, 5)
-    `eta5_prior`              | "amplitude" for the magnetic cycle kernel          | LogUniform(0.1, 100)
-    `eta6_prior`              | period for the magnetic cycle kernel               | LogUniform(365, 5*$\Delta t$)
-    `eta7_prior`              | recurrence timescale for the magnetic cycle kernel | Uniform(1, 10)
+{%
+    include-markdown "./default_priors.md"
+    start="<!--intro-start-->"
+    end="<!--intro-end-->"
+%}
 
 
 And for the orbital parameters
@@ -393,14 +363,10 @@ And for the orbital parameters
     In essence, the number of free parameters is usually not a very useful quantity by itself.
 
 
-{%
-    include-markdown "./default_priors.md"
-    start="<!--intro-start-->"
-    end="<!--intro-end-->"
-%}
 
 
-#### References
+
+## References
 
 [^1]: Rasmussen, C.E. and Williams, C.K.I. (2006) *Gaussian processes for machine learning*.   
       The MIT Press, ISBN 0-262-18253-X  
