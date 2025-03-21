@@ -25,7 +25,7 @@ jobs:
 
       - name: Install docs packages
         run: |
-          pip installmkdocs-include-markdown-plugin
+          pip install mkdocs-include-markdown-plugin
 
       - name: Import
         run: |
