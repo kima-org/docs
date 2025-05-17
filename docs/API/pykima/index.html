@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -93,6 +93,23 @@
   };
   Headway.init(HW_config);
 </script>
+
+
+<!-- Gurubase Widget -->
+<script async src="https://widget.gurubase.io/widget.latest.min.js"
+  defer
+  data-widget-id="cTWHFC_DlXs72SaofZxey6rO7bPeLru9U_CgKpw9Wg8"
+  data-text="Ask AI"
+  data-margins='{"bottom": "0.6rem", "right": "1rem"}'
+  data-light-mode="auto"
+  id="guru-widget-id">
+</script>
+
+<!-- widget IDs -->
+<!-- data-widget-id="4DCNV_wUJvZbaJGIR3SjkWEfvd2scWuhF5KCVvif_HY" -->
+<!-- data-widget-id="cTWHFC_DlXs72SaofZxey6rO7bPeLru9U_CgKpw9Wg8" -->
+<!--  -->
+
 
   </head>
   
@@ -294,6 +311,7 @@
       <a href="../../" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Welcome
     
@@ -314,6 +332,7 @@
     <li class="md-nav__item">
       <a href="../../installation/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Installation
@@ -336,6 +355,7 @@
       <a href="../../getting-started/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Getting started
     
@@ -356,6 +376,7 @@
     <li class="md-nav__item">
       <a href="../../models/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Models
@@ -391,6 +412,7 @@
       
     
     
+    
       
         
         
@@ -406,10 +428,10 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../../examples/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Examples
@@ -445,6 +467,7 @@
       <a href="../../examples/51Peg/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     51Peg
     
@@ -466,6 +489,7 @@
     <li class="md-nav__item">
       <a href="../../examples/multi_instrument/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Multiple instruments
@@ -489,6 +513,7 @@
       <a href="../../examples/transiting_planet/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     (Mono-)Transiting planets
     
@@ -510,6 +535,7 @@
     <li class="md-nav__item">
       <a href="../../examples/jitter_rhk/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Variable jitter
@@ -551,6 +577,7 @@
       
     
     
+    
       
         
         
@@ -566,10 +593,10 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     API
@@ -605,6 +632,7 @@
       <a href="../kima/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     kima
     
@@ -636,6 +664,7 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+  
   <span class="md-ellipsis">
     pykima
     
@@ -647,6 +676,7 @@
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
+  
   
   <span class="md-ellipsis">
     pykima
@@ -1088,6 +1118,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#kima.pykima.display.plot_random_samples" class="md-nav__link">
+    <span class="md-ellipsis">
+      plot_random_samples
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#kima.pykima.display.plot_random_samples_multiseries" class="md-nav__link">
     <span class="md-ellipsis">
       plot_random_samples_multiseries
@@ -1515,6 +1554,7 @@
       <a href="../../troubleshooting/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Troubleshooting
     
@@ -1535,6 +1575,7 @@
     <li class="md-nav__item">
       <a href="../../contributing/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Contributing
@@ -1984,6 +2025,15 @@
   <a href="#kima.pykima.display.phase_plot" class="md-nav__link">
     <span class="md-ellipsis">
       phase_plot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kima.pykima.display.plot_random_samples" class="md-nav__link">
+    <span class="md-ellipsis">
+      plot_random_samples
     </span>
   </a>
   
@@ -2754,6 +2804,8 @@ unique name will be generated from the properties of the model.</p>
           </tr>
       </tbody>
     </table>
+        <p>Returns:
+    filename (str): The name of the pickle file where the model was saved</p>
 
 
     </div>
@@ -3014,7 +3066,7 @@ represent the posterior</em>.</p>
 
 
 <h2 id="kima.pykima.results.KimaResults.maximum_likelihood_sample" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">maximum_likelihood_sample</span><span class="p">(</span><span class="n">Np</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">printit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">from_posterior</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">maximum_likelihood_sample</span><span class="p">(</span><span class="n">Np</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">printit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">from_posterior</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">optimize</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 <a href="#kima.pykima.results.KimaResults.maximum_likelihood_sample" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -3084,7 +3136,24 @@ random choices, between different calls to <code>load_results</code>.</p>
             <td>
               <div class="doc-md-description">
                 <p>If True, return the highest likelihood sample <em>from those that
-represent the posterior</em>.</p>
+represent the posterior</em>. </p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>optimize</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, optimize the likelihood, starting from the maximum
+likelihood sample.</p>
               </div>
             </td>
             <td>
@@ -4020,8 +4089,25 @@ Warning: untested!</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The total number of posterior samples will be equal to ESS *
-moreSamples</p>
+                <p>The total number of posterior samples will be equal to 
+ESS * moreSamples</p>
+              </div>
+            </td>
+            <td>
+                  <code>1</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>n_resample_logX</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Number of times to resample the logX values in order to estimate the
+NS uncertainty in logZ, I, etc.</p>
               </div>
             </td>
             <td>
@@ -4836,7 +4922,7 @@ star_mass [Msun]</p>
 
 
 <h2 id="kima.pykima.analysis.FIP" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">FIP</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_peaks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">oversampling</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">FIP</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_peaks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">oversampling</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">include_aliases</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_ESS</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 <a href="#kima.pykima.analysis.FIP" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -4862,7 +4948,7 @@ star_mass [Msun]</p>
                 <code>res</code>
             </td>
             <td>
-                  <code><span title="kima.KimaResults">KimaResults</span></code>
+                  <code><a class="autorefs autorefs-internal" title="kima.KimaResults" href="#kima.pykima.results.KimaResults">KimaResults</a></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5406,7 +5492,7 @@ works for multimodal distributions, returning more than one mode.</p>
                 <code>res</code>
             </td>
             <td>
-                  <code><span title="kima.KimaResults">KimaResults</span></code>
+                  <code><a class="autorefs autorefs-internal" title="kima.KimaResults" href="#kima.pykima.results.KimaResults">KimaResults</a></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5590,7 +5676,7 @@ works for multimodal distributions, returning more than one mode.</p>
                 <code>res</code>
             </td>
             <td>
-                  <code><span title="kima.KimaResults">KimaResults</span></code>
+                  <code><a class="autorefs autorefs-internal" title="kima.KimaResults" href="#kima.pykima.results.KimaResults">KimaResults</a></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5970,7 +6056,7 @@ the samples with Np Keplerians.</p>
 
 
 <h2 id="kima.pykima.display.hist_vsys" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">hist_vsys</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">show_offsets</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">specific</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_prior</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">hist_vsys</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_offsets</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_other</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">specific</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_prior</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#kima.pykima.display.hist_vsys" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -5997,7 +6083,7 @@ between-instrument offsets. (if the model has multiple instruments).</p>
                 <code>res</code>
             </td>
             <td>
-                  <code><span title="kima.KimaResults">KimaResults</span></code>
+                  <code><a class="autorefs autorefs-internal" title="kima.KimaResults" href="#kima.pykima.results.KimaResults">KimaResults</a></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6022,6 +6108,23 @@ between-instrument offsets. (if the model has multiple instruments).</p>
             </td>
             <td>
                   <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>show_other</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to plot the histogram for the constant offsets corresponding
+to the activity indicators in the corresponding models</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -6058,6 +6161,21 @@ between-instrument offsets. (if the model has multiple instruments).</p>
                   <code>False</code>
             </td>
           </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Keyword arguments passed to <code>matplotlib.pyplot.hist</code></p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
       </tbody>
     </table>
 
@@ -6070,7 +6188,7 @@ between-instrument offsets. (if the model has multiple instruments).</p>
 
 
 <h2 id="kima.pykima.display.hist_jitter" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">hist_jitter</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">show_prior</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_stats</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_title</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">hist_jitter</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">show_prior</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_stats</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_title</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_stellar_jitter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#kima.pykima.display.hist_jitter" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -6178,7 +6296,7 @@ between-instrument offsets. (if the model has multiple instruments).</p>
 
 
 <h2 id="kima.pykima.display.phase_plot" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">phase_plot</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">sample</span><span class="p">,</span> <span class="n">phase_axs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sort_by_increasing_P</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sort_by_decreasing_K</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">highlight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">highlight_points</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">only</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">add_titles</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_gls_residuals</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">phase_plot</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">sample</span><span class="p">,</span> <span class="n">phase_axs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xaxis</span><span class="o">=</span><span class="s1">&#39;mean anomaly&#39;</span><span class="p">,</span> <span class="n">sort_by_increasing_P</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sort_by_decreasing_K</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">highlight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">highlight_points</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">only</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_titles</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_gls_residuals</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_outliers</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fancy_ticks</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#kima.pykima.display.phase_plot" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -6204,7 +6322,7 @@ between-instrument offsets. (if the model has multiple instruments).</p>
                 <code>res</code>
             </td>
             <td>
-                  <code><span title="kima.KimaResults">KimaResults</span></code>
+                  <code><a class="autorefs autorefs-internal" title="kima.KimaResults" href="#kima.pykima.results.KimaResults">KimaResults</a></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6245,6 +6363,22 @@ between-instrument offsets. (if the model has multiple instruments).</p>
             </td>
             <td>
                   <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>xaxis</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Plot the phase curve against 'mean anomaly' or 'mean longitude'</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;mean anomaly&#39;</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -6329,7 +6463,7 @@ between-instrument offsets. (if the model has multiple instruments).</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>add_titles</code>
+                <code>show_titles</code>
             </td>
             <td>
                   <code><span title="bool">bool</span></code>
@@ -6377,6 +6511,38 @@ between-instrument offsets. (if the model has multiple instruments).</p>
           </tr>
           <tr class="doc-section-item">
             <td>
+                <code>show_outliers</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Show points identified as outliers</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>fancy_ticks</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Use fancy ticks for angles</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
                 <code>**kwargs</code>
             </td>
             <td>
@@ -6408,8 +6574,247 @@ one, the layout of the axes in the figure may not always be optimal.</p>
 <div class="doc doc-object doc-function">
 
 
+<h2 id="kima.pykima.display.plot_random_samples" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">plot_random_samples</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">ncurves</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">over</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">ntt</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">show_vsys</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">isolate_known_object</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">isolate_transiting_planet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">include_jitters_in_points</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_jitters_in_predict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">full_plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_outliers</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#kima.pykima.display.plot_random_samples" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Display the RV data together with curves from the posterior predictive. </p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>ncurves</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Number of posterior predictive curves to show. Defaults to 50.</p>
+              </div>
+            </td>
+            <td>
+                  <code>50</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>samples</code>
+            </td>
+            <td>
+                  <code><span title="array">array</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Specific posterior sample(s) to plot. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>over</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Curves are calculated covering 100*(1 + <code>over</code>)% of the timespan of
+the data. Defaults to 0.1.</p>
+              </div>
+            </td>
+            <td>
+                  <code>0.1</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ntt</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Number of points for the time grid. Defaults to 5000.</p>
+              </div>
+            </td>
+            <td>
+                  <code>5000</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>show_vsys</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Show the systemic velocity for each sample. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>isolate_known_object</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Show the Keplerian curves for the known object(s), if present in the
+model. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>isolate_transiting_planet</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Show the Keplerian curves for the transiting planet(s), if present
+in the model. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>include_jitters_in_points</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Include an extra error bar for each point which takes into account
+the jitter(s). This only works when ncurves=1. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>include_jitters_in_predict</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Include the jitters in the GP prediction (if model has a GP). This
+should almost always be True! Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>full_plot</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True (and ncurves=1), adds panels with the residuals from the
+given sample and their GLS periodogram. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>show_outliers</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Highlight the outliers (if likelihood is Student-t). Defaults to
+False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>fig</code></td>            <td>
+                  <code><span title="matplotlib.figure.Figure">Figure</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The figure with the plot</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h2 id="kima.pykima.display.plot_random_samples_multiseries" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">plot_random_samples_multiseries</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">ncurves</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">over</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">ntt</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">show_vsys</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">isolate_known_object</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">include_jitters</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">just_rvs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">full_plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">highest_likelihood</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">plot_random_samples_multiseries</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">ncurves</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">over</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">ntt</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">show_vsys</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">isolate_known_object</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">include_jitters_in_points</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_jitters_in_predict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">just_rvs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">full_plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">highest_likelihood</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#kima.pykima.display.plot_random_samples_multiseries" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -8749,7 +9154,7 @@ containing three columns each.</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright © 2018 - 2024 João Faria
+      Copyright © 2018 - 2025 João Faria
     </div>
   
   
@@ -8770,10 +9175,12 @@ containing three columns each.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.share", "navigation.instant", "navigation.sections", "navigation.indexes", "navigation.prune", "content.code.annotate", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.share", "navigation.instant", "navigation.sections", "navigation.indexes", "navigation.prune", "content.code.annotate", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../../js/timeago.min.js"></script>
       
