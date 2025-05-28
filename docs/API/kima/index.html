@@ -1043,66 +1043,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kima.RVmodel.KeplerianConditionalPrior" class="md-nav__link">
-    <span class="md-ellipsis">
-      KeplerianConditionalPrior
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="KeplerianConditionalPrior">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kima.RVmodel.KeplerianConditionalPrior.Kprior" class="md-nav__link">
-    <span class="md-ellipsis">
-      Kprior
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kima.RVmodel.KeplerianConditionalPrior.Pprior" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pprior
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kima.RVmodel.KeplerianConditionalPrior.eprior" class="md-nav__link">
-    <span class="md-ellipsis">
-      eprior
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kima.RVmodel.KeplerianConditionalPrior.phiprior" class="md-nav__link">
-    <span class="md-ellipsis">
-      phiprior
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kima.RVmodel.KeplerianConditionalPrior.wprior" class="md-nav__link">
-    <span class="md-ellipsis">
-      wprior
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#kima.RVmodel.RVmodel" class="md-nav__link">
     <span class="md-ellipsis">
       RVmodel
@@ -4711,66 +4651,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kima.RVmodel.KeplerianConditionalPrior" class="md-nav__link">
-    <span class="md-ellipsis">
-      KeplerianConditionalPrior
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="KeplerianConditionalPrior">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kima.RVmodel.KeplerianConditionalPrior.Kprior" class="md-nav__link">
-    <span class="md-ellipsis">
-      Kprior
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kima.RVmodel.KeplerianConditionalPrior.Pprior" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pprior
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kima.RVmodel.KeplerianConditionalPrior.eprior" class="md-nav__link">
-    <span class="md-ellipsis">
-      eprior
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kima.RVmodel.KeplerianConditionalPrior.phiprior" class="md-nav__link">
-    <span class="md-ellipsis">
-      phiprior
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kima.RVmodel.KeplerianConditionalPrior.wprior" class="md-nav__link">
-    <span class="md-ellipsis">
-      wprior
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#kima.RVmodel.RVmodel" class="md-nav__link">
     <span class="md-ellipsis">
       RVmodel
@@ -7930,8 +7810,14 @@ from a set of files or arrays</p>
 <h4 id="example">Example:<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">kima</span><span class="w"> </span><span class="kn">import</span> <span class="n">RVData</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">data</span> <span class="o">=</span> <span class="n">RVData</span><span class="p">(</span><span class="s1">&#39;filename.txt&#39;</span><span class="p">,</span> <span class="n">skip</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">data</span> <span class="o">=</span> <span class="n">RVData</span><span class="p">(</span><span class="s1">&#39;filename.txt&#39;</span><span class="p">,</span> <span class="n">skip</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#(1)!</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span> <span class="c1">#(2)!</span>
 </code></pre></div>
+<ol>
+<li>With <code>skip=1</code>, the first line of the file will be ignored.</li>
+<li>A very simple plot of the dataset.</li>
+</ol>
 <details class="example">
 <summary><code>kima.RVData</code> API</summary>
 
@@ -8750,158 +8636,6 @@ Args:
 
 
 
-
-<div class="doc doc-object doc-class">
-
-
-
-<h2 id="kima.RVmodel.KeplerianConditionalPrior" class="doc doc-heading">
-              <code class="highlight language-python"><span class="n">KeplerianConditionalPrior</span><span class="p">()</span></code>
-
-<a href="#kima.RVmodel.KeplerianConditionalPrior" class="headerlink" title="Permanent link">&para;</a></h2>
-
-
-    <div class="doc doc-contents ">
-
-
-        <p><strong>init</strong>(self) -&gt; None</p>
-
-
-
-
-
-
-
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-<div class="doc doc-object doc-attribute">
-
-
-
-<h3 id="kima.RVmodel.KeplerianConditionalPrior.Kprior" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">Kprior</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-property"><code>property</code></small>
-  </span>
-
-<a href="#kima.RVmodel.KeplerianConditionalPrior.Kprior" class="headerlink" title="Permanent link">&para;</a></h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Prior for the semi-amplitude(s)</p>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-attribute">
-
-
-
-<h3 id="kima.RVmodel.KeplerianConditionalPrior.Pprior" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">Pprior</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-property"><code>property</code></small>
-  </span>
-
-<a href="#kima.RVmodel.KeplerianConditionalPrior.Pprior" class="headerlink" title="Permanent link">&para;</a></h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Prior for the orbital period(s)</p>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-attribute">
-
-
-
-<h3 id="kima.RVmodel.KeplerianConditionalPrior.eprior" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">eprior</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-property"><code>property</code></small>
-  </span>
-
-<a href="#kima.RVmodel.KeplerianConditionalPrior.eprior" class="headerlink" title="Permanent link">&para;</a></h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Prior for the orbital eccentricity(ies)</p>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-attribute">
-
-
-
-<h3 id="kima.RVmodel.KeplerianConditionalPrior.phiprior" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">phiprior</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-property"><code>property</code></small>
-  </span>
-
-<a href="#kima.RVmodel.KeplerianConditionalPrior.phiprior" class="headerlink" title="Permanent link">&para;</a></h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Prior for the mean anomaly(ies)</p>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-attribute">
-
-
-
-<h3 id="kima.RVmodel.KeplerianConditionalPrior.wprior" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">wprior</span></code>
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-property"><code>property</code></small>
-  </span>
-
-<a href="#kima.RVmodel.KeplerianConditionalPrior.wprior" class="headerlink" title="Permanent link">&para;</a></h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Prior for the argument(s) of periastron</p>
-
-    </div>
-
-</div>
-
-
-
-
-
-  </div>
-
-    </div>
-
-</div>
 
 <div class="doc doc-object doc-class">
 
@@ -19743,7 +19477,7 @@ there is the <a class="autorefs autorefs-internal" href="#kima.kepler.keplerian"
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="July 9, 2024 16:18:55"><span class="timeago" datetime="2024-07-09T16:18:55+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="July 9, 2024 16:18:55">2024-07-09</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 28, 2025 11:24:17 UTC"><span class="timeago" datetime="2025-05-28T11:24:17+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 28, 2025 11:24:17 UTC">2025-05-28</span>
   </span>
 
     
