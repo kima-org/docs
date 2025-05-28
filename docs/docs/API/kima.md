@@ -11,11 +11,18 @@ Most analyses will start by using the [`RVData`][kima.Data.RVData] class to load
 from a set of files or arrays
 
 #### Example:
+
 ```py
 from kima import RVData
 
-data = RVData('filename.txt', skip=1)
+data = RVData('filename.txt', skip=1) #(1)!
+
+data.plot() #(2)!
 ```
+
+1. With `skip=1`, the first line of the file will be ignored.
+2. A very simple plot of the dataset.
+
 
 ??? example "`kima.RVData` API"
 
@@ -44,7 +51,8 @@ model = RVmodel(fix=False, npmax=2, data=data)
         handler: python
         options:
           filters:
-            - "!RVConditionalPrior"
+            - "!KeplerianConditionalPrior"
+            - "!ApodizedKeplerianConditionalPrior"
             - "!TRANSITConditionalPrior"
             - "!__"
             - "__init__"
@@ -53,29 +61,22 @@ model = RVmodel(fix=False, npmax=2, data=data)
 ??? tip "`kima.GPmodel` API"
 
     ::: kima.GPmodel
-        handler: python
         options:
           filters:
-            - "!RVConditionalPrior"
-            - "!TRANSITConditionalPrior"
             - "!__"
 
 
 ??? tip "`kima.RVFWHMmodel` API"
 
     ::: kima.RVFWHMmodel
-        handler: python
         options:
           filters:
-            - "!RVConditionalPrior"
-            - "!TRANSITConditionalPrior"
             - "!__"
 
 
 ??? tip "`kima.BINARIESmodel` API"
 
     ::: kima.BINARIESmodel
-        handler: python
         options:
           filters:
             - "!RVConditionalPrior"
