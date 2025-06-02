@@ -87,6 +87,7 @@ plugins:
   - git-revision-date-localized:
       type: timeago
       enable_creation_date: false
+  - marimo
 
 markdown_extensions:
   - attr_list

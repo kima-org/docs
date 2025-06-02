@@ -25,7 +25,7 @@ jobs:
 
       - name: Install docs packages
         run: |
-          pip install mkdocs-include-markdown-plugin
+          pip install mkdocs-include-markdown-plugin mkdocs-marimo
 
       - name: Import
         run: |

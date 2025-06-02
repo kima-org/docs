@@ -165,28 +165,26 @@ $$
 $$
 
 
-<details class="boilerplate">
+<details class="example">
 <summary>check this out!</summary>
-<p>
-<div>
-<marimo-iframe data-height="450px" data-show-code="false">
-```python
+
+```python {marimo}
 import marimo as mo
 import matplotlib.pyplot as plt
 import numpy as np
 ```
 
-```python
+```python {marimo}
 Np = mo.ui.slider(0, 10)
 fix = mo.ui.checkbox()
 mo.md(f"`model = RVmodel(fix=`{fix}`, npmax=`{Np}`, data=data)`")
 ```
 
-```python
+```python {marimo}
 pmf = np.zeros(11)
 fig, ax = plt.subplots(figsize=(6, 3))
 ax.set(xticks=np.arange(11), yticks=[0, 1], 
-       xlabel="$N_p$", ylabel="prior", ylim=[0, 1.1])
+      xlabel="$N_p$", ylabel="prior", ylim=[0, 1.1])
 
 if fix.value:
     pmf[Np.value] = 1
@@ -196,9 +194,7 @@ else:
 ax.stem(np.arange(11), pmf)
 mo.mpl.interactive(fig)
 ```
-</marimo-iframe>
-</div>
-</p>
+
 </details>
 
 
