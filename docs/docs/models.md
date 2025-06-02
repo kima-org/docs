@@ -165,13 +165,14 @@ $$
 $$
 
 
-<details class="example">
+<!-- <details class="example">
 <summary>check this out!</summary>
 
 ```python {marimo}
 import marimo as mo
 import matplotlib.pyplot as plt
-import numpy as np
+from numpy import zeros, arange
+plt.style.use('fast')
 ```
 
 ```python {marimo}
@@ -181,21 +182,32 @@ mo.md(f"`model = RVmodel(fix=`{fix}`, npmax=`{Np}`, data=data)`")
 ```
 
 ```python {marimo}
-pmf = np.zeros(11)
-fig, ax = plt.subplots(figsize=(6, 3))
-ax.set(xticks=np.arange(11), yticks=[0, 1], 
-      xlabel="$N_p$", ylabel="prior", ylim=[0, 1.1])
+def plot_prior(Np, fix):
+  pmf = zeros(11)
+  if fix:
+      pmf[Np] = 1
+  else:
+      pmf[:Np+1] = 1 / (Np + 1)
+    
+  plt.figure(figsize=(6, 3))
+  #plt.set(xticks=arange(11), yticks=[0, 1], 
+  #      xlabel="$N_p$", ylabel="prior", ylim=[0, 1.1])
+  plt.stem(arange(11), pmf)
+  return plt.gca()
+```
 
-if fix.value:
-    pmf[Np.value] = 1
-else:
-    pmf[:Np.value+1] = 1 / (Np.value + 1)
+```python {marimo}
+Np.value
+```
 
-ax.stem(np.arange(11), pmf)
-mo.mpl.interactive(fig)
+```python {marimo}
+plot_prior(Np.value, fix.value)
+#mo.mpl.interactive(fig)
 ```
 
 </details>
+ -->
+
 
 
 By default, each of the $N_p$ planets has 5 orbital parameters
