@@ -14,9 +14,10 @@ pip install kima
 
 [![PyPI version](https://badge.fury.io/py/kima.svg)](https://badge.fury.io/py/kima)
 
-Installation is tested on Linux, Windows, and MacOS regularly.
-If the following badge is green, things should be working 
-(even if it's red, go ahead and try it anyway :shrug:)
+Installation is tested on Linux :simple-linux:, Windows
+:fontawesome-brands-windows:, and MacOS :material-apple: regularly. If the
+following badge is green, things should be working (even if it's red, go ahead
+and try it anyway :shrug:)
 
 [![test pip install](https://github.com/kima-org/test-pip-install/actions/workflows/python-package.yml/badge.svg)](https://github.com/kima-org/test-pip-install/actions/workflows/python-package.yml){:target="_blank"}
 
@@ -41,6 +42,13 @@ and install the package locally
 ```sh
 cd kima
 pip install -e .
+```
+
+An even easier way to install the latest version directly from the repository is
+to use [`uv`](https://docs.astral.sh/uv/):
+
+```sh
+uv pip install "git+https://github.com/kima-org/kima"
 ```
 
  
