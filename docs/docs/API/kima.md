@@ -79,8 +79,19 @@ model = RVmodel(fix=False, npmax=2, data=data)
     ::: kima.BINARIESmodel
         options:
           filters:
-            - "!RVConditionalPrior"
-            - "!TRANSITConditionalPrior"
+            - "!__"
+
+
+
+The `model.conditional` object contained in each model can be used to define the
+priors for the orbital parameters. Different models may use different
+conditionals, depending on the specific parameterisation:
+
+??? tip "`RVmodel` / `GPmodel` / `RVFWHMmodel` → `KeplerianConditionalPrior`"
+
+    ::: kima.RVmodel.KeplerianConditionalPrior
+        options:
+          filters:
             - "!__"
 
 
@@ -107,7 +118,6 @@ kima.run(model, steps=1000, num_threads=4)
           heading_level: 2
           filters:
             - "!__"
-
 
 --- 
 
