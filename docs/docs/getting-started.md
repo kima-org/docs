@@ -4,7 +4,8 @@ comments: true
 
 ## Data, models, and results
 
-To get started, read in a dataset and choose one of the available [models](/docs/models):
+To get started, read in a [dataset](/docs/data) and choose one of the available
+[models](/docs/models):
 
 ```python
 import kima
