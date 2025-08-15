@@ -46,6 +46,7 @@ nav:
   - Welcome: docs/index.md
   - docs/installation.md
   - docs/getting-started.md
+  - docs/data.md
   - docs/models.md
   - Examples:
     - docs/examples/index.md
@@ -60,7 +61,7 @@ nav:
     - pykima: docs/API/pykima.md
 
   - docs/troubleshooting.md
-  - docs/contributing.md
+  - Contributing: docs/contributing.md
 #   - Building Models:
 #     - building-models/index.md
 #     - building-models/general-settings.md
