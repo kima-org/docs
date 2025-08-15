@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://www.kima.science/docs/default_priors/">
+        <link rel="canonical" href="https://www.kima.science/docs/data/">
       
       
+        <link rel="prev" href="../getting-started/">
+      
+      
+        <link rel="next" href="../models/">
       
       
       <link rel="icon" href="../../assets/favicon.ico">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Default priors - kima</title>
+        <title>Data - kima</title>
       
     
     
@@ -145,6 +149,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#data" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -173,7 +182,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-            Default priors
+            Data
             
           </span>
         </div>
@@ -382,10 +391,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../data/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Data
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -396,6 +427,79 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#radial-velocity-time-series-rvdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radial velocity time series (RVData)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Radial velocity time series (RVData)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#useful-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick plot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activity-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activity indicators
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hipparcos-gaia-proper-motions-hgpmdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hipparcos-Gaia proper motions (HGPMdata)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -769,6 +873,67 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#radial-velocity-time-series-rvdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radial velocity time series (RVData)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Radial velocity time series (RVData)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#useful-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick plot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activity-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activity indicators
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hipparcos-gaia-proper-motions-hgpmdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hipparcos-Gaia proper motions (HGPMdata)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -784,220 +949,103 @@
 
 
 
-  <h1>Default priors</h1>
-
-<!-- automatically generated with -->
-<!-- `python get_default_priors.py` -->
-
-<p>In the tables below, the following abbreviations are used:</p>
-<ul>
-<li><span class="arithmatex">\(\Delta t\)</span> is the timespan of the data</li>
-<li><span class="arithmatex">\(\Delta v\)</span> is the span of the RVs</li>
-<li><span class="arithmatex">\(\Delta {\rm FWHM}\)</span> is the span of the FWHM</li>
-<li><span class="arithmatex">\(\mathcal{O}(x)\)</span> is order of magnitude of <span class="arithmatex">\(x\)</span></li>
-</ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">RVmodel</label><label for="__tabbed_1_2">GPmodel</label><label for="__tabbed_1_3">RVFWHMmodel</label></div>
+<h1 id="data">Data<a class="headerlink" href="#data" title="Permanent link">&para;</a></h1>
+<p><strong>kima</strong> can load different kinds of data, either from column-based text files
+or Python arrays. The different data classes have some useful attributes and
+methods.</p>
+<h2 id="radial-velocity-time-series-rvdata">Radial velocity time series (<code>RVData</code>)<a class="headerlink" href="#radial-velocity-time-series-rvdata" title="Permanent link">&para;</a></h2>
+<p>The simplest dataset is a time series of radial velocity measurements from one
+single instrument. The <code>RVData</code> class is used to load these data from a file,
+which must contain <em>at least</em> three columns:</p>
+<div class="highlight"><span class="filename">data.txt</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>time   RV   RVerror
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>...    ...  ...
+</code></pre></div>
+<p>and can be loaded as </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">kima</span><span class="w"> </span><span class="kn">import</span> <span class="n">RVData</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">data</span> <span class="o">=</span> <span class="n">RVData</span><span class="p">(</span><span class="s1">&#39;data.txt&#39;</span><span class="p">,</span> <span class="n">skip</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<p>The columns in the file can be space (<code>␣</code>), TAB (<code>⇥</code>), or comma (<code>,</code>) separated.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can actually mix separators in the same file! But please don't... 
+<img alt="🤨" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f928.svg" title=":face_with_raised_eyebrow:" /></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The file can actually have more columns; by default, <strong>kima</strong> will
+read the first three and ignore any remaining ones.</p>
+</div>
+<p>Regarding units, the first column is assumed to be in days (although this is not
+strictly enforced), and the RVs and uncertainties are by default assumed to be
+given in m/s. Most importantly, they both have to be in the same units!</p>
+<p>The <code>skip</code> argument can be used to skip the first line(s) of the file.</p>
+<p>If you want to load RV data from multiple instruments, simply provide a list of 
+filenames:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">instrument 1</label><label for="__tabbed_1_2">instrument 2</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>meaning</th>
-<th>default prior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>beta_prior</code></td>
-<td>Gaussian(0, 1)</td>
-<td>activity indicator coefficients</td>
-</tr>
-<tr>
-<td><code>offsets_prior</code></td>
-<td>Uniform(-<span class="arithmatex">\(\Delta v\)</span>, <span class="arithmatex">\(\Delta v\)</span>)</td>
-<td>between-instrument offsets</td>
-</tr>
-<tr>
-<td><code>stellar_jitter_prior</code></td>
-<td>Fixed(0)</td>
-<td>stellar jitter</td>
-</tr>
-<tr>
-<td><code>slope_prior</code></td>
-<td>Gaussian(0, <span class="arithmatex">\(\mathcal{O} \left(\frac{ \Delta v }{ \Delta t} \right)\)</span>)</td>
-<td>slope of linear trend</td>
-</tr>
-<tr>
-<td><code>quadr_prior</code></td>
-<td>Gaussian(0, <span class="arithmatex">\(\mathcal{O} \left(\frac{ \Delta v }{ \Delta t^2} \right)\)</span>)</td>
-<td>coefficient of quadratic trend</td>
-</tr>
-<tr>
-<td><code>cubic_prior</code></td>
-<td>Gaussian(0, <span class="arithmatex">\(\mathcal{O} \left(\frac{ \Delta v }{ \Delta t^3} \right)\)</span>)</td>
-<td>coefficient of cubic trend</td>
-</tr>
-<tr>
-<td><code>nu_prior</code></td>
-<td>LogUniform(2, 1000)</td>
-<td>degrees of freedom of Student-t likelihood</td>
-</tr>
-</tbody>
-</table>
+<div class="highlight"><span class="filename">data_inst1.txt</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>time   RV   RVerror
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>...    ...  ...
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>meaning</th>
-<th>default prior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>beta_prior</code></td>
-<td>Gaussian(0, 1)</td>
-<td>activity indicator coefficients</td>
-</tr>
-<tr>
-<td><code>offsets_prior</code></td>
-<td>Uniform(-<span class="arithmatex">\(\Delta v\)</span>, <span class="arithmatex">\(\Delta v\)</span>)</td>
-<td>between-instrument offsets</td>
-</tr>
-<tr>
-<td><code>slope_prior</code></td>
-<td>Gaussian(0, <span class="arithmatex">\(\mathcal{O} \left(\frac{ \Delta v }{ \Delta t} \right)\)</span>)</td>
-<td>slope of linear trend</td>
-</tr>
-<tr>
-<td><code>quadr_prior</code></td>
-<td>Gaussian(0, <span class="arithmatex">\(\mathcal{O} \left(\frac{ \Delta v }{ \Delta t^2} \right)\)</span>)</td>
-<td>coefficient of quadratic trend</td>
-</tr>
-<tr>
-<td><code>cubic_prior</code></td>
-<td>Gaussian(0, <span class="arithmatex">\(\mathcal{O} \left(\frac{ \Delta v }{ \Delta t^3} \right)\)</span>)</td>
-<td>coefficient of cubic trend</td>
-</tr>
-<tr>
-<td><code>eta1_prior</code></td>
-<td>LogUniform(0.1, <span class="arithmatex">\(\Delta v_{\rm max}\)</span>)</td>
-<td>GP "amplitude"</td>
-</tr>
-<tr>
-<td><code>eta2_prior</code></td>
-<td>LogUniform(1, <span class="arithmatex">\(\Delta t\)</span>)</td>
-<td>GP correlation timescale</td>
-</tr>
-<tr>
-<td><code>eta3_prior</code></td>
-<td>Uniform(10, 40)</td>
-<td>GP period</td>
-</tr>
-<tr>
-<td><code>eta4_prior</code></td>
-<td>Uniform(0.2, 5.0)</td>
-<td>recurrence timescale</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="tabbed-block">
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>meaning</th>
-<th>default prior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>slope_prior</code></td>
-<td>Gaussian(0, <span class="arithmatex">\(\mathcal{O} \left(\frac{ \Delta v }{ \Delta t} \right)\)</span>)</td>
-<td>slope of linear trend</td>
-</tr>
-<tr>
-<td><code>quadr_prior</code></td>
-<td>Gaussian(0, <span class="arithmatex">\(\mathcal{O} \left(\frac{ \Delta v }{ \Delta t^2} \right)\)</span>)</td>
-<td>coefficient of quadratic trend</td>
-</tr>
-<tr>
-<td><code>cubic_prior</code></td>
-<td>Gaussian(0, <span class="arithmatex">\(\mathcal{O} \left(\frac{ \Delta v }{ \Delta t^3} \right)\)</span>)</td>
-<td>coefficient of cubic trend</td>
-</tr>
-<tr>
-<td><code>eta1_prior</code></td>
-<td>LogUniform(0.1, <span class="arithmatex">\(\Delta v_{\rm max}\)</span>)</td>
-<td>GP "amplitude"</td>
-</tr>
-<tr>
-<td><code>eta2_prior</code></td>
-<td>LogUniform(1, <span class="arithmatex">\(\Delta t\)</span>)</td>
-<td>GP correlation timescale</td>
-</tr>
-<tr>
-<td><code>eta3_prior</code></td>
-<td>Uniform(10, 40)</td>
-<td>GP period</td>
-</tr>
-<tr>
-<td><code>eta4_prior</code></td>
-<td>Uniform(0.2, 5.0)</td>
-<td>recurrence timescale</td>
-</tr>
-<tr>
-<td><code>Cfwhm_prior</code></td>
-<td>Uniform(FWHM<span class="arithmatex">\(_{\rm min}\)</span>, FWHM<span class="arithmatex">\(_{\rm max}\)</span>)</td>
-<td>"systemic" FWHM</td>
-</tr>
-<tr>
-<td><code>Jfwhm_prior</code></td>
-<td>complicated</td>
-<td>jitter in FWHM</td>
-</tr>
-<tr>
-<td><code>slope_fwhm_prior</code></td>
-<td>Gaussian(0, <span class="arithmatex">\(\mathcal{O} (\frac{\Delta {\rm FWHM}}{\Delta t})\)</span>)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>quadr_fwhm_prior</code></td>
-<td>Gaussian(0, <span class="arithmatex">\(\mathcal{O} (\frac{\Delta {\rm FWHM}}{\Delta t^2})\)</span>)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>cubic_fwhm_prior</code></td>
-<td>Gaussian(0, <span class="arithmatex">\(\mathcal{O} (\frac{\Delta {\rm FWHM}}{\Delta t^3})\)</span>)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>eta1_fwhm_prior</code></td>
-<td>LogUniform(0.1, <span class="arithmatex">\(\Delta {\rm FWHM}\)</span>)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>eta2_fwhm_prior</code></td>
-<td>LogUniform(1, <span class="arithmatex">\(\Delta t\)</span>)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>eta3_fwhm_prior</code></td>
-<td>Uniform(10, 40)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>eta4_fwhm_prior</code></td>
-<td>Uniform(0.2, 5.0)</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<div class="highlight"><span class="filename">data_inst2.txt</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>time   RV   RVerror
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>...    ...  ...
+</code></pre></div>
 </div>
 </div>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">data</span> <span class="o">=</span> <span class="n">RVData</span><span class="p">([</span><span class="s1">&#39;data_inst1.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;data_inst2.txt&#39;</span><span class="p">],</span> <span class="n">skip</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="useful-methods">Useful methods<a class="headerlink" href="#useful-methods" title="Permanent link">&para;</a></h3>
+<p>A few methods of the <code>RVData</code> class can be useful, e.g., when setting priors:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">data</span><span class="o">.</span><span class="n">get_timespan</span><span class="p">()</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">data</span><span class="o">.</span><span class="n">get_RV_span</span><span class="p">()</span>
+</code></pre></div>
+<p>The full documentation is available <a class="autorefs autorefs-internal" href="../API/kima/#kima.Data.RVData">here</a>.</p>
+<h3 id="quick-plot">Quick plot<a class="headerlink" href="#quick-plot" title="Permanent link">&para;</a></h3>
+<p>The <code>RVData</code> class has a <code>plot</code> method that allows you to quickly check the
+data:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span> <span class="c1">#(1)!</span>
+</code></pre></div>
+<ol>
+<li>This plot show the RVs from the <a href="/docs/examples/51Peg">51 Peg example</a>.</li>
+</ol>
+<p><img alt="alt text" src="image.png" /></p>
+<h2 id="activity-indicators">Activity indicators<a class="headerlink" href="#activity-indicators" title="Permanent link">&para;</a></h2>
+<p>Sometimes it's useful to use activity indicators simultaneous to the RVs. These
+can be considered as basis vectors for decorrelation or for joint GP fits, for
+example. The <code>RVData</code> class can also load these data if they are stored in the
+subsequent columns of a file:</p>
+<div class="highlight"><span class="filename">data_with_indicators.txt</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>time   RV   RVerror   ind1    ind2
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>...    ...  ...       ...     ...
+</code></pre></div>
+<p>which can be loaded as </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">data</span> <span class="o">=</span> <span class="n">RVData</span><span class="p">(</span><span class="s1">&#39;data.txt&#39;</span><span class="p">,</span> <span class="n">skip</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">indicators</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ind1&#39;</span><span class="p">,</span> <span class="s1">&#39;ind2&#39;</span><span class="p">])</span>
+</code></pre></div>
+<p>The data is stored in the <code>actind</code> (read-only) attribute of the <code>RVData</code> object,
+which appears as a list of lists. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A particular column of the file can easily be skipped by providing an empty
+string as the indicator name:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">data</span> <span class="o">=</span> <span class="n">RVData</span><span class="p">(</span><span class="s1">&#39;data.txt&#39;</span><span class="p">,</span> <span class="n">skip</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">indicators</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;ind2&#39;</span><span class="p">])</span>
+</code></pre></div>
+</div>
+<p>Provided the indicators were loaded, the
+<a class="autorefs autorefs-internal" title="indicator_correlations
+
+  
+      property
+  " href="../API/kima/#kima.RVmodel.RVmodel.indicator_correlations">RVmodel.indicator_correlations</a>
+option can be used to model linear correlations. On the other hand, some models,
+like the <a class="autorefs autorefs-internal" href="../API/kima/#kima.RVFWHMmodel">RVFWHMmodel</a> for example, assume that the provided
+<code>RVData</code> object has two activity indicators corresponding to the FWHM and its
+uncertainty.</p>
+<h2 id="hipparcos-gaia-proper-motions-hgpmdata">Hipparcos-Gaia proper motions (<code>HGPMdata</code>)<a class="headerlink" href="#hipparcos-gaia-proper-motions-hgpmdata" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">TODO</p>
 </div>
 
 
@@ -1019,7 +1067,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="March 21, 2025 22:32:17 UTC"><span class="timeago" datetime="2025-03-21T22:32:17+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="March 21, 2025 22:32:17 UTC">2025-03-21</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="August 15, 2025 20:57:05 UTC"><span class="timeago" datetime="2025-08-15T20:57:05+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="August 15, 2025 20:57:05 UTC">2025-08-15</span>
   </span>
 
     
