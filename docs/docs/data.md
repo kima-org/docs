@@ -26,12 +26,10 @@ data = RVData('data.txt', skip=1)
 The columns in the file can be space (` ␣ `), TAB (` ⇥ `), or comma (` , `) separated.
 
 !!! note
-    You can actually mix separators in the same file! But please don't... 
-    :face_with_raised_eyebrow:
-
-!!! note  
-    The file can actually have more columns; by default, **kima** will
-    read the first three and ignore any remaining ones.
+    The file can have more columns; by default, **kima** will
+    read the first three and ignore any remaining ones.  
+    Aso, you can actually mix separators in the same file! But please don't... 
+    :face_with_raised_eyebrow:  
 
 Regarding units, the first column is assumed to be in days (although this is not
 strictly enforced), and the RVs and uncertainties are by default assumed to be
