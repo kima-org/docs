@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
@@ -111,9 +111,9 @@
 <!--  -->
 
 
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.14.17/dist/main.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.15.1/dist/main.js"></script>
 <link
-    href="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.14.17/dist/style.css"
+    href="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.15.1/dist/style.css"
     rel="stylesheet"
     crossorigin="anonymous"
 />
@@ -1153,7 +1153,7 @@ prior distribution as well.</p>
 
 <marimo-island data-app-id=main data-cell-id=Hbol data-reactive=true><marimo-cell-output><span></span></marimo-cell-output><marimo-cell-code hidden>import%20marimo%20as%20mo%0Aimport%20matplotlib.pyplot%20as%20plt%0Afrom%20numpy%20import%20zeros%2C%20arange%0Aplt.style.use('fast')</marimo-cell-code></marimo-island>
 
-<marimo-island data-app-id=main data-cell-id=MJUe data-reactive=true><marimo-cell-output><span class="markdown prose dark:prose-invert"><span class=paragraph><code>model = RVmodel(fix=</code><marimo-ui-element object-id=MJUe-1 random-id=e4154236-9f09-b35a-059c-1b9dd52ef501><marimo-checkbox data-initial-value=false data-label=null data-disabled=false></marimo-checkbox></marimo-ui-element><code>, npmax=</code><marimo-ui-element object-id=MJUe-0 random-id=ec62e5a8-d2c1-15eb-2664-1d7461e92c7e><marimo-slider data-initial-value=0 data-label=null data-start=0 data-stop=10 data-steps=[] data-debounce=false data-disabled=false data-orientation='"horizontal"' data-show-value=false data-include-input=false data-full-width=false></marimo-slider></marimo-ui-element><code>, data=data)</code></span></span></marimo-cell-output><marimo-cell-code hidden>Np%20%3D%20mo.ui.slider(0%2C%2010)%0Afix%20%3D%20mo.ui.checkbox()%0Amo.md(f%22%60model%20%3D%20RVmodel(fix%3D%60%7Bfix%7D%60%2C%20npmax%3D%60%7BNp%7D%60%2C%20data%3Ddata)%60%22)</marimo-cell-code></marimo-island>
+<marimo-island data-app-id=main data-cell-id=MJUe data-reactive=true><marimo-cell-output><span class="markdown prose dark:prose-invert"><span class=paragraph><code>model = RVmodel(fix=</code><marimo-ui-element object-id=MJUe-1 random-id=e4825e1e-1c56-b3e4-eb5e-173b1065d63f><marimo-checkbox data-initial-value=false data-label=null data-disabled=false></marimo-checkbox></marimo-ui-element><code>, npmax=</code><marimo-ui-element object-id=MJUe-0 random-id=5923f913-0f3d-18e5-8028-e1513a89b41b><marimo-slider data-initial-value=0 data-label=null data-start=0 data-stop=10 data-steps=[] data-debounce=false data-disabled=false data-orientation='"horizontal"' data-show-value=false data-include-input=false data-full-width=false></marimo-slider></marimo-ui-element><code>, data=data)</code></span></span></marimo-cell-output><marimo-cell-code hidden>Np%20%3D%20mo.ui.slider(0%2C%2010)%0Afix%20%3D%20mo.ui.checkbox()%0Amo.md(f%22%60model%20%3D%20RVmodel(fix%3D%60%7Bfix%7D%60%2C%20npmax%3D%60%7BNp%7D%60%2C%20data%3Ddata)%60%22)</marimo-cell-code></marimo-island>
 
 <marimo-island data-app-id=main data-cell-id=vblA data-reactive=true><marimo-cell-output><span></span></marimo-cell-output><marimo-cell-code hidden>def%20plot_prior(Np%2C%20fix)%3A%0A%20%20pmf%20%3D%20zeros(11)%0A%20%20if%20fix%3A%0A%20%20%20%20%20%20pmf%5BNp%5D%20%3D%201%0A%20%20else%3A%0A%20%20%20%20%20%20pmf%5B%3ANp%2B1%5D%20%3D%201%20%2F%20(Np%20%2B%201)%0A%0A%20%20plt.figure(figsize%3D(6%2C%203))%0A%20%20%23plt.set(xticks%3Darange(11)%2C%20yticks%3D%5B0%2C%201%5D%2C%20%0A%20%20%23%20%20%20%20%20%20xlabel%3D%22%24N_p%24%22%2C%20ylabel%3D%22prior%22%2C%20ylim%3D%5B0%2C%201.1%5D)%0A%20%20plt.stem(arange(11)%2C%20pmf)%0A%20%20return%20plt.gca()</marimo-cell-code></marimo-island>
 
