@@ -54,6 +54,7 @@ nav:
     - multi_instrument: docs/examples/multi_instrument.ipynb
     - transiting_planet: docs/examples/transiting_planet.ipynb
     - jitter_rhk: docs/examples/jitter_rhk.ipynb
+    - Circumbinary: docs/examples/TIC172900988.ipynb
 
   - API:
     - docs/API/index.md
@@ -88,7 +89,6 @@ plugins:
   - git-revision-date-localized:
       type: timeago
       enable_creation_date: false
-  - marimo
 
 markdown_extensions:
   - attr_list
