@@ -121,6 +121,24 @@ like the [RVFWHMmodel][kima.RVFWHMmodel] for example, assume that the provided
 `RVData` object has two activity indicators corresponding to the FWHM and its
 uncertainty.
 
+## Gaia astrometric time series (`GAIAdata`)
+This should only ever be a single datafile with 5 columns at least
+
+```title="gaia_data.txt"
+time   along-scan position   along-scan position error   scan angle   parallax factor along-scan
+...             ...                     ...                 ...                  ...
+```
+
+These should all be provided within the Gaia data. These 5 columns in this order are required, after which you 
+can add other columns useful to you in analysis if you like.
+
+This data can be loaded as 
+
+```python
+from kima import GAIAdata
+
+data = GAIAdata('gaia_data.txt', skip=1)
+```
 
 ## Hipparcos-Gaia proper motions (`HGPMdata`)
 

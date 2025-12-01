@@ -21,3 +21,4 @@ The following pages describe each example in some depth:
 - [multi_instrument](multi_instrument)
 - [transiting_planet](transiting_planet)
 - [Circumbinary planet using the BINARIESmodel](TIC172900988)
+- [Gaia BH3](GaiaBH3)

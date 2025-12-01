@@ -27,8 +27,14 @@ parameters, priors, and settings.
   double-lined binary data. More details are available in
   [Baycroft et al. (2023)](https://ui.adsabs.harvard.edu/abs/2023MNRAS.521.1871B/abstract){:target="_blank"}.
 
+- [GAIAmodel][kima.GAIAmodel]
+  Models Gaia epoch astrometry with a 5-parameter astrometric solution plus a 
+  sum-of-Keplerians
+  
+- [RVGAIAmodel][kima.RVGAIAmodel]
+  Models RVs as well as Gaia epoch astrometry simultaneously with shared Keplerians
+
 - TRANSITmodel (coming soon)
-- GAIAmodel (comming soon)
 
 To use a given model, just instantiate an object of the respective class
 providing the necessary options and a dataset
@@ -210,7 +216,7 @@ plot_prior(Np.value, fix.value)
 
 
 
-By default, each of the $N_p$ planets has 5 orbital parameters
+When fitting radial velocity data, by default, each of the $N_p$ planets has 5 orbital parameters
 
 $$
 \theta = { P, K, e, M_0, \omega }
@@ -221,7 +227,7 @@ at the epoch, and argument of periastron.
 
 Some models include additional *per-planet* parameters: the
 [BINARIESmodel][kima.BINARIESmodel] considers a linear precession parameter
-$\dot\omega$ and the BDmodel infers a mixture probability $\lambda$ for each
+$\dot\omega$ for the binary (which uses the Known Object mode, see below), and the BDmodel infers a mixture probability $\lambda$ for each
 planet.
 
 !!! info "units"
@@ -233,6 +239,31 @@ planet.
 
 By default, the epoch is set to the middle of the observed times ($t_{\rm min} +
 \Delta t / 2$), but it can be changed by setting the corresponding attribute of
+the data:
+
+```py
+data.M0_epoch = ...
+```
+
+When fitting Gaia astrometric data, each of the $N_p$ planets has 7 parameters, either of
+
+$$
+\theta_{\rm orb} = { P, M_0, e, a0, \omega, \cos{i}, \Omega }\\
+\theta_{\rm TI} = { P, M_0, e, A, B, F, G }
+$$
+
+depending on whether you chose to fit using the orbital parameters, or the linearised Thiele-Innes parameters.
+Either of these can be chosen in the [GAIAmodel][kima.GAIAmodel], but in the [RVGAIAmodel][kima.RVGAIAmodel] the geometric 
+parameters must be used.
+
+!!! info "units"
+
+    - $P$ is in [days]
+    - $a0$ is in [mas]
+    - $e$ and $cosi$ are unitless
+    - $M_0$, $ω$, and $Ω$ are in radians
+
+By default, the epoch is set to the Gaia DR4 reference epoch (tcb_jd = 2457936.875) but it can be changed by setting the corresponding attribute of
 the data:
 
 ```py

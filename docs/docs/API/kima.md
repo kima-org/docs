@@ -8,7 +8,8 @@ hide:
 ### Data
 
 Most analyses will start by using the [`RVData`][kima.Data.RVData] class to load data
-from a set of files or arrays
+from a set of files or arrays. If using Gaia epoch astrometry the the [`GAIAdata`][kima.Data.GAIAdata] class
+is used to load that in.
 
 #### Example:
 
@@ -27,6 +28,15 @@ data.plot() #(2)!
 ??? example "`kima.RVData` API"
 
     ::: kima.Data.RVData
+        handler: python
+        options:
+          filters:
+            - "!__"
+            - "__init__"
+            
+??? example "`kima.GAIAdata` API"
+
+    ::: kima.Data.GAIAdata
         handler: python
         options:
           filters:
@@ -80,7 +90,20 @@ model = RVmodel(fix=False, npmax=2, data=data)
         options:
           filters:
             - "!__"
+            
+??? tip "`kima.GAIAmodel` API"
 
+    ::: kima.GAIAmodel
+        options:
+          filters:
+            - "!__"
+
+??? tip "`kima.RVGAIAmodel` API"
+
+    ::: kima.RVGAIAmodel
+        options:
+          filters:
+            - "!__"
 
 
 The `model.conditional` object contained in each model can be used to define the
@@ -180,3 +203,17 @@ there is the [keplerian][kima.kepler.keplerian] function:
 ??? example "`kima.keplerian` API"
     
     ::: kima.kepler.keplerian
+    
+This is the default radial velocity keplerian function, though others exist for the more specific cases.
+There is the keplerian function for Gaia astrometry:
+
+??? example "`kima.keplerian_gaia` API"
+    
+    ::: kima.kepler.keplerian_gaia
+    
+And for the [BINARIESmodel][kima.BINARIESmodel] there is a special keplerian that includes 
+post-Keplerian corrections and apsidal precession:
+
+??? example "`kima.post_keplerian` API"
+    
+    ::: kima.postkepler.post_keplerian
