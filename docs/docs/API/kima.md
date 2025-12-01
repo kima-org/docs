@@ -211,9 +211,11 @@ There is the keplerian function for Gaia astrometry:
     
     ::: kima.kepler.keplerian_gaia
     
+<!-- 
 And for the [BINARIESmodel][kima.BINARIESmodel] there is a special keplerian that includes 
 post-Keplerian corrections and apsidal precession:
 
 ??? example "`kima.post_keplerian` API"
+ -->
     
     ::: kima.postkepler.post_keplerian
