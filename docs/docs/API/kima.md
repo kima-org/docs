@@ -218,4 +218,4 @@ post-Keplerian corrections and apsidal precession:
 ??? example "`kima.post_keplerian` API"
  -->
     
-    ::: kima.postkepler.post_keplerian
+<!--     ::: kima.postkepler.post_keplerian -->
