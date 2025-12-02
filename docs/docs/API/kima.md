@@ -96,6 +96,7 @@ model = RVmodel(fix=False, npmax=2, data=data)
     ::: kima.GAIAmodel
         options:
           filters:
+            - "!GAIAConditionalPrior"
             - "!__"
 
 ??? tip "`kima.RVGAIAmodel` API"
@@ -103,6 +104,24 @@ model = RVmodel(fix=False, npmax=2, data=data)
     ::: kima.RVGAIAmodel
         options:
           filters:
+            - "!RVGAIAConditionalPrior"
+            - "!__"
+
+??? tip "`kima.RVHGPMmodel` API"
+
+    ::: kima.RVHGPMmodel
+        options:
+          filters:
+            - "!RVHGPMConditionalPrior"
+            - "!__"
+
+
+??? tip "`kima.GAIAmodel` API"
+
+    ::: kima.GAIAmodel
+        options:
+          filters:
+            - "!RVHGPMConditionalPrior"
             - "!__"
 
 
@@ -113,6 +132,21 @@ conditionals, depending on the specific parameterisation:
 ??? tip "`RVmodel` / `GPmodel` / `RVFWHMmodel` → `KeplerianConditionalPrior`"
 
     ::: kima.RVmodel.KeplerianConditionalPrior
+        options:
+          filters:
+            - "!__"
+
+??? tip "`GAIAmodel` → `GAIAConditionalPrior`"
+
+    ::: kima.GAIAmodel.GAIAConditionalPrior
+        options:
+          filters:
+            - "!__"
+
+
+??? tip "`RVHGPMmodel` → `RVHGPMConditionalPrior`"
+
+    ::: kima.RVHGPMmodel.RVHGPMConditionalPrior
         options:
           filters:
             - "!__"
