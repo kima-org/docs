@@ -55,7 +55,8 @@ nav:
     - transiting_planet: docs/examples/transiting_planet.ipynb
     - jitter_rhk: docs/examples/jitter_rhk.ipynb
     - Circumbinary: docs/examples/TIC172900988.ipynb
-    - Gaia_BH3: docs/examples/GaiaBH3.ipynb
+    - Gaia BH3: docs/examples/GaiaBH3.ipynb
+
 
   - API:
     - docs/API/index.md
