@@ -34,4 +34,4 @@ jobs:
 
       - name: GH deploy
         run: |
-          mkdocs gh-deploy --force
+          mkdocs gh-deploy -v --force
