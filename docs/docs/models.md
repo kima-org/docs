@@ -27,12 +27,13 @@ parameters, priors, and settings.
   double-lined binary data. More details are available in
   [Baycroft et al. (2023)](https://ui.adsabs.harvard.edu/abs/2023MNRAS.521.1871B/abstract){:target="_blank"}.
 
-- [GAIAmodel][kima.GAIAmodel]
+- [GAIAmodel][kima.GAIAmodel]  
   Models Gaia epoch astrometry with a 5-parameter astrometric solution plus a 
   sum-of-Keplerians
   
-- [RVGAIAmodel][kima.RVGAIAmodel]
-  Models RVs as well as Gaia epoch astrometry simultaneously with shared Keplerians
+- [RVGAIAmodel][kima.RVGAIAmodel]  
+  Models RVs as well as Gaia epoch astrometry simultaneously with shared
+  Keplerians
 
 - TRANSITmodel (coming soon)
 
