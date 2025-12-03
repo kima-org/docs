@@ -7,9 +7,9 @@ hide:
 
 ### Data
 
-Most analyses will start by using the [`RVData`][kima.Data.RVData] class to load data
-from a set of files or arrays. If using Gaia epoch astrometry the the [`GAIAdata`][kima.Data.GAIAdata] class
-is used to load that in.
+Most analyses will start by using the [`RVData`][kima.Data.RVData] class to load
+data from a set of files or arrays. Gaia epoch astrometry can also be read with
+the [`GAIAdata`][kima.Data.GAIAdata] class.
 
 #### Example:
 
