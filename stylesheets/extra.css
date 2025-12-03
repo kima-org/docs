@@ -56,8 +56,3 @@ a.autorefs-external:hover::after {
   height: 100%;
   position: absolute !important;
 }
-
-/* hide prompts In[ ] and Out[ ] in notebooks */
-.jp-InputPrompt, .jp-OutputPrompt {
-    display: none !important;
-}
