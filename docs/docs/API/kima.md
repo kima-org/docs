@@ -158,7 +158,7 @@ kima.run(model, steps=1000, num_threads=4)
 
 ??? danger "`kima.run` API"
 
-    ::: kima.Sampler.run
+    ::: kima.Sampler
         handler: python
         options:
           show_root_heading: false
@@ -166,17 +166,17 @@ kima.run(model, steps=1000, num_threads=4)
           separate_signature: false
           heading_level: 2
           filters:
+            - "run"
             - "!__"
 
 --- 
 
 ### Distributions
 
-The `distributions` sub-package contains the implementation of several probability distributions 
-that can be used as priors for a model parameter. All distributions have standard parameterizations, 
-as you would find e.g. in Wikipedia. Some distributions have a corresponding 
-`Truncated` version which truncates the support of the distribution to an
-interval $ \[{\rm lower}, {\rm upper} \]$.
+The `distributions` sub-package contains the implementation of several probability distributions
+that can be used as priors for a model parameter. All distributions have standard parameterizations,
+as you would find e.g. in Wikipedia. Some distributions have a corresponding `Truncated` version
+which truncates the support of the distribution to an interval $ \[{\rm lower}, {\rm upper} \]$.
 
 #### Example:
 ```py
