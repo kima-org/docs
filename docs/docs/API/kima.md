@@ -91,6 +91,14 @@ model = RVmodel(fix=False, npmax=2, data=data)
           filters:
             - "!__"
             
+??? warning "TODO: `kima.RVHGPMmodel` API"
+
+    <!-- ::: kima.RVHGPMmodel
+        options:
+          filters:
+            - "!RVHGPMConditionalPrior"
+            - "!__" -->
+
 ??? tip "`kima.GAIAmodel` API"
 
     ::: kima.GAIAmodel
@@ -107,22 +115,6 @@ model = RVmodel(fix=False, npmax=2, data=data)
             - "!RVGAIAConditionalPrior"
             - "!__"
 
-??? tip "`kima.RVHGPMmodel` API"
-
-    ::: kima.RVHGPMmodel
-        options:
-          filters:
-            - "!RVHGPMConditionalPrior"
-            - "!__"
-
-
-??? tip "`kima.GAIAmodel` API"
-
-    ::: kima.GAIAmodel
-        options:
-          filters:
-            - "!RVHGPMConditionalPrior"
-            - "!__"
 
 
 The `model.conditional` object contained in each model can be used to define the
@@ -144,12 +136,12 @@ conditionals, depending on the specific parameterisation:
             - "!__"
 
 
-??? tip "`RVHGPMmodel` → `RVHGPMConditionalPrior`"
+??? warning "TODO: `RVHGPMmodel` → `RVHGPMConditionalPrior`"
 
-    ::: kima.RVHGPMmodel.RVHGPMConditionalPrior
+    <!-- ::: kima.RVHGPMmodel.RVHGPMConditionalPrior
         options:
           filters:
-            - "!__"
+            - "!__" -->
 
 
 ### Run
