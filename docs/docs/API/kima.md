@@ -147,7 +147,7 @@ conditionals, depending on the specific parameterisation:
 ### Run
 
 To run the sampler and estimate the posterior for the model parameters 
-just call [`kima.run`][kima.Sampler.run]
+just call `kima.run`
 
 #### Example:
 ```py
