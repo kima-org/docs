@@ -1,0 +1,1 @@
+# jitter   da   dd   mua   mud   parallax   ndim   maxNp   Np   P0   P1   phi0   phi1   ecc0   ecc1   a00   a01   w0   w1   cosi0   cosi1   W0   W1   staleness   
