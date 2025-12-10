@@ -226,10 +226,9 @@ $$
 corresponding to the orbital period, semi-amplitude, eccentricity, mean anomaly
 at the epoch, and argument of periastron.
 
-Some models include additional *per-planet* parameters: the
+Some models include additional *per-planet* parameters: for example, the
 [BINARIESmodel][kima.BINARIESmodel] considers a linear precession parameter
-$\dot\omega$ for the binary (which uses the Known Object mode, see below), and the BDmodel infers a mixture probability $\lambda$ for each
-planet.
+$\dot\omega$ for the binary (which uses the Known Object mode, see below).
 
 !!! info "units"
 
