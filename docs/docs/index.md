@@ -3,7 +3,7 @@ hide:
   - toc 
 ---
 
-# Welcome to `kima`'s documentation
+# Welcome to **kima**'s documentation
 
 **kima** is the name of a really good [drink produced in
 Azores](https://azorieden.com/kima-a-drink-everyone-needs-to-try/)
