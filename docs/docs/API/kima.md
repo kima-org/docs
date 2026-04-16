@@ -185,6 +185,40 @@ from kima import distributions
 parameter_prior = distributions.Gaussian(10, 1)
 ```
 
+
+Here's a complete list of the implemented distributions:
+
+<div class="grid cards" markdown>
+
+- [BivariateGaussian][kima.distributions.BivariateGaussian]
+- [Cauchy][kima.distributions.Cauchy]
+- [Exponential][kima.distributions.Exponential]
+- [ExponentialRayleighMixture][kima.distributions.ExponentialRayleighMixture]
+- [Fixed][kima.distributions.Fixed]
+- [Gaussian][kima.distributions.Gaussian]
+- [GaussianMixture][kima.distributions.GaussianMixture]
+- [HalfGaussian][kima.distributions.HalfGaussian]
+- [InverseGamma][kima.distributions.InverseGamma]
+- [InverseMoment][kima.distributions.InverseMoment]
+- [Kumaraswamy][kima.distributions.Kumaraswamy]
+- [Laplace][kima.distributions.Laplace]
+- [LogUniform][kima.distributions.LogUniform]
+- [ModifiedLogUniform][kima.distributions.ModifiedLogUniform]
+- [Pareto][kima.distributions.Pareto]
+- [Rayleigh][kima.distributions.Rayleigh]
+- [Sine][kima.distributions.Sine]
+- [SingleTransitPeriodPrior][kima.distributions.SingleTransitPeriodPrior]
+- [Triangular][kima.distributions.Triangular]
+- [TruncatedCauchy][kima.distributions.TruncatedCauchy]
+- [TruncatedExponential][kima.distributions.TruncatedExponential]
+- [TruncatedGaussian][kima.distributions.TruncatedGaussian]
+- [TruncatedPareto][kima.distributions.TruncatedPareto]
+- [TruncatedRayleigh][kima.distributions.TruncatedRayleigh]
+- [Uniform][kima.distributions.Uniform]
+- [UniformAngle][kima.distributions.UniformAngle]
+
+</div>
+
 <!-- ::: kima.distributions
     handler: python
     options:
