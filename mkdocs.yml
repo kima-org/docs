@@ -51,7 +51,7 @@ nav:
   - docs/models.md
   - Examples:
     - docs/examples/index.md
-    - 51Peg: docs/examples/51Peg.ipynb
+    - 51Peg: /docs/examples/51Peg
     - multi_instrument: docs/examples/multi_instrument.ipynb
     - transiting_planet: docs/examples/transiting_planet.ipynb
     - jitter_rhk: docs/examples/jitter_rhk.ipynb
