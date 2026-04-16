@@ -23,6 +23,7 @@ jobs:
           python-version: 3.x
 
       - run: pip install zensical mkdocstrings[python]
+      - run: pip install kima
 
       - run: zensical build --clean 
       - uses: actions/upload-pages-artifact@v4
