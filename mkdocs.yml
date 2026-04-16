@@ -52,7 +52,7 @@ nav:
   - Examples:
     - docs/examples/index.md
     - 51Peg: /docs/examples/51Peg
-    - multi_instrument: docs/examples/multi_instrument.ipynb
+    - Multiple instruments: docs/examples/multi_instrument
     - transiting_planet: docs/examples/transiting_planet.ipynb
     - jitter_rhk: docs/examples/jitter_rhk.ipynb
     - Circumbinary: docs/examples/TIC172900988.ipynb
