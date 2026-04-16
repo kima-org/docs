@@ -1,4 +1,5 @@
 ---
+title: kima API
 hide:
   - toc
 ---

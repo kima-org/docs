@@ -1,3 +1,7 @@
+---
+title: pykima API
+---
+
 # API documentation for `pykima`
 
 **kima** itself is written in C++, to leverage the increased performance. The
