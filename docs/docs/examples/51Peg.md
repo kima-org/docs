@@ -172,7 +172,7 @@ res.phase_plot(p)
 So, **kima** tells us that a planet at a period of 4.23 days and an amplitude of ~56 m/s is the best model given the RV data. If it was 1995, we'd be going about changing the history of astronomy!
 
 ---
-#### marimo setup
+### 🚧 marimo setup
 
 
 ```python
