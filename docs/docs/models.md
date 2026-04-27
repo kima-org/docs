@@ -10,33 +10,56 @@ comments: true
 a given dataset. The models share a common organization, but each has its own
 parameters, priors, and settings.
 
-- [RVmodel][kima.RVmodel]  
-  Models the RVs with a sum-of-Keplerians
+![RVmodel](../assets/models/RVmodel_icon.svg){ align=left width="96" }
+<!--  -->
+[RVmodel][kima.RVmodel]  
+Models the RVs with a sum-of-Keplerians
+<br><br><br>
 
-- [GPmodel][kima.GPmodel]  
-  Models the RVs with a sum-of-Keplerians plus a correlated noise component
-  given by a Gaussian process
 
-- [RVFWHMmodel][kima.RVFWHMmodel]  
-  Models the RVs together with the FWHM as an activity indicator, including a
-  Gaussian process for the activity signal
+![GPmodel](../assets/models/GPmodel_icon.svg){ align=left width="96" }
+<!--  -->
+[GPmodel][kima.GPmodel]  
+Models the RVs with a sum-of-Keplerians plus a correlated noise component
+given by a Gaussian process
+<br><br>
 
-- [BINARIESmodel][kima.BINARIESmodel]  
-  This includes tidal and relativistic effects as well as apsidal precession of
-  the binary’s orbit (applicable for circumbinary planets), and can also fit 
-  double-lined binary data. More details are available in
-  [Baycroft et al. (2023)](https://ui.adsabs.harvard.edu/abs/2023MNRAS.521.1871B/abstract){:target="_blank"}.
+![RVFWHMmodel](../assets/models/RVFWHMmodel_icon.svg){ align=left width="96" }
+<!--  -->
+[RVFWHMmodel][kima.RVFWHMmodel]  
+Models the RVs together with the FWHM as an activity indicator, including a
+Gaussian process for the activity signal
+<br><br>
 
-- [GAIAmodel][kima.GAIAmodel]  
-  Models Gaia epoch astrometry with a 5-parameter astrometric solution plus a 
-  sum-of-Keplerians
+![BINARIESmodel](../assets/models/BINARIESmodel_icon.svg){ align=left width="96" }
+<!--  -->
+[BINARIESmodel][kima.BINARIESmodel]  
+This includes tidal and relativistic effects as well as apsidal precession of
+the binary’s orbit (applicable for circumbinary planets), and can also fit 
+double-lined binary data. More details are available in
+[Baycroft et al. (2023)](https://ui.adsabs.harvard.edu/abs/2023MNRAS.521.1871B/abstract){:target="_blank"}.
+<br>
+
+![GAIAmodel](../assets/models/GAIAmodel_icon.svg){ align=left width="96" }
+<!--  -->
+[GAIAmodel][kima.GAIAmodel]  
+Models Gaia epoch astrometry with a 5-parameter astrometric solution plus a 
+sum-of-Keplerians
   
 - [RVGAIAmodel][kima.RVGAIAmodel]  
   Models RVs as well as Gaia epoch astrometry simultaneously with shared
   Keplerians
 
-- TRANSITmodel (coming soon)
 
+![TRANSITmodel](../assets/models/TRANSITmodel_icon.svg){ align=left width="96" }
+<!--  -->
+[TRANSITmodel][kima.TRANSITmodel]  
+:construction: coming soon! :construction:
+<br>
+
+
+<br>
+<br>
 To use a given model, just instantiate an object of the respective class
 providing the necessary options and a dataset
 
