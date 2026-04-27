@@ -52,8 +52,8 @@ nav:
   - Examples:
     - docs/examples/index.md
     - 51Peg: /docs/examples/51Peg
-    - Multiple instruments: docs/examples/multi_instrument
-    # - transiting_planet: docs/examples/transiting_planet.ipynb
+    - Multiple instruments: /docs/examples/multi_instrument
+    - (Mono-)Transiting planet: /docs/examples/transiting_planet
     # - jitter_rhk: docs/examples/jitter_rhk.ipynb
     # - Circumbinary: docs/examples/TIC172900988.ipynb
     # - Gaia BH3: docs/examples/GaiaBH3.ipynb
