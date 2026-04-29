@@ -1,3 +1,5 @@
+# (Mono-)Transiting planet
+
 The way in which the Keplerian function is parameterized in **kima** is most
 useful for RV detection, but can in some cases become a bottleneck.
 
