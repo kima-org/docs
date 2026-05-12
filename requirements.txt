@@ -1,4 +1,4 @@
-# kima
+kima
 zensical
 mkdocstrings[python]
 
