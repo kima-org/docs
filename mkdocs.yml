@@ -81,14 +81,14 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
-          paths: [../src/kima]
           options:
-            merge_init_into_class: true
             show_source: false
             members_order: "source"
-      #       filters:
-      #         - "!^_"
-      #         - "!__"
+            merge_init_into_class: true
+  #         paths: [../src/kima]
+  #     #       filters:
+  #     #         - "!^_"
+  #     #         - "!__"
   - git-revision-date-localized:
       type: timeago
       enable_creation_date: false
@@ -128,10 +128,6 @@ extra_javascript:
 extra_css:
   - stylesheets/extra.css
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
-
-
-watch:
-  - overrides
 
 
 copyright: Copyright © 2018 - 2026 João Faria
