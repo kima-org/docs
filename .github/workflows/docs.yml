@@ -23,11 +23,13 @@ jobs:
           python-version: 3.x
           cache: 'pip'
 
-      - run: CMAKE_BUILD_PARALLEL_LEVEL=4 pip install -r requirements.txt
+      - run: CMAKE_BUILD_PARALLEL_LEVEL=4 pip install -r requirements.txt -U
 
       - run: zensical build --clean 
+
       - uses: actions/upload-pages-artifact@v4
         with:
           path: site
+
       - uses: actions/deploy-pages@v4
         id: deployment
