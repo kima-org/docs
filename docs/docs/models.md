@@ -45,15 +45,18 @@ double-lined binary data. More details are available in
 [GAIAmodel][kima.GAIAmodel]  
 Models Gaia epoch astrometry with a 5-parameter astrometric solution plus a 
 sum-of-Keplerians
-  
-- [RVGAIAmodel][kima.RVGAIAmodel]  
-  Models RVs as well as Gaia epoch astrometry simultaneously with shared
-  Keplerians
+<br><br>
 
+![RVGAIAmodel](../assets/models/RVGAIAmodel_icon.svg){ align=left width="96" }
+<!--  -->
+[RVGAIAmodel][kima.RVGAIAmodel]  
+Models RVs as well as Gaia epoch astrometry simultaneously with shared
+Keplerians
+<br><br>
 
 ![TRANSITmodel](../assets/models/TRANSITmodel_icon.svg){ align=left width="96" }
 <!--  -->
-[TRANSITmodel][kima.TRANSITmodel]  
+TRANSITmodel  
 :construction: coming soon! :construction:
 <br>
 
