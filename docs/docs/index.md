@@ -9,7 +9,7 @@ hide:
 **kima** is the name of a really good [drink produced in
 Azores](https://azorieden.com/kima-a-drink-everyone-needs-to-try/)
 :tropical_drink:  
-And now, it's also a package for the analysis of radial velocity (RV) data.
+And now, it's also a package for the analysis of exoplanet data.
 
 
 <figure markdown>
