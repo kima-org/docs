@@ -13,7 +13,8 @@ And now, it's also a package for the analysis of exoplanet data.
 
 
 <figure markdown>
-  ![Image title](https://github.com/j-faria/kima/raw/master/paper/joss_figure.png){ width="800px" }
+  ![Image title](/assets/joss_figure.png#only-light){ width="800px" loading=lazy }
+  ![Image title](/assets/joss_figure_inverted.png#only-dark){ width="800px" loading=lazy }
   <!-- <figcaption>Image caption</figcaption> -->
 </figure>
 
