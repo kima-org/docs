@@ -426,11 +426,8 @@ If you need a distribution that is not yet implemented, consider opening an
 
 Below is the list of default priors which are used if not explicitly re-defined.
 
-{%
-    include-markdown "./default_priors.md"
-    start="<!--intro-start-->"
-    end="<!--intro-end-->"
-%}
+
+--8<-- "docs/docs/default_priors.md"
 
 
 And for the orbital parameters
