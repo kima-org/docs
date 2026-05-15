@@ -82,7 +82,7 @@ data.plot() #(1)!
 
 1. This plot show the RVs from the [51 Peg example](/docs/examples/51Peg).
 
-![alt text](image.png)
+![51 Peg data](/assets/data_plot.png)
 
 
 ## Activity indicators
