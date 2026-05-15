@@ -12,15 +12,22 @@ theme:
   favicon: assets/favicon.ico
   custom_dir: overrides
   palette:
-    # Palette toggle for light mode
-    - scheme: default
-      primary: teal
-      accent: green
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: green
+      toggle:
+        icon: lucide/sun-moon
+        name: Switch to automatic mode
     # Palette toggle for dark mode
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
