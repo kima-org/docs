@@ -136,4 +136,6 @@ extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
 
 
-copyright: Copyright © 2018 - 2026 João Faria
+copyright: 
+  Copyright © 2018 - 2026 João Faria 
+  and <a href="https://github.com/kima-org/kima/graphs/contributors?all=1">contributors</a>
