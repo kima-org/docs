@@ -274,7 +274,7 @@ data.M0_epoch = ...
 When fitting Gaia astrometric data, each of the $N_p$ planets has 7 parameters, either of
 
 $$
-\theta_{\rm orb} = { P, M_0, e, a0, \omega, \cos{i}, \Omega }\\
+\theta_{\rm orb} = { P, M_0, e, a, \omega, \cos{i}, \Omega }\\
 \theta_{\rm TI} = { P, M_0, e, A, B, F, G }
 $$
 
@@ -285,7 +285,7 @@ parameters must be used.
 !!! info "units"
 
     - $P$ is in [days]
-    - $a0$ is in [mas]
+    - $a$ is in [mas]
     - $e$ and $cosi$ are unitless
     - $M_0$, $ω$, and $Ω$ are in radians
 
