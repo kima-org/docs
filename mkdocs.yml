@@ -62,8 +62,8 @@ nav:
     - Multiple instruments: /docs/examples/multi_instrument
     - (Mono-)Transiting planet: /docs/examples/transiting_planet
     - Variable Jitter: /docs/examples/jitter_rhk
-    # - Circumbinary: docs/examples/TIC172900988.ipynb
-    # - Gaia BH3: docs/examples/GaiaBH3.ipynb
+#     - Circumbinary: docs/examples/TIC172900988
+#     - Gaia BH3: docs/examples/GaiaBH3
 
 
   - API:
