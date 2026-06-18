@@ -50,7 +50,7 @@ sum-of-Keplerians
 ![RVGAIAmodel](../assets/models/RVGAIAmodel_icon.svg){ align=left width="96" }
 <!--  -->
 [RVGAIAmodel][kima.RVGAIAmodel]  
-Models RVs as well as Gaia epoch astrometry simultaneously with shared
+Models RVs as well as Gaia epoch astrometry simultaneously, with shared
 Keplerians
 <br><br>
 
