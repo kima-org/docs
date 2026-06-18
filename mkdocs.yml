@@ -1,6 +1,6 @@
 site_name: kima
 repo_url: https://github.com/kima-org/kima
-site_url: "https://www.kima.science"
+site_url: "https://www.kima.science/"
 
 docs_dir: docs
 edit_uri: ""
@@ -28,6 +28,7 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: blue
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
@@ -62,8 +63,9 @@ nav:
     - Multiple instruments: /docs/examples/multi_instrument
     - (Mono-)Transiting planet: /docs/examples/transiting_planet
     - Variable Jitter: /docs/examples/jitter_rhk
+    - Gaia BH3: docs/examples/GaiaBH3
+    # - Gaia BH3 new: docs/examples/GaiaBH3
 #     - Circumbinary: docs/examples/TIC172900988
-#     - Gaia BH3: docs/examples/GaiaBH3
 
 
   - API:
@@ -104,6 +106,7 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - footnotes
+  - pymdownx.snippets
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
