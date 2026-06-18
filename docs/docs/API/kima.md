@@ -159,16 +159,7 @@ kima.run(model, steps=1000, num_threads=4)
 
 ??? danger "`kima.run` API"
 
-    ::: kima.Sampler.run
-        handler: python
-        options:
-          show_root_heading: false
-          show_signature: false
-          separate_signature: false
-          heading_level: 2
-          filters:
-            - "run"
-            - "!__"
+    ::: kima._run_wrapper_for_docs
 
 --- 
 
