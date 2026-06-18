@@ -258,13 +258,14 @@ Here's a complete list of the implemented distributions:
 ### Keplerian
 
 Finally, even though it sits at the core of what **kima** does, 
-there is the [keplerian][kima.kepler.keplerian] function:
+there is the `kima.keplerian` function:
 
 
 ??? example "`kima.keplerian` API"
     
-    ::: kima.kepler.keplerian
-    
+    ::: kima._keplerian_wrapper_for_docs
+
+
 This is the default radial velocity keplerian function, though others exist for the more specific cases.
 There is the keplerian function for Gaia astrometry:
 
