@@ -70,6 +70,8 @@ res.plot_posterior_period()
     documented.
 
 
+`pykima` also provides several functions for analysis and visualisation of the
+results:
 
 ??? example "`kima.pykima.analysis` API"
 
