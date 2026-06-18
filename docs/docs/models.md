@@ -289,8 +289,9 @@ parameters must be used.
     - $e$ and $cosi$ are unitless
     - $M_0$, $ω$, and $Ω$ are in radians
 
-By default, the epoch is set to the Gaia DR4 reference epoch (tcb_jd = 2457936.875) but it can be changed by setting the corresponding attribute of
-the data:
+By default, the epoch is set to the Gaia DR4 reference epoch (tcb_jd =
+2457936.875) but it can be changed by setting the corresponding attribute of the
+data:
 
 ```py
 data.M0_epoch = ...
@@ -341,6 +342,9 @@ $$
 where $t_m$ is the mean of the times and *slope*, *quadr*, and *cubic* are free
 parameters. See the [example]() for more information.
 
+parameters. 
+<!-- See the [example]() for more information. -->
+
 
 When using data from multiple instruments, **kima** adds RV offsets between
 pairs of instruments as well as individual jitter parameters per instrument.
@@ -361,7 +365,7 @@ in the same units.
     The number of _known objects_ is defined by the user and is always fixed,
     unlike $N_p$.
 
-Most models can accomodate known objects which can be added to the model with
+Most models can accommodate known objects which can be added to the model with
 the following code
 
 ```py
@@ -381,13 +385,14 @@ model.KO_wprior = [...]
 ## Prior distributions
 
 As in any Bayesian analysis, **kima** needs a set of priors for the model
-parameters. If we don't explicitly set the priors, default ones will be 
-used and the model will run. But sometimes we will want to set custom priors for some parameters.
+parameters. If we don't explicitly set the priors, default ones will be used and
+the model will run. But sometimes we will want to set custom priors for some
+parameters.
 
-To change specific priors, we just need to re-assign some attributes of the models,
-using the probability distributions defined in [kima.distributions][].
-Admittedly, some of these attributes might have rather undescriptive names, 
-but they are still documented individually.
+To change specific priors, we just need to re-assign some attributes of the
+models, using the probability distributions defined in [kima.distributions][].
+Admittedly, some of these attributes might have rather undescriptive names, but
+they are still documented individually.
 
 For example, let's re-define the priors for the jitter and for the orbital
 periods of the $N_p$ planets
@@ -418,9 +423,10 @@ unlike the `scipy.stats.uniform` distribution which would have support [1, 21] !
     _conditional on_ having those Keplerians.
 
 
-In the example above, we specify the prior distribution and its parameters.
-The list of currently implemented distributions is described [here][kima.distributions].
-If you need a distribution that is not yet implemented, consider opening an
+In the example above, we specify the prior distribution and its parameters. The
+list of currently implemented distributions is described
+[here](/docs/API/kima/#distributions). If you need a distribution that is not
+yet implemented, consider opening an
 [issue](https://github.com/kima-org/kima/issues){:target="_blank"}.
 
 
