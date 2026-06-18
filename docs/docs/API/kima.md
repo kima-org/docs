@@ -266,18 +266,17 @@ there is the `kima.keplerian` function:
     ::: kima._keplerian_wrapper_for_docs
 
 
-This is the default radial velocity keplerian function, though others exist for the more specific cases.
-There is the keplerian function for Gaia astrometry:
+This is the default Keplerian function producing radial velocities, while other
+functions are specialized for Gaia astrometry:
 
-??? example "`kima.keplerian_gaia` API"
+??? example "`kima.kepler.keplerian_gaia` API"
     
-    ::: kima.kepler.keplerian_gaia
+    ::: kima._keplerian_gaia_wrapper_for_docs
     
-<!-- 
-And for the [BINARIESmodel][kima.BINARIESmodel] there is a special keplerian that includes 
-post-Keplerian corrections and apsidal precession:
+
+or for use with the [BINARIESmodel][kima.BINARIESmodel] including post-Keplerian
+corrections and apsidal precession:
 
 ??? example "`kima.post_keplerian` API"
- -->
     
-<!--     ::: kima.postkepler.post_keplerian -->
+    ::: kima._post_keplerian_wrapper_for_docs
