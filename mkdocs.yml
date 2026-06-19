@@ -64,8 +64,7 @@ nav:
     - (Mono-)Transiting planet: /docs/examples/transiting_planet
     - Variable Jitter: /docs/examples/jitter_rhk
     - Gaia BH3: docs/examples/GaiaBH3
-    # - Gaia BH3 new: docs/examples/GaiaBH3
-#     - Circumbinary: docs/examples/TIC172900988
+    - Circumbinary: docs/examples/TIC172900988
 
 
   - API:
