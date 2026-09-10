@@ -20,13 +20,13 @@ And now, it's also a package for the analysis of exoplanet data.
 
 
 
-In brief, **kima** fits Keplerian curves to a set of RV measurements, using the
-Diffusive Nested Sampling algorithm[^1] to sample the posterior distribution for
-the model parameters. Additionally, the code can calculate the fully
-marginalized likelihood (or evidence, $Z$) of a model with a given number of
-Keplerians and also *infer* the number ($N_p$) of Keplerian signals detected in
-a given dataset. In this case, $N_p$ is a *free* parameter and its posterior
-distribution is estimated[^2]<sup>, </sup>[^3].
+In brief, **kima** fits Keplerian curves to a set of RV or astrometry
+measurements, using the Diffusive Nested Sampling algorithm[^1] to sample the
+posterior distribution for the model parameters. Additionally, the code can
+calculate the fully marginalized likelihood (or evidence, $Z$) of a model with a
+given number of Keplerians and also *infer* the number ($N_p$) of Keplerian
+signals detected in a given dataset. In this case, $N_p$ is a *free* parameter
+and its posterior distribution is estimated[^2]<sup>, </sup>[^3].
 
 
 The code is under active development at 
