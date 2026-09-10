@@ -54,7 +54,6 @@ $ make notebooks
 
 Native Jupyter notebooks can also be added and converted in the same way.
 
-!!! note
-
-    The output from a **kima** run may not display correctly in a Jupyter notebook, so using a native Jupyter notebook for the examples is not recommended.
+> [!CAUTION]
+> The output from a **kima** run may not display correctly in a Jupyter notebook, so using a native Jupyter notebook for the examples is not recommended.
 
