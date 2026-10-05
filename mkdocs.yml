@@ -42,12 +42,12 @@ theme:
     # - navigation.expand
     - navigation.indexes
     # - toc.integrate 
-    #- navigation.top
+    - navigation.top
     - navigation.prune
     - content.code.annotate
     - content.code.copy
     - content.tabs.link
-
+    - content.tooltips
 
 
 
@@ -75,6 +75,8 @@ nav:
     - kima: docs/API/kima.md
     - pykima: docs/API/pykima.md
 
+  - Research Notes:
+    - docs/research-notes/index.md
 
 
 plugins:

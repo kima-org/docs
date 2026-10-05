@@ -61,3 +61,10 @@ a.autorefs-external:hover::after {
 .jp-InputPrompt, .jp-OutputPrompt {
     display: none !important;
 }
+
+/* For research notes */
+.orcid {
+    color: #A6CE39
+}
+.print-only { display: none; }
+@media print { .no-print { display: none; } .print-only { display: block; } }
