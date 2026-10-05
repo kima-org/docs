@@ -24,7 +24,7 @@ filled: true
     (2026). *Thiele-Innes to Campbell orbital elements* 
     (kima Research Notes). Zenodo.  
     
-    DOI: [10.5072/zenodo.614181](https://handle.test.datacite.org/10.5072/zenodo.614181){:target="_blank"}  
+    DOI: [10.5281/zenodo.23165531](https://doi.org/10.5281/zenodo.23165531){:target="_blank"}  
     License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/){:target="_blank"}
 
 
@@ -41,8 +41,8 @@ filled: true
           title     = {Thiele-Innes to Campbell orbital elements},
           year      = {2026},
           publisher = {Zenodo},
-          doi       = {10.5072/zenodo.614181},
-          url       = {https://handle.test.datacite.org/10.5072/zenodo.614181}
+          doi       = {10.5281/zenodo.23165531},
+          url       = {https://doi.org/10.5281/zenodo.23165531}
         }
         ```
 
