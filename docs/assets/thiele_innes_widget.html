@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thiele-Innes and Campbell elements</title>
+<style>
+:root{--bg:#fff;--fg:#1d1d1f;--mut:#6b6b73;--grid:#d9d9de;--pl:#c2255c;--nd:#1864ab;--pe:#d9480f}
+@media(prefers-color-scheme:dark){:root{--bg:#1b1b20;--fg:#e9e9ee;--mut:#9a9aa6;--grid:#3a3a44;--pl:#ff6b9d;--nd:#74c0fc;--pe:#ffa94d}}
+html,body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.4 system-ui,sans-serif}
+body{padding:10px}
+.row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.pane{flex:1 1 300px;max-width:360px}
+.pane h3{margin:0 0 4px;font-size:14px;font-weight:600}
+svg{width:100%;height:auto;touch-action:none;border:1px solid var(--grid);border-radius:6px;display:block}
+svg text{fill:var(--fg);font-size:11px;user-select:none}
+.mut{fill:var(--mut)!important}
+#ctl{display:grid;grid-template-columns:auto 1fr 3.4em;gap:2px 8px;align-items:center;max-width:560px;margin:10px auto}
+#ctl input{width:100%}
+#ctl output{text-align:right;font-variant-numeric:tabular-nums}
+pre{max-width:560px;margin:6px auto;white-space:pre-wrap;font:12.5px/1.5 ui-monospace,Menlo,Consolas,monospace}
+#note{max-width:560px;margin:0 auto;color:var(--pe);min-height:2.8em;font-size:13px}
+.opts{display:flex;gap:18px;justify-content:center;margin:8px 0}
+.hint{max-width:560px;margin:4px auto;color:var(--mut);font-size:13px;text-justify:inter-word;}
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="pane"><h3>Orbital plane (face-on)</h3><svg id="orb" viewBox="0 0 300 300" aria-label="Orbit in its own plane"></svg></div>
+  <div class="pane"><h3>Plane of the sky</h3><svg id="sky" viewBox="0 0 300 300" aria-label="Orbit projected on the sky"></svg></div>
+</div>
+<p class="hint">
+  Drag the planet (pink) along the orbit to changee E, the periastron marker (orange)
+  to change &omega;, or the ascending-node marker (blue) to change &Omega;. The
+  Thiele-Innes elements only change when the orbit changes, not when the planet
+  moves. In RV 'mode' the ascending node is the one where the body recedes from
+  the observer.</p>
+<div class="opts"><label><input type="checkbox" id="rv"> RV colouring</label><label><input type="checkbox" id="tw"> Show degeneracy</label></div>
+<svg id="rvp" viewBox="0 0 600 130" aria-label="Radial velocity curve" style="display:none;max-width:560px;margin:8px auto"></svg>
+<div id="ctl"></div>
+<pre id="out"></pre>
+<div id="note"></div>
+
+<script>
+const D = Math.PI / 180, TAU = 2 * Math.PI, C = 150, PX = 15;   // PX = pixels per unit of a
+const S = {a: 3, e: 0.4, i: 60, Om: 40, om: 30, E: 70};          // angles in degrees
+const R = {a: [1, 5, .1, 'a'], e: [0, .9, .01, 'e'], i: [0, 180, 1, 'i (°)'],
+           Om: [0, 360, 1, 'Ω (°)'], om: [0, 360, 1, 'ω (°)'], E: [0, 360, 1, 'E (°)']};
+const $ = id => document.getElementById(id);
+const mod = (x, m) => ((x % m) + m) % m;
+
+// ---- Campbell -> Thiele-Innes, and the inversion described in the note ----
+function ti() {
+  const {a, i, Om, om} = S, c = Math.cos(i * D), co = Math.cos(om * D), so = Math.sin(om * D),
+        cO = Math.cos(Om * D), sO = Math.sin(Om * D);
+  return {A: a * (co * cO - so * sO * c), B: a * (co * sO + so * cO * c),
+          F: -a * (so * cO + co * sO * c), G: -a * (so * sO - co * cO * c)};
+}
+function inv({A, B, F, G}) {
+  const p = .5 * Math.hypot(A + G, B - F), q = .5 * Math.hypot(A - G, B + F);
+  const s = Math.atan2(B - F, A + G), d = Math.atan2(-(B + F), A - G);
+  let w = (s + d) / 2, O = (s - d) / 2;
+  if (O < 0) { O += Math.PI; w += Math.PI; }
+  return {a: p + q, i: 2 * Math.atan2(Math.sqrt(q), Math.sqrt(p)) / D,
+          om: mod(w / D, 360), Om: O / D, sum: s / D, dif: d / D};
+}
+
+// ---- geometry: position at eccentric anomaly E (degrees) in each panel ----
+function XY(E) { const r = E * D; return [Math.cos(r) - S.e, Math.sqrt(1 - S.e * S.e) * Math.sin(r)]; }
+function orbPt(E) {            // orbital plane, node line horizontal, screen coords
+  const [X, Y] = XY(E), co = Math.cos(S.om * D), so = Math.sin(S.om * D);
+  return [C + PX * S.a * (X * co - Y * so), C - PX * S.a * (X * so + Y * co)];
+}
+function skyPt(E) {            // north up, east left
+  const [X, Y] = XY(E), t = ti();
+  return [C - PX * (t.B * X + t.G * Y), C - PX * (t.A * X + t.F * Y)];
+}
+const path = f => { let d = ''; for (let k = 0; k <= 180; k++) d += (k ? 'L' : 'M') + f(k * 2).map(v => v.toFixed(1)).join(','); return d; };
+const arc = (r, a0, a1, big) => `M${(C + r * Math.cos(a0)).toFixed(1)},${(C - r * Math.sin(a0)).toFixed(1)}A${r},${r} 0 ${big ? 1 : 0} 0 ${(C + r * Math.cos(a1)).toFixed(1)},${(C - r * Math.sin(a1)).toFixed(1)}`;
+const dot = (p, r, col, extra = '') => `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="${r}" fill="${col}" ${extra}/>`;
+const line = (x0, y0, x1, y1, st) => `<line x1="${x0}" y1="${y0}" x2="${x1}" y2="${y1}" ${st}/>`;
+const grid = 'stroke="var(--grid)" stroke-width="1"';
+
+// ---- RV mode and twin ----
+const rvOn = () => $('rv').checked, twOn = () => $('tw').checked;
+// radial velocity in units of K (the star's semi-amplitude); RV > 0 means receding (redshift).
+// The ascending node is where the body recedes, so z = r sin(nu+omega) sin(i) points away from the observer.
+function rvAt(E, om) {
+  const [X, Y] = XY(E), co = Math.cos(om * D), so = Math.sin(om * D);
+  return (X * co - Y * so) / (1 - S.e * Math.cos(E * D)) + S.e * co;     // cos(nu+om) + e cos(om)
+}
+const MID = [150, 150, 160], BLU = [49, 130, 206], RED = [224, 49, 49];
+function rvCol(v) {
+  const t = Math.max(-1, Math.min(1, v / (1 + S.e))), c = t < 0 ? BLU : RED, k = Math.abs(t);
+  return 'rgb(' + MID.map((m, j) => Math.round(m + (c[j] - m) * k)).join(',') + ')';
+}
+function orbit(f) {
+  if (!rvOn()) return `<path d="${path(f)}" fill="none" stroke="var(--fg)" stroke-width="1.5"/>`;
+  let outer = '', inner = '';
+  for (let E = 0; E < 360; E += 2) {
+    const a = f(E), b = f(E + 2), v = rvAt(E + 1, S.om),
+          seg = `M${a[0].toFixed(1)},${a[1].toFixed(1)}L${b[0].toFixed(1)},${b[1].toFixed(1)}`;
+    outer += `<path d="${seg}" stroke="${rvCol(v)}" stroke-width="${twOn() ? 5 : 3.5}" fill="none"/>`;
+    if (twOn()) inner += `<path d="${seg}" stroke="${rvCol(-v)}" stroke-width="1.8" fill="none"/>`;   // twin: opposite RV
+  }
+  return outer + inner;
+}
+function extraOrb() {
+  let s = '';
+  if (rvOn()) s += `<text class="mut" x="${C}" y="14" text-anchor="middle">far side (receding)</text><text class="mut" x="${C}" y="294" text-anchor="middle">near side: toward the observer ↓</text>`;
+  if (twOn()) s += `<circle cx="14" cy="${C}" r="6" fill="none" stroke="var(--nd)" stroke-width="1.5" stroke-dasharray="3 2"/><text class="mut" x="8" y="${C + 20}">degenerate node</text>`;
+  return s;
+}
+function extraSky() {
+  let s = '';
+  if (twOn()) {
+    const Om = S.Om * D, p = [C + 125 * Math.sin(Om), C + 125 * Math.cos(Om)];   // opposite end of the line of nodes
+    s += `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="6" fill="none" stroke="var(--nd)" stroke-width="1.5" stroke-dasharray="3 2"/>` +
+         `<text class="mut" x="${p[0] + (p[0] > C ? -9 : 9)}" y="${p[1] + (p[1] > C ? -9 : 14)}" text-anchor="${p[0] > C ? 'end' : 'start'}">degenerate node</text>`;
+  }
+  if (rvOn()) s += `<circle cx="16" cy="278" r="4" fill="${rvCol(-(1 + S.e))}"/><text class="mut" x="24" y="282">toward us</text><circle cx="96" cy="278" r="4" fill="${rvCol(1 + S.e)}"/><text class="mut" x="104" y="282">away (into the page)</text>`;
+  return s;
+}
+function drawRV() {
+  const el = $('rvp'); el.style.display = rvOn() ? '' : 'none';
+  if (!rvOn()) return;
+  const H = 130, x0 = 30, x1 = 590, yc = H / 2, ys = (H / 2 - 16) / (1 + S.e);
+  const pt = (E, sg) => [x0 + (x1 - x0) * (E * D - S.e * Math.sin(E * D)) / TAU, yc - sg * ys * rvAt(E, S.om)];   // x = mean anomaly / 2pi
+  const curve = sg => { let d = ''; for (let E = 0; E <= 360; E += 2) d += (E ? 'L' : 'M') + pt(E, sg).map(v => v.toFixed(1)).join(','); return d; };
+  el.innerHTML = line(x0, yc, x1, yc, grid) +
+    `<text class="mut" x="${x0}" y="12">RV &gt; 0: receding</text><text class="mut" x="${x0}" y="${H - 4}">RV &lt; 0: approaching</text><text class="mut" x="${x1}" y="${H - 4}" text-anchor="end">x axis: orbital phase</text>` +
+    `<path d="${curve(1)}" fill="none" stroke="var(--fg)" stroke-width="1.8"/>` +
+    (twOn() ? `<path d="${curve(-1)}" fill="none" stroke="var(--nd)" stroke-width="1.5" stroke-dasharray="5 3"/><text x="${x1}" y="12" text-anchor="end" style="fill:var(--nd)">degenerate (dashed)</text>` : '') +
+    dot(pt(S.E, 1), 6, 'var(--pl)');
+}
+
+function handles() {
+  const L = 125, Om = S.Om * D, om = S.om * D;
+  return {
+    planetOrb: orbPt(S.E), planetSky: skyPt(S.E),
+    node: [C - L * Math.sin(Om), C - L * Math.cos(Om)],             // ascending-node end of the line of nodes (sky)
+    peri: orbPt(0)                                                  // periastron (orbital plane)
+  };
+}
+
+function draw() {
+  const h = handles(), Om = S.Om * D, om = S.om * D;
+  // orbital plane panel
+  $('orb').innerHTML =
+    line(10, C, 290, C, grid) + line(C, 10, C, 290, grid) +
+    `<text class="mut" x="292" y="${C - 4}" text-anchor="end">ascending node</text>` +
+    orbit(orbPt) +
+    line(C, C, C + 135 * Math.cos(om), C - 135 * Math.sin(om), 'stroke="var(--pe)" stroke-dasharray="4 3"') +
+    `<path d="${arc(34, 0, om, S.om > 180)}" fill="none" stroke="var(--pe)" stroke-width="1.5"/>` +
+    `<text x="${C + 44 * Math.cos(om / 2)}" y="${C - 44 * Math.sin(om / 2)}" fill="var(--pe)" style="fill:var(--pe)">ω</text>` +
+    dot([C, C], 3, 'var(--mut)') + dot(h.peri, 7, 'var(--pe)', 'data-h="peri" style="cursor:grab"') +
+    `<text class="mut" x="${h.peri[0] + 9}" y="${h.peri[1] - 8}">periastron</text>` +
+    dot(h.planetOrb, 7, 'var(--pl)', 'data-h="pl" style="cursor:grab"') + extraOrb();
+  // sky panel
+  const nx = -Math.sin(Om), ny = -Math.cos(Om);
+  $('sky').innerHTML =
+    line(C, 12, C, 288, grid) + line(12, C, 288, C, grid) +
+    `<text class="mut" x="${C + 5}" y="22">N</text><text class="mut" x="20" y="${C - 5}">E</text>` +
+    line(C - 135 * nx, C - 135 * ny, C + 135 * nx, C + 135 * ny, 'stroke="var(--nd)" stroke-dasharray="4 3"') +
+    orbit(skyPt) +
+    `<path d="${arc(40, Math.PI / 2, Math.PI / 2 + Om, S.Om > 180)}" fill="none" stroke="var(--nd)" stroke-width="1.5"/>` +
+    `<text x="${C - 50 * Math.sin(Om / 2)}" y="${C - 50 * Math.cos(Om / 2)}" style="fill:var(--nd)">Ω</text>` +
+    dot([C, C], 3, 'var(--mut)') + dot(h.node, 7, 'var(--nd)', 'data-h="node" style="cursor:grab"') +
+    `<text class="mut" x="${h.node[0] + (nx > 0 ? -9 : 9)}" y="${h.node[1] + (ny > 0 ? -9 : 14)}" text-anchor="${nx > 0 ? 'end' : 'start'}">ascending node</text>` +
+    dot(h.planetSky, 7, 'var(--pl)', 'data-h="pl" style="cursor:grab"') + extraSky();
+  readout(); drawRV();
+}
+
+function readout() {
+  const t = ti(), r = inv(t), [X, Y] = XY(S.E), f = (v, n = 3) => (v >= 0 ? ' ' : '') + v.toFixed(n);
+  $('out').textContent =
+`Campbell (input)   a=${S.a.toFixed(2)}  i=${S.i.toFixed(1)}°  Ω=${S.Om.toFixed(1)}°  ω=${S.om.toFixed(1)}°  e=${S.e.toFixed(2)}
+
+Thiele-Innes       A=${f(t.A)}  B=${f(t.B)}
+(fixed by orbit)   F=${f(t.F)}  G=${f(t.G)}
+
+Planet position    X=${f(X)}  Y=${f(Y)}      (orbital plane, units of a)
+(moves with E)     Δδ=${f(t.A * X + t.F * Y)}  Δα*=${f(t.B * X + t.G * Y)}   (sky: north, east)
+
+Recovered          a=${r.a.toFixed(2)}  i=${r.i.toFixed(1)}°  Ω=${r.Om.toFixed(1)}°  ω=${r.om.toFixed(1)}°
+from A,B,F,G       ω+Ω= ${r.sum.toFixed(1)}°   ω−Ω= ${r.dif.toFixed(1)}°`;
+  const twin = Math.abs(mod(r.Om - S.Om + 180, 360) - 180) > 0.01;
+  $('note').textContent = twin
+    ? 'Ω is above 180°. The Thiele-Innes elements cannot tell (ω, Ω) from (ω+180°, Ω+180°), so the recovered values use the convention Ω in [0°, 180°]. The orbit on the sky is identical.'
+    : (S.i < 2 || S.i > 178) ? 'Nearly face-on: only ω+Ω (or ω−Ω for i near 180°) is constrained, so ω and Ω are individually ill-determined.' : '';
+  if (twOn()) $('note').textContent = `Degeneracy: (ω, Ω) = (${mod(S.om + 180, 360).toFixed(1)}°, ${mod(S.Om + 180, 360).toFixed(1)}°) has the same A, B, F, G and the same path on the sky, with the other node called ascending.` +
+    (rvOn() ? ' Radial velocities for this orbit are flipped (dashed curve).' : ' Turn on RV colouring to see how radial velocities break the tie.');
+}
+
+// ---- controls ----
+const ctl = $('ctl');
+for (const k in R) {
+  ctl.insertAdjacentHTML('beforeend',
+    `<label for="s_${k}">${R[k][3]}</label><input id="s_${k}" type="range" min="${R[k][0]}" max="${R[k][1]}" step="${R[k][2]}" value="${S[k]}"><output id="o_${k}"></output>`);
+  $('s_' + k).addEventListener('input', e => { S[k] = +e.target.value; sync(); });
+}
+function sync() {
+  for (const k in R) { $('s_' + k).value = S[k]; $('o_' + k).textContent = (+S[k]).toFixed(k === 'a' ? 1 : k === 'e' ? 2 : 0); }
+  draw();
+}
+
+// ---- dragging ----
+let drag = null;
+function local(svg, ev) {
+  const b = svg.getBoundingClientRect();
+  return [(ev.clientX - b.left) * 300 / b.width, (ev.clientY - b.top) * 300 / b.height];
+}
+function nearestE(f, p) {
+  let best = 0, bd = 1e9;
+  for (let E = 0; E < 360; E += .5) { const q = f(E), d = (q[0] - p[0]) ** 2 + (q[1] - p[1]) ** 2; if (d < bd) { bd = d; best = E; } }
+  return best;
+}
+for (const id of ['orb', 'sky']) {
+  const svg = $(id);
+  svg.addEventListener('pointerdown', ev => {
+    const p = local(svg, ev), h = handles(), dist = q => Math.hypot(q[0] - p[0], q[1] - p[1]);
+    const cands = id === 'orb' ? [['pl', h.planetOrb], ['peri', h.peri]] : [['pl', h.planetSky], ['node', h.node]];
+    const hit = cands.filter(c => dist(c[1]) < 20).sort((a, b) => dist(a[1]) - dist(b[1]))[0];
+    drag = hit ? {id, what: hit[0]} : (id === 'orb' || id === 'sky') ? {id, what: 'pl'} : null;
+    svg.setPointerCapture(ev.pointerId); move(ev);
+  });
+  svg.addEventListener('pointermove', ev => { if (drag && drag.id === id) move(ev); });
+  svg.addEventListener('pointerup', () => { drag = null; });
+}
+function move(ev) {
+  const p = local($(drag.id), ev), dx = p[0] - C, dy = p[1] - C;
+  if (drag.what === 'pl') S.E = nearestE(drag.id === 'orb' ? orbPt : skyPt, p);
+  else if (drag.what === 'peri') S.om = mod(Math.atan2(-dy, dx) / D, 360);
+  else if (drag.what === 'node') S.Om = mod(Math.atan2(-dx, -dy) / D, 360);   // east = -x, north = -y
+  sync();
+}
+$('rv').onchange = $('tw').onchange = draw;
+sync();
+</script>
+</body>
+</html>
