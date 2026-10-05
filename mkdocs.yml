@@ -57,6 +57,9 @@ nav:
   - docs/getting-started.md
   - docs/data.md
   - docs/models.md
+  - docs/troubleshooting.md
+  - Contributing: docs/contributing.md
+
   - Examples:
     - docs/examples/index.md
     - 51Peg: /docs/examples/51Peg
@@ -72,14 +75,6 @@ nav:
     - kima: docs/API/kima.md
     - pykima: docs/API/pykima.md
 
-  - docs/troubleshooting.md
-  - Contributing: docs/contributing.md
-#   - Building Models:
-#     - building-models/index.md
-#     - building-models/general-settings.md
-#   #   - Page 1: section/page-1.md
-#   #   ...
-#   #   - Page n: section/page-n.md
 
 
 plugins:
