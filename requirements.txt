@@ -1,5 +1,5 @@
-# kima
-kima @ git+https://github.com/kima-org/kima@main
+kima
+# kima @ git+https://github.com/kima-org/kima@main
 zensical
 mkdocstrings[python]
 
