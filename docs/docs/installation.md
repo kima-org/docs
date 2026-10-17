@@ -1,5 +1,5 @@
 ---
-comments: true
+comments: false
 ---
 
 # Installation
@@ -53,6 +53,5 @@ uv pip install "git+https://github.com/kima-org/kima"
 
  
 If the installation fails,
-open an issue [here](https://github.com/kima-org/kima/issues){:target="_blank"}
-or comment below.
+open an issue [here](https://github.com/kima-org/kima/issues){:target="_blank"}.
 <!-- take a look at the [troubleshooting](/docs/troubleshooting) page -->

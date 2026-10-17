@@ -1,5 +1,5 @@
 ---
-comments: true
+comments: false
 ---
 
 # Models
@@ -479,5 +479,3 @@ And for the orbital parameters
       [link](https://gaussianprocess.org/gpml/), 
       [PDF](https://gaussianprocess.org/gpml/chapters/RW.pdf)
 
-
-<script src="https://cdn.jsdelivr.net/npm/@marimo-team/marimo-snippets@1"></script>

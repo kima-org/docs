@@ -1,5 +1,5 @@
 ---
-comments: true
+comments: false
 ---
 
 ## Data, models, and results
@@ -44,7 +44,7 @@ Running it is as simple as
 ```py
 from kima.examples import _51Peg
 
-model, res = _51Peg(run=True, load=True) #(1)
+model, res = _51Peg(run=True, load=True) #(1)!
 ```
 
 1. This will run **kima** for 5000 steps, taking a few seconds.
@@ -52,12 +52,12 @@ model, res = _51Peg(run=True, load=True) #(1)
 and the results object provides a number of useful plots 
 
 ```py
-res.plot_posterior_np() #(1)
+res.plot_posterior_np() #(1)!
 
-res.plot_posterior_periods() #(2)
+res.plot_posterior_periods() #(2)!
 
-p = res.maximum_likelihood_sample() #(3)
-res.phase_plot(p) #(4)
+p = res.maximum_likelihood_sample() #(3)!
+res.phase_plot(p) #(4)!
 ```
 
 1. shows the posterior for the number of planets
