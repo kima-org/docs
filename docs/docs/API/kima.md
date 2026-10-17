@@ -190,6 +190,7 @@ Here's a complete list of the implemented distributions:
 - [Gaussian][kima.distributions.Gaussian]
 - [GaussianMixture][kima.distributions.GaussianMixture]
 - [HalfGaussian][kima.distributions.HalfGaussian]
+- [Gamma][kima.distributions.Gamma]
 - [InverseGamma][kima.distributions.InverseGamma]
 - [InverseMoment][kima.distributions.InverseMoment]
 - [Kumaraswamy][kima.distributions.Kumaraswamy]
