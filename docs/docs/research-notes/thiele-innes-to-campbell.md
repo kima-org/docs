@@ -380,7 +380,7 @@ An interactive version is available at the kima documentation.
 </p>
 
 <iframe src="../../assets/thiele_innes_widget.html" class="no-print" 
-        width="100%" height="1024" style="border:0" scrolling="no">
+        width="100%" height="1060" style="border:0" scrolling="no">
 </iframe>
 <img class="print-only" src="../../assets/ti_figure.png" alt="thiele_innes_widget">
 
