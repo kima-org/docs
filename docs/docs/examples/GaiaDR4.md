@@ -89,7 +89,7 @@ epoch_astrometry.head()
 
 
     
-![png](../GaiaDR4_files/GaiaDR4_12_0.png)
+![png](GaiaDR4_files/GaiaDR4_12_0.png)
     
 
 
@@ -309,7 +309,7 @@ data.plot()
 
 
     
-![png](../GaiaDR4_files/GaiaDR4_24_0.png)
+![png](GaiaDR4_files/GaiaDR4_24_0.png)
     
 
 
@@ -369,7 +369,7 @@ res.plot_random_samples()[0]
 
 
     
-![png](../GaiaDR4_files/GaiaDR4_33_1.png)
+![png](GaiaDR4_files/GaiaDR4_33_1.png)
     
 
 
@@ -389,7 +389,7 @@ res.plot_posterior_periods(show_prior=True)
 
 
     
-![png](../GaiaDR4_files/GaiaDR4_36_0.png)
+![png](GaiaDR4_files/GaiaDR4_36_0.png)
     
 
 
@@ -402,7 +402,7 @@ res.hist_astrometric_solution()[0]
 
 
     
-![png](../GaiaDR4_files/GaiaDR4_38_0.png)
+![png](GaiaDR4_files/GaiaDR4_38_0.png)
     
 
 
@@ -484,7 +484,7 @@ new_res.hist_astrometric_solution(show_prior=True)[0]
 
 
     
-![png](../GaiaDR4_files/GaiaDR4_50_0.png)
+![png](GaiaDR4_files/GaiaDR4_50_0.png)
     
 
 
