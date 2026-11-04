@@ -11,4 +11,4 @@ on GitHub](https://github.com/kima-org/kima/discussions).
 
 
 - [Thiele-Innes to Campbell Orbital Elements](thiele-innes-to-campbell)
-- [Label Switching](label-switching)
+- [The label-switching degeneracy](label-switching)
