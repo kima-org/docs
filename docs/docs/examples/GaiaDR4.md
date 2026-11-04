@@ -1,10 +1,10 @@
-# Gaia DR4
+# Gaia-4b from DR4 data
 
 ### Introduction
 
 The anticipation is palpable in observatories around the world as ESA prepares the 4th Data Release (DR4) of the Gaia mission. As a teaser, the Gaia DR4 epoch astrometry for 12 sources was pre-released in June 2026. Here we use the pre-release data for Gaia-4 to demonstrate how to fit Gaia epoch astrometry with **kima**.
 
-This example uses the recently developed [GAIAmodel](/docs/API/kima/#kima.GAIAmodel), which is described in detail in Baycroft, Faria & Delisle (2026)[^1].
+This example uses the recently developed [GAIAmodel](/docs/API/kima/#kima.GAIAmodel), which is described in detail in the recent paper Baycroft, Faria & Delisle (2026)[^1].
 
 !!! abstract "Checkout the paper"
 
@@ -26,7 +26,7 @@ This example uses the recently developed [GAIAmodel](/docs/API/kima/#kima.GAIAmo
     [Octofitter documentation](https://sefffal.github.io/Octofitter.jl/dev/gaia-dr4-prerelease/)!
 
 First things first:
-Besides **kima**, this tutorial needs `numpy`, `scipy`, `pandas`, `astropy` and `requests`.
+besides **kima**, this tutorial needs a few other standard packages:
 
 
 ```python
@@ -102,7 +102,7 @@ DR4). At the same time, several columns are actually arrays, containing the valu
 !!! note "SM and AF observations"
 
     Of the 10 entries per transit, the first one comes from the Sky Mapper
-    (SM) and is not an astrometric measurement for our purposes. Only the
+    (SM) and is not a calibrated astrometric measurement for our purposes. Only the
     other 9, from the Astrometric Field CCDs (AF1–AF9), should be used. The function below discards the SM value.
 
 
@@ -208,6 +208,15 @@ We're still not done though: we will also bin the individual CCD observations to
 
 Following the Octofitter tutorial and recommendations from the Gaia team, we will calculate the **median along-scan position per-transit**, and **estimate its uncertainty by bootstrap-resampling** the observations within the transit. To avoid very small uncertainties, we further limit them to the IPD uncertainty divided by the square root of the number of CCD observations.
 
+!!! note "What is IPD?"
+
+    IPD stands for *Image Parameter Determination*, the step of the Gaia
+    data processing in which the image of the star recorded on each CCD
+    is fitted with a model of the instrument's line-spread function. This
+    fit provides the along-scan centroid position (the measurement we are
+    using) and its formal uncertainty, `ipd_error_al`, for every individual
+    CCD observation. See Rowell et al. 2026[^2] for more details.
+
 
 ```python
 def bin_by_transit(file=None, df=None, nboot=100, seed=42):
@@ -309,7 +318,7 @@ data.plot()
 
 
     
-![png](GaiaDR4_files/GaiaDR4_24_0.png)
+![png](GaiaDR4_files/GaiaDR4_25_0.png)
     
 
 
@@ -328,13 +337,13 @@ model = kima.GAIAmodel(fix=True, npmax=1, data=data)
 
 
 ```python
-kima.run(model, steps=20_000, num_threads=2)
+kima.run(model, steps=30_000, num_threads=4)
 ```
 
 !!! tip
 
     Running this model for 20 000 steps with the default settings
-    should take only a few seconds, but note (below) we don't get
+    should take about one minute, but note (below) we don't get
     a very large effective sample size. Those few posterior samples
     should nevertheless be enough for a first look at the results.
 
@@ -348,11 +357,11 @@ Let's load the results and make a first plot of the posterior orbits
 res = kima.load_results(model)
 ```
 
-    Loading files took 0.30 seconds
-    log(Z) = 101.86
-    Information = 59.35 nats
-    BMD = 22.71
-    Effective sample size = 1419.9
+    Loading files took 0.32 seconds
+    log(Z) = 102.76
+    Information = 56.68 nats
+    BMD = 26.14
+    Effective sample size = 3986.9
     
 
 
@@ -369,7 +378,7 @@ res.plot_random_samples()[0]
 
 
     
-![png](GaiaDR4_files/GaiaDR4_33_1.png)
+![png](GaiaDR4_files/GaiaDR4_34_1.png)
     
 
 
@@ -389,7 +398,7 @@ res.plot_posterior_periods(show_prior=True)
 
 
     
-![png](GaiaDR4_files/GaiaDR4_36_0.png)
+![png](GaiaDR4_files/GaiaDR4_37_0.png)
     
 
 
@@ -402,7 +411,7 @@ res.hist_astrometric_solution()[0]
 
 
     
-![png](GaiaDR4_files/GaiaDR4_38_0.png)
+![png](GaiaDR4_files/GaiaDR4_39_0.png)
     
 
 
@@ -462,7 +471,7 @@ Running the model again with the new priors will typically improve the sampling,
 
 
 ```python
-kima.run(model, steps=20_000, progress_bar=True)
+kima.run(model, steps=30_000, num_threads=4)
 ```
 
 
@@ -470,11 +479,11 @@ kima.run(model, steps=20_000, progress_bar=True)
 new_res = kima.load_results(model)
 ```
 
-    Loading files took 0.40 seconds
-    log(Z) = 123.65
-    Information = 40.20 nats
-    BMD = 41.06
-    Effective sample size = 4167.6
+    Loading files took 0.31 seconds
+    log(Z) = 129.57
+    Information = 38.59 nats
+    BMD = 17.62
+    Effective sample size = 8293.1
     
 
 
@@ -484,7 +493,7 @@ new_res.hist_astrometric_solution(show_prior=True)[0]
 
 
     
-![png](GaiaDR4_files/GaiaDR4_50_0.png)
+![png](GaiaDR4_files/GaiaDR4_51_0.png)
     
 
 
@@ -523,32 +532,7 @@ percentile68_ranges(final_res.posteriors.P)
 
 
 
-or we can simply print the results directly
-
-
-```python
-final_res.print_results()
-```
-
-    logL max: 173.86
-    logZ: 108.87
-    
-        parameter : median ± std           Ͱ                         distribution                         
-        jitter    : 0.0241 ± 0.0049        Ͱ     0.0008│▁ ▁▁▁▁▁▁▁▁▁▁▂▂▂▄▄▅▆▇▇▇▇▆▅▄▃▃▂▁▁▁▁▁▁▁ ▁▁│0.0444    
-        dd        : 0.160 ± 0.035          Ͱ      0.062│▁▁▁▁▁▁▁▁▁▁▃▂▄▃▄▅▇▄▅▄▂▃▂▃▃▃▂▃▂▁▁▁▁▂▁▁ ▁▁│0.272     
-        da        : -0.184 ± 0.024         Ͱ     -0.260│▁▁ ▂▁▁▁▁▂▄▄▂▂▃▅▃▆▇▇▇▆▆▆▆▃▃▂▂▂▁▁▁▂▁▁▁  ▁│-0.102    
-        mua       : -75.5324 ± 0.0054      Ͱ   -75.5532│▁▁ ▁▁▁▁▁▂▁▁▂▃▂▃▃▃▄▇▃▅▄▄▄▄▃▂▃▂▂▁▁▁▁▁ ▁▁▁│-75.5124  
-        mud       : 17.9665 ± 0.0053       Ͱ    17.9516│▁▁▁▁▁▂▂▂▂▁▃▃▃▃▂▂▃▄▃▄▇▃▃▂▃▂▃▂▁▁▁▁▁▁▁▁▁▁▁│17.9829   
-        plx       : 13.621 ± 0.011         Ͱ     13.587│▁▁▁▁▁▁▁▃▁▂▁▂▂▃▅▅▅▅▆▇▄▆▄▂▃▆▃▆▂▃▃▂▁▁▁▁▁▁▁│13.655    
-        - planets
-        1: P      : 577.2 ± 4.4            Ͱ      561.6│▁▁ ▁▁▁▁▁▁▁▃▄▃▃▆▆▃▃▆▃▆▅▇▄▃▂▂▂▁▁▁ ▁▁ ▁▁ ▁│593.9     
-        1: a      : 0.256 ± 0.014          Ͱ      0.218│▁▁▁▁▁▁▂▄▁▄▅▅▂▄▄▄▅▄▇▃▇▆▄▆▄▆▄▃▄▄▅▂▁▂▁  ▁▁│0.292     
-        1: M0     : 5.79 ± 0.85            Ͱ       0.00│▁▁ ▁                            ▁▁▃▇▆▂▂│6.28      
-        1: e      : 0.402 ± 0.092          Ͱ      0.056│▁   ▁▁▁▁▁▁▁▁▁▁▂▃▂▂▇▃▄▄▅▆▃▅▃▃▂▃▄▂▁▁▁▂▁▁▂│0.641     
-        1: w      : 3.6 ± 1.0              Ͱ        0.1│▁ ▁▂▁▁▁▁          ▁▁▁▁▅▅▇▅▂▁          ▁│5.8       
-        1: W      : 3.1 ± 1.0              Ͱ        0.0│▂▁▁                                ▁▁▄▇│3.1       
-        --
-    
+or we could print the results directly with the `print_results()` function.
 
 The table below summarises all the results, after the necessary unit conversions
 
@@ -572,7 +556,7 @@ table = mo.md(f"""
 | $\omega$ [deg] | $185 \pm 16$      | $180.3^{{+5.5}}_{{-4.8}}$     | —   | {p68(np.rad2deg(final_res.posteriors.w))} |
 | $\Omega$ [deg] | $159.4 \pm 5$     | $158.6 \pm 5.1$               | —   | {p68(np.rad2deg(final_res.posteriors.W))} |
 | $a_0$ [mas]    | $0.312 \pm 0.040$ | $0.279^{{+0.016}}_{{-0.014}}$ | —   | {p68(final_res.posteriors.a)} |
-| $m_\mathrm{{p}}$ [M$_\mathrm{{Jup}}$] | $13.2 \pm 1.9$ | $11.8^{{+0.73}}_{{-0.66}}$ | $\geq 10.30 \pm 0.45$ | {Mp} |
+| $m_\mathrm{{p}}$ [M$_\mathrm{{Jup}}$] | $13.2 \pm 1.9$ | $11.8^{{+0.73}}_{{-0.66}}$ | $\geq 10.30 \pm 0.45$ | ${Mp}$ |
 """)
 table
 ```
@@ -645,7 +629,7 @@ table
 <td>$13.2 \pm 1.9$</td>
 <td>$11.8^{+0.73}_{-0.66}$</td>
 <td>$\geq 10.30 \pm 0.45$</td>
-<td>10.79</td>
+<td>$10.79$</td>
 </tr>
 </tbody>
 </table></span>
@@ -684,13 +668,19 @@ import zipfile
       [arXiv](https://arxiv.org/abs/2606.24132),
       [DOI](https://doi.org/10.1051/0004-6361/202661563)
 
-[^2]: Stefánsson, G., Mahadevan, S., Winn, J.N., et al.
+[^2]: Rowell et al.
+      *Gaia Data Release 4: Modelling of drift-scan-related effects in Gaia's point spread function*
+      A&A, 708, A174 (2026)
+      [arXiv](https://arxiv.org/abs/2602.20906)
+      [DOI](https://doi.org/10.1051/0004-6361/202558618)
+
+[^3]: Stefánsson, G. et al.
       *Gaia-4b and 5b: Radial Velocity Confirmation of Gaia Astrometric Orbital Solutions Reveal a Massive Planet and a Brown Dwarf Orbiting Low-mass Stars*
       AJ, 169, 107 (2025)
       [arXiv](https://arxiv.org/abs/2410.05654),
       [DOI](https://doi.org/10.3847/1538-3881/ada9e1)
 
-[^3]: Barbato, D., Pinamonti, M., Sozzetti, A., et al.
+[^4]: Barbato, D. et al.
       *The GAPS programme at TNG LXXV. Validating and confirming Gaia substellar astrometric candidates with HARPS-N*
       A&A 712, A213 (2026)
       [arXiv](https://arxiv.org/abs/2606.29001),

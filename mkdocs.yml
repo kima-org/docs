@@ -68,6 +68,8 @@ nav:
     - Variable Jitter: /docs/examples/jitter_rhk
     - Gaia BH3: docs/examples/GaiaBH3
     - Circumbinary: docs/examples/TIC172900988
+    - Gaia BH3: docs/examples/GaiaBH3
+    - Gaia-4b (DR4 pre-release): docs/examples/GaiaDR4
 
 
   - API:
