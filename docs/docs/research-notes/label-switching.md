@@ -166,7 +166,7 @@ observed at 57 random epochs:
 
 <figure markdown="span">
 
-![data](../figures/label-switching-plot_data.png){ width="80%" }
+![data](figures/label-switching-plot_data.png){ width="80%" }
 
 </figure>
 
@@ -203,7 +203,7 @@ helpful:
 
 `res.plot_posterior_periods()` |  `res.plot_posterior_PKE()`
 :-------------------------:|:-------------------------:
-![plot2](../figures/label-switching-plot2.png) | ![plot3](../figures/label-switching-plot3.png)
+![plot2](figures/label-switching-plot2.png) | ![plot3](figures/label-switching-plot3.png)
 
 
 The plot on the right shows the mixing of different colours in the two main
@@ -214,7 +214,7 @@ $N_p$, which points to the significant detection of two planets:
 
 <figure markdown="span">
 
-![plot1](../figures/label-switching-plot1.png){ width="80%" }
+![plot1](figures/label-switching-plot1.png){ width="80%" }
 
 </figure>
 
@@ -225,7 +225,7 @@ values of that sample. This is implemented in the *pykima* function
 `pykima.display.label_switching_plot`, which produces a figure like the
 following:
 
-![fig1](../figures/label-switching-1.png)
+![fig1](figures/label-switching-1.png)
 
 In this figure, the semi-amplitudes and periods of all planets in all posterior
 samples are concatenated and coloured by their planet label (that is, the column
@@ -359,7 +359,7 @@ kima.pykima.display.label_switching_plot(post)
 
 resulting in the following figure:
 
-![fig2](../figures/label-switching-2.png)
+![fig2](figures/label-switching-2.png)
 
 Note how the "first" planet has the largest semi-amplitude, since the default
 ordering by decreasing $K$ has been applied to the reference sample.
