@@ -44,14 +44,14 @@ double-lined binary data. More details are available in
 <!--  -->
 [GAIAmodel][kima.GAIAmodel]  
 Models Gaia epoch astrometry with a 5-parameter astrometric solution plus a 
-sum-of-Keplerians
+sum-of-Keplerians. See [Baycroft, Faria & Delisle (2026)](https://scixplorer.org/abs/2026A%26A...714A.288B){:target="_blank"}.
 <br><br>
 
 ![RVGAIAmodel](../assets/models/RVGAIAmodel_icon.svg){ align=left width="96" }
 <!--  -->
 [RVGAIAmodel][kima.RVGAIAmodel]  
 Models RVs as well as Gaia epoch astrometry simultaneously, with shared
-Keplerians
+Keplerians. See [Baycroft, Faria & Delisle (2026)](https://scixplorer.org/abs/2026A%26A...714A.288B){:target="_blank"}.
 <br><br>
 
 ![TRANSITmodel](../assets/models/TRANSITmodel_icon.svg){ align=left width="96" }
