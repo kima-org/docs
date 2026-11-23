@@ -72,7 +72,7 @@ Feel free to use the following BibTeX entry, or see the ADS entry
       [arXiv](https://arxiv.org/abs/0912.2380),
       [DOI](https://doi.org/10.1007/s11222-010-9198-8)
 
-[^2]: Brewer, B.J., *Inference for Trans-dimensional Bayesian Models with
+[^2]: Brewer, B.J., *Inference for Trans-dimensional Bayesian Models with 
       Diffusive Nested Sampling* (2015)  
       [arXiv](https://arxiv.org/abs/1411.3921)
 
