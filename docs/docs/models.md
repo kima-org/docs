@@ -10,7 +10,7 @@ comments: false
 a given dataset. The models share a common organization, but each has its own
 parameters, priors, and settings.
 
-![RVmodel](../assets/models/RVmodel_icon.svg){ align=left width="96" }
+![RVmodel](/assets/models/RVmodel_icon.svg){ align=left width="96" }
 <!--  -->
 [RVmodel][kima.RVmodel]  
 Models the RVs with a sum-of-Keplerians
