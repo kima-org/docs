@@ -17,21 +17,21 @@ Models the RVs with a sum-of-Keplerians
 <br><br><br>
 
 
-![GPmodel](../assets/models/GPmodel_icon.svg){ align=left width="96" }
+![GPmodel](/assets/models/GPmodel_icon.svg){ align=left width="96" }
 <!--  -->
 [GPmodel][kima.GPmodel]  
 Models the RVs with a sum-of-Keplerians plus a correlated noise component
 given by a Gaussian process
 <br><br>
 
-![RVFWHMmodel](../assets/models/RVFWHMmodel_icon.svg){ align=left width="96" }
+![RVFWHMmodel](/assets/models/RVFWHMmodel_icon.svg){ align=left width="96" }
 <!--  -->
 [RVFWHMmodel][kima.RVFWHMmodel]  
 Models the RVs together with the FWHM as an activity indicator, including a
 Gaussian process for the activity signal
 <br><br>
 
-![BINARIESmodel](../assets/models/BINARIESmodel_icon.svg){ align=left width="96" }
+![BINARIESmodel](/assets/models/BINARIESmodel_icon.svg){ align=left width="96" }
 <!--  -->
 [BINARIESmodel][kima.BINARIESmodel]  
 This includes tidal and relativistic effects as well as apsidal precession of
@@ -40,14 +40,14 @@ double-lined binary data. More details are available in
 [Baycroft et al. (2023)](https://ui.adsabs.harvard.edu/abs/2023MNRAS.521.1871B/abstract){:target="_blank"}.
 <br>
 
-![GAIAmodel](../assets/models/GAIAmodel_icon.svg){ align=left width="96" }
+![GAIAmodel](/assets/models/GAIAmodel_icon.svg){ align=left width="96" }
 <!--  -->
 [GAIAmodel][kima.GAIAmodel]  
 Models Gaia epoch astrometry with a 5-parameter astrometric solution plus a 
 sum-of-Keplerians. See [Baycroft, Faria & Delisle (2026)](https://scixplorer.org/abs/2026A%26A...714A.288B){:target="_blank"}.
 <br><br>
 
-![RVGAIAmodel](../assets/models/RVGAIAmodel_icon.svg){ align=left width="96" }
+![RVGAIAmodel](/assets/models/RVGAIAmodel_icon.svg){ align=left width="96" }
 <!--  -->
 [RVGAIAmodel][kima.RVGAIAmodel]  
 Models RVs as well as Gaia epoch astrometry simultaneously, with shared
